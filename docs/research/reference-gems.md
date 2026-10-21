@@ -28,7 +28,7 @@ Checked against Spinel's limitations and require documents at commit `3a54c72` o
 - **dotenv** (rejected, `config`): unverified past its core: the reader agent found the parser free of refused constructs
 - **xdg** (picked, `config`): Forwardable and Data.define, both supported, no runtime dependencies; its own files are loaded with require, which Spinel resolves only to bundled features, so those lines become require_relative
 
-Every other pick is either native or uses a refused construct in its core, and its entry names which, with the file and line the reading found. A rejected survivor's call is recorded only when it is a candidate, as above.
+Every other pick is native, uses a refused construct in its core, or depends on a gem that is one of those, and its entry names which, with a file and line wherever the reason is a construct. A rejected survivor's call is recorded only when it is a candidate, as above.
 
 ## parsers
 
