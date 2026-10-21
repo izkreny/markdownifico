@@ -304,7 +304,7 @@ Every other pick is native, uses a refused construct in its core, or depends on 
    - Latest release 2026-09-30 (1.3.2); 473 commits in the last 12 months, 11 authors, 3 with 3 or more commits; sferik wrote 96%. Spinel: no, lib/simplecov/profiles.rb:32 require with interpolated name; depends on prism. Clone: `miscellaneous/simplecov-ruby_simplecov`.
 10. **[timecop](https://github.com/travisjeffery/timecop)**: testing: clock mocking via a time stack and monkeypatching Time/Date
    - Score 4 of 5, missing craft. Docs: GitHub wiki.
-   - Latest release 2026-04-12 (0.9.11); 6 commits in the last 12 months, 6 authors, 0 with 3 or more commits; NikolasPilavakis wrote 17%. Spinel: no, it captures Time.now with alias_method and rebinds :now to a method that calls the captured alias, which Spinel's limitations list as refused. Clone: `miscellaneous/travisjeffery_timecop`.
+   - Latest release 2026-04-12 (0.9.11); 6 commits in the last 12 months, 6 authors, 0 with 3 or more commits; NikolasPilavakis wrote 17%. Spinel: no, lib/timecop/time_extensions.rb:11 captures Time.now with alias_method and :17 rebinds :now to a method that calls the captured alias, which Spinel's limitations list as refused. Clone: `miscellaneous/travisjeffery_timecop`.
 
 ## Also in the reference tree
 
