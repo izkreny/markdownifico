@@ -306,6 +306,13 @@ Every other survivor is native or uses a refused construct in its core; its entr
    - Score 4 of 5, missing craft. Docs: GitHub wiki.
    - Latest release 2026-04-12 (0.9.11); 6 commits in the last 12 months, 6 authors, 0 with 3 or more commits; NikolasPilavakis wrote 17%. Spinel: no. Clone: `miscellaneous/travisjeffery_timecop`.
 
+## Also in the reference tree
+
+Cloned for [#2](https://github.com/izkreny/markdownifico/issues/2) rather than picked, so they went through none of the steps above:
+
+- **[roundhouse](https://github.com/rubys/roundhouse)**: the largest program compiled with Spinel, read for how it rewrites libraries that do not compile as they are. Clone: `compilers/rubys_roundhouse`.
+- **[spinel](https://github.com/matz/spinel)**: the ahead-of-time compiler #2 tries, read for the subset it accepts, its FFI and its package format. Clone: `compilers/matz_spinel`.
+
 ## Rejected
 
 Every candidate not picked, with the first criterion it failed, so a later pass need not evaluate it again. The sources are the ones in step 1.
