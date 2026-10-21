@@ -370,134 +370,134 @@ Every candidate not picked, with the first criterion it failed, so a later pass 
 
 ### parsers
 
-- **redcarpet** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-02-25).
-- **ox** (catalog, awesome-ruby): scored 2 of 5 (missing README design, tests, craft).
-- **rexml** (catalog): no release since 2025-10-21 (last release 2025-09-10).
-- **oj** (catalog): scored 2 of 5 (missing README design, lib/ layout, craft).
-- **parslet** (agent): no release since 2025-10-21 (last release 2020-02-16).
-- **racc** (agent): no release since 2025-10-21 (last release 2024-07-30).
-- **citrus** (agent): no release since 2025-10-21 (last release 2015-02-19).
+- **[redcarpet](https://github.com/vmg/redcarpet)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-02-25).
+- **[ox](https://github.com/ohler55/ox)** (catalog, awesome-ruby): scored 2 of 5 (missing README design, tests, craft).
+- **[rexml](https://github.com/ruby/rexml)** (catalog): no release since 2025-10-21 (last release 2025-09-10).
+- **[oj](https://github.com/ohler55/oj)** (catalog): scored 2 of 5 (missing README design, lib/ layout, craft).
+- **[parslet](https://github.com/kschiess/parslet)** (agent): no release since 2025-10-21 (last release 2020-02-16).
+- **[racc](https://github.com/ruby/racc)** (agent): no release since 2025-10-21 (last release 2024-07-30).
+- **[citrus](https://github.com/mjijackson/citrus)** (agent): no release since 2025-10-21 (last release 2015-02-19).
 
 ### renderers
 
-- **erubi** (catalog): no release since 2025-10-21 (last release 2024-12-19).
-- **tilt** (catalog, awesome-ruby): no documentation beyond the README: its generated API pages carry doc comments on 28% of its 102 public methods, under the 50% the condition asks (scored 4).
-- **coderay** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2020-05-30).
-- **syntax_tree** (agent): no release since 2025-10-21 (last release 2025-07-17).
-- **rufo** (agent): scored 2 of 5 (missing README design, lib/ layout, craft).
-- **blueprinter** (catalog): no documentation beyond the README: its generated API pages carry doc comments on 43% of its 60 public methods, under the 50% the condition asks (scored 4).
-- **terminal-table** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-01-27).
-- **tty-markdown** (catalog): no release since 2025-10-21 (last release 2023-03-12).
-- **prawn** (agent): no release since 2025-10-21 (last release 2024-03-05).
+- **[erubi](https://github.com/jeremyevans/erubi)** (catalog): no release since 2025-10-21 (last release 2024-12-19).
+- **[tilt](https://github.com/jeremyevans/tilt)** (catalog, awesome-ruby): no documentation beyond the README: its generated API pages carry doc comments on 28% of its 102 public methods, under the 50% the condition asks (scored 4).
+- **[coderay](https://github.com/rubychan/coderay)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2020-05-30).
+- **[syntax_tree](https://github.com/kddnewton/syntax_tree)** (agent): no release since 2025-10-21 (last release 2025-07-17).
+- **[rufo](https://github.com/ruby-formatter/rufo)** (agent): scored 2 of 5 (missing README design, lib/ layout, craft).
+- **[blueprinter](https://github.com/procore-oss/blueprinter)** (catalog): no documentation beyond the README: its generated API pages carry doc comments on 43% of its 60 public methods, under the 50% the condition asks (scored 4).
+- **[terminal-table](https://github.com/tj/terminal-table)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-01-27).
+- **[tty-markdown](https://github.com/piotrmurach/tty-markdown)** (catalog): no release since 2025-10-21 (last release 2023-03-12).
+- **[prawn](https://github.com/prawnpdf/prawn)** (agent): no release since 2025-10-21 (last release 2024-03-05).
 
 ### linters
 
-- **flay** (catalog, awesome-ruby): no CI configuration in the repository.
-- **flog** (catalog, awesome-ruby): no CI configuration in the repository.
-- **brakeman** (awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in linters, which then held 14 picks, the most of any folder with a gem at that score; Rails-only security checks, while mdl stays as the one Markdown linter in the pool.
-- **fasterer** (awesome-ruby): no release since 2025-10-21 (last release 2023-11-20).
-- **rails_best_practices** (catalog, awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in linters, which then held 15 picks, the most of any folder with a gem at that score; Rails-only rules over the same kind of AST walk rubocop covers.
-- **erb_lint** (agent): no release since 2025-10-21 (last release 2025-01-20).
-- **debride** (agent): no CI configuration in the repository.
+- **[flay](https://github.com/seattlerb/flay)** (catalog, awesome-ruby): no CI configuration in the repository.
+- **[flog](https://github.com/seattlerb/flog)** (catalog, awesome-ruby): no CI configuration in the repository.
+- **[brakeman](https://github.com/presidentbeef/brakeman)** (awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in linters, which then held 14 picks, the most of any folder with a gem at that score; Rails-only security checks, while mdl stays as the one Markdown linter in the pool.
+- **[fasterer](https://github.com/damirsvrtan/fasterer)** (awesome-ruby): no release since 2025-10-21 (last release 2023-11-20).
+- **[rails_best_practices](https://github.com/flyerhzm/rails_best_practices)** (catalog, awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in linters, which then held 15 picks, the most of any folder with a gem at that score; Rails-only rules over the same kind of AST walk rubocop covers.
+- **[erb_lint](https://github.com/shopify/erb-lint)** (agent): no release since 2025-10-21 (last release 2025-01-20).
+- **[debride](https://github.com/seattlerb/debride)** (agent): no CI configuration in the repository.
 
 ### cli
 
-- **thor** (catalog, awesome-ruby): scored 2 of 5 (missing README design, CHANGELOG, craft).
-- **optparse** (catalog): scored 1 of 5 (missing README design, CHANGELOG, lib/ layout, craft).
-- **gli** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-01-27).
-- **slop** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2023-02-26).
-- **optimist** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-03-19).
-- **cri** (catalog): no release since 2025-10-21 (last release 2024-06-09).
-- **tty-option** (catalog): no release since 2025-10-21 (last release 2023-05-29).
-- **command_kit** (catalog): no release since 2025-10-21 (last release 2024-06-20).
-- **tty-prompt** (catalog): no release since 2025-10-21 (last release 2021-04-17).
-- **tty-table** (catalog): no release since 2025-10-21 (last release 2020-09-20).
-- **pastel** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2020-07-04).
-- **rainbow** (catalog, dependency): no release since 2025-10-21 (last release 2022-01-11).
-- **highline** (catalog): no release since 2025-10-21 (last release 2025-01-06).
-- **mercenary** (dependency): no release since 2025-10-21 (last release 2020-01-18).
-- **tabulo** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-01-19).
-- **cmdparse** (catalog): no release since 2025-10-21 (last release 2020-12-08).
-- **mixlib-cli** (catalog): no release since 2025-10-21 (last release 2020-08-21).
-- **optparse-plus** (catalog): no release since 2025-10-21 (last release 2021-02-14).
-- **docopt** (catalog): no release since 2025-10-21 (last release 2018-01-21).
-- **getoptions** (catalog): no release since 2025-10-21 (last release 2009-07-25).
-- **reline** (agent): scored 2 of 5 (missing README design, CHANGELOG, craft).
-- **io-console** (agent): scored 0 of 5 (missing README design, CHANGELOG, lib/ layout, tests, craft).
-- **amazing_print** (agent): no documentation beyond the README: its generated API pages carry doc comments on 37% of its 89 public methods, under the 50% the condition asks (scored 4).
-- **unicode-display_width** (dependency): no documentation beyond the README: its generated API pages carry doc comments on 46% of its 13 public methods, under the 50% the condition asks (scored 5). Spinel: candidate.
-- **colorize** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2023-06-23).
-- **paint** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2022-07-05).
-- **ruby-progressbar** (awesome-ruby): no release since 2025-10-21 (last release 2023-03-04).
-- **tty-spinner** (catalog): no release since 2025-10-21 (last release 2020-01-28).
-- **tty-progressbar** (catalog): no release since 2025-10-21 (last release 2024-11-10).
-- **tty-screen** (catalog): no release since 2025-10-21 (last release 2023-12-17).
-- **formatador** (awesome-ruby): scored 2 of 5 (missing README design, tests, craft).
-- **whirly** (awesome-ruby): scored 2 of 5 (missing README design, tests, craft). Spinel: candidate.
+- **[thor](https://github.com/rails/thor)** (catalog, awesome-ruby): scored 2 of 5 (missing README design, CHANGELOG, craft).
+- **[optparse](https://github.com/ruby/optparse)** (catalog): scored 1 of 5 (missing README design, CHANGELOG, lib/ layout, craft).
+- **[gli](https://github.com/davetron5000/gli)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-01-27).
+- **[slop](https://github.com/leejarvis/slop)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2023-02-26).
+- **[optimist](https://github.com/manageiq/optimist)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-03-19).
+- **[cri](https://github.com/ddfreyne/cri)** (catalog): no release since 2025-10-21 (last release 2024-06-09).
+- **[tty-option](https://github.com/piotrmurach/tty-option)** (catalog): no release since 2025-10-21 (last release 2023-05-29).
+- **[command_kit](https://github.com/postmodern/command_kit.rb)** (catalog): no release since 2025-10-21 (last release 2024-06-20).
+- **[tty-prompt](https://github.com/piotrmurach/tty-prompt)** (catalog): no release since 2025-10-21 (last release 2021-04-17).
+- **[tty-table](https://github.com/piotrmurach/tty-table)** (catalog): no release since 2025-10-21 (last release 2020-09-20).
+- **[pastel](https://github.com/piotrmurach/pastel)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2020-07-04).
+- **[rainbow](https://github.com/sickill/rainbow)** (catalog, dependency): no release since 2025-10-21 (last release 2022-01-11).
+- **[highline](https://github.com/jeg2/highline)** (catalog): no release since 2025-10-21 (last release 2025-01-06).
+- **[mercenary](https://github.com/jekyll/mercenary)** (dependency): no release since 2025-10-21 (last release 2020-01-18).
+- **[tabulo](https://github.com/matt-harvey/tabulo)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-01-19).
+- **[cmdparse](https://github.com/gettalong/cmdparse)** (catalog): no release since 2025-10-21 (last release 2020-12-08).
+- **[mixlib-cli](https://github.com/chef/mixlib-cli)** (catalog): no release since 2025-10-21 (last release 2020-08-21).
+- **[optparse-plus](https://github.com/davetron5000/optparse-plus)** (catalog): no release since 2025-10-21 (last release 2021-02-14).
+- **[docopt](https://github.com/docopt/docopt.rb)** (catalog): no release since 2025-10-21 (last release 2018-01-21).
+- **[getoptions](https://rubygems.org/gems/getoptions)** (catalog): no release since 2025-10-21 (last release 2009-07-25).
+- **[reline](https://github.com/ruby/reline)** (agent): scored 2 of 5 (missing README design, CHANGELOG, craft).
+- **[io-console](https://github.com/ruby/io-console)** (agent): scored 0 of 5 (missing README design, CHANGELOG, lib/ layout, tests, craft).
+- **[amazing_print](https://github.com/amazing-print/amazing_print)** (agent): no documentation beyond the README: its generated API pages carry doc comments on 37% of its 89 public methods, under the 50% the condition asks (scored 4).
+- **[unicode-display_width](https://github.com/janlelis/unicode-display_width)** (dependency): no documentation beyond the README: its generated API pages carry doc comments on 46% of its 13 public methods, under the 50% the condition asks (scored 5). Spinel: candidate.
+- **[colorize](https://github.com/fazibear/colorize)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2023-06-23).
+- **[paint](https://github.com/janlelis/paint)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2022-07-05).
+- **[ruby-progressbar](https://github.com/jfelchner/ruby-progressbar)** (awesome-ruby): no release since 2025-10-21 (last release 2023-03-04).
+- **[tty-spinner](https://github.com/piotrmurach/tty-spinner)** (catalog): no release since 2025-10-21 (last release 2020-01-28).
+- **[tty-progressbar](https://github.com/piotrmurach/tty-progressbar)** (catalog): no release since 2025-10-21 (last release 2024-11-10).
+- **[tty-screen](https://github.com/piotrmurach/tty-screen)** (catalog): no release since 2025-10-21 (last release 2023-12-17).
+- **[formatador](https://github.com/geemus/formatador)** (awesome-ruby): scored 2 of 5 (missing README design, tests, craft).
+- **[whirly](https://github.com/janlelis/whirly)** (awesome-ruby): scored 2 of 5 (missing README design, tests, craft). Spinel: candidate.
 
 ### config
 
-- **config** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-07-11).
-- **figaro** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-06-25).
-- **configatron** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2017-03-08).
-- **global** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2024-12-04).
-- **envied** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-06-06).
-- **settingslogic** (catalog): no release since 2025-10-21 (last release 2012-12-30).
-- **tty-config** (catalog): no release since 2025-10-21 (last release 2022-06-18).
-- **mixlib-config** (agent): no release since 2025-10-21 (last release 2022-06-08).
-- **dry-validation** (agent): no release since 2025-10-21 (last release 2025-01-21).
-- **econfig** (awesome-ruby): no release since 2025-10-21 (last release 2018-10-17).
-- **configus** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2014-01-17).
-- **envyable** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2016-11-08).
-- **json_schemer** (agent): no documentation beyond the README: its generated API pages carry doc comments on 0% of its 254 public methods, under the 50% the condition asks (scored 4).
-- **json-schema** (agent): no documentation beyond the README: its generated API pages carry doc comments on 18% of its 171 public methods, under the 50% the condition asks (scored 3).
-- **sail** (awesome-ruby): no release since 2025-10-21 (last release 2022-02-24).
-- **ledermann-rails-settings** (catalog): no release since 2025-10-21 (last release 2024-05-30).
-- **climate_control** (agent): no release since 2025-10-21 (last release 2022-07-15).
-- **figjam** (agent): no documentation beyond the README: its generated API pages carry doc comments on 0% of its 19 public methods, under the 50% the condition asks (scored 3).
-- **configurations** (catalog): no release since 2025-10-21 (last release 2016-11-12).
+- **[config](https://github.com/rubyconfig/config)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-07-11).
+- **[figaro](https://github.com/laserlemon/figaro)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-06-25).
+- **[configatron](https://github.com/markbates/configatron)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2017-03-08).
+- **[global](https://github.com/railsware/global)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2024-12-04).
+- **[envied](https://github.com/javierjulio/envied)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-06-06).
+- **[settingslogic](https://github.com/binarylogic/settingslogic)** (catalog): no release since 2025-10-21 (last release 2012-12-30).
+- **[tty-config](https://github.com/piotrmurach/tty-config)** (catalog): no release since 2025-10-21 (last release 2022-06-18).
+- **[mixlib-config](https://github.com/chef/mixlib-config)** (agent): no release since 2025-10-21 (last release 2022-06-08).
+- **[dry-validation](https://github.com/dry-rb/dry-validation)** (agent): no release since 2025-10-21 (last release 2025-01-21).
+- **[econfig](https://github.com/elabs/econfig)** (awesome-ruby): no release since 2025-10-21 (last release 2018-10-17).
+- **[configus](https://github.com/kaize/configus)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2014-01-17).
+- **[envyable](https://github.com/philnash/envyable)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2016-11-08).
+- **[json_schemer](https://github.com/davishmcclurg/json_schemer)** (agent): no documentation beyond the README: its generated API pages carry doc comments on 0% of its 254 public methods, under the 50% the condition asks (scored 4).
+- **[json-schema](https://github.com/voxpupuli/json-schema)** (agent): no documentation beyond the README: its generated API pages carry doc comments on 18% of its 171 public methods, under the 50% the condition asks (scored 3).
+- **[sail](https://github.com/vinistock/sail)** (awesome-ruby): no release since 2025-10-21 (last release 2022-02-24).
+- **[ledermann-rails-settings](https://github.com/ledermann/rails-settings)** (catalog): no release since 2025-10-21 (last release 2024-05-30).
+- **[climate_control](https://github.com/thoughtbot/climate_control)** (agent): no release since 2025-10-21 (last release 2022-07-15).
+- **[figjam](https://github.com/hlascelles/figjam)** (agent): no documentation beyond the README: its generated API pages carry doc comments on 0% of its 19 public methods, under the 50% the condition asks (scored 3).
+- **[configurations](https://github.com/beatrichartz/configurations)** (catalog): no release since 2025-10-21 (last release 2016-11-12).
 
 ### frameworks
 
-- **sinatra** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-10-10).
-- **rspec-core** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-10-19).
-- **jekyll** (agent): no release since 2025-10-21 (last release 2025-01-29).
-- **guard** (awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in frameworks, which then held 13 picks, the most of any folder with a gem at that score; its plugin host is covered by rake, yard and bridgetown.
-- **trailblazer** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2023-06-15).
-- **cuba** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2024-01-24).
-- **interactor** (awesome-ruby): no release since 2025-10-21 (last release 2025-07-10).
-- **wisper** (awesome-ruby): no release since 2025-10-21 (last release 2024-05-23).
+- **[sinatra](https://github.com/sinatra/sinatra)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-10-10).
+- **[rspec-core](https://github.com/rspec/rspec)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-10-19).
+- **[jekyll](https://github.com/jekyll/jekyll)** (agent): no release since 2025-10-21 (last release 2025-01-29).
+- **[guard](https://github.com/guard/guard)** (awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in frameworks, which then held 13 picks, the most of any folder with a gem at that score; its plugin host is covered by rake, yard and bridgetown.
+- **[trailblazer](https://github.com/trailblazer/trailblazer)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2023-06-15).
+- **[cuba](https://github.com/soveran/cuba)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2024-01-24).
+- **[interactor](https://github.com/collectiveidea/interactor)** (awesome-ruby): no release since 2025-10-21 (last release 2025-07-10).
+- **[wisper](https://github.com/krisleech/wisper)** (awesome-ruby): no release since 2025-10-21 (last release 2024-05-23).
 
 ### clients
 
-- **excon** (catalog, awesome-ruby): scored 2 of 5 (missing README design, tests, craft).
-- **net-http** (agent): scored 2 of 5 (missing README design, CHANGELOG, craft).
-- **httparty** (catalog, awesome-ruby): scored 2 of 5 (missing README design, CHANGELOG, craft).
-- **rest-client** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2019-08-21).
-- **octokit** (awesome-ruby): no release since 2025-10-21 (last release 2025-04-24).
-- **redis-client** (agent): no documentation beyond the README: its generated API pages carry doc comments on 1% of its 181 public methods, under the 50% the condition asks (scored 5).
-- **mysql2** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-09-22).
-- **trilogy** (catalog, awesome-ruby): no documentation beyond the README: its generated API pages carry doc comments on 0% of its 13 public methods, under the 50% the condition asks (scored 3).
-- **stripe** (agent): scored 2 of 5 (missing README design, lib/ layout, craft).
-- **anthropic** (agent): scored 2 of 5 (missing README design, lib/ layout, craft).
+- **[excon](https://github.com/excon/excon)** (catalog, awesome-ruby): scored 2 of 5 (missing README design, tests, craft).
+- **[net-http](https://github.com/ruby/net-http)** (agent): scored 2 of 5 (missing README design, CHANGELOG, craft).
+- **[httparty](https://github.com/jnunemaker/httparty)** (catalog, awesome-ruby): scored 2 of 5 (missing README design, CHANGELOG, craft).
+- **[rest-client](https://github.com/rest-client/rest-client)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2019-08-21).
+- **[octokit](https://github.com/octokit/octokit.rb)** (awesome-ruby): no release since 2025-10-21 (last release 2025-04-24).
+- **[redis-client](https://github.com/redis-rb/redis-client)** (agent): no documentation beyond the README: its generated API pages carry doc comments on 1% of its 181 public methods, under the 50% the condition asks (scored 5).
+- **[mysql2](https://github.com/brianmario/mysql2)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-09-22).
+- **[trilogy](https://github.com/trilogy-libraries/trilogy)** (catalog, awesome-ruby): no documentation beyond the README: its generated API pages carry doc comments on 0% of its 13 public methods, under the 50% the condition asks (scored 3).
+- **[stripe](https://github.com/stripe/stripe-ruby)** (agent): scored 2 of 5 (missing README design, lib/ layout, craft).
+- **[anthropic](https://github.com/anthropics/anthropic-sdk-ruby)** (agent): scored 2 of 5 (missing README design, lib/ layout, craft).
 
 ### servers
 
-- **unicorn** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2021-12-25).
-- **iodine** (catalog, awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in servers, which then held 15 picks, the most of any folder with a gem at that score; a C server whose Ruby side is a thin binding, while puma and falcon carry the server design in Ruby.
-- **agoo** (catalog, awesome-ruby): scored 2 of 5 (missing README design, tests, craft).
-- **webrick** (catalog): cut to keep the picks at 100: it scored 3, the lowest among the picks, in servers, which then held 14 picks, the most of any folder with a gem at that score; the folder's last score-3 gem, and puma, falcon and pitchfork already cover the server design.
-- **que** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2024-10-28).
-- **sucker_punch** (catalog, awesome-ruby): no documentation beyond the README: its generated API pages carry doc comments on 0% of its 50 public methods, under the 50% the condition asks (scored 5).
-- **foreman** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-07-27).
+- **[unicorn](https://rubygems.org/gems/unicorn)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2021-12-25).
+- **[iodine](https://github.com/boazsegev/iodine)** (catalog, awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in servers, which then held 15 picks, the most of any folder with a gem at that score; a C server whose Ruby side is a thin binding, while puma and falcon carry the server design in Ruby.
+- **[agoo](https://github.com/ohler55/agoo)** (catalog, awesome-ruby): scored 2 of 5 (missing README design, tests, craft).
+- **[webrick](https://github.com/ruby/webrick)** (catalog): cut to keep the picks at 100: it scored 3, the lowest among the picks, in servers, which then held 14 picks, the most of any folder with a gem at that score; the folder's last score-3 gem, and puma, falcon and pitchfork already cover the server design.
+- **[que](https://github.com/que-rb/que)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2024-10-28).
+- **[sucker_punch](https://github.com/brandonhilkert/sucker_punch)** (catalog, awesome-ruby): no documentation beyond the README: its generated API pages carry doc comments on 0% of its 50 public methods, under the 50% the condition asks (scored 5).
+- **[foreman](https://github.com/ddollar/foreman)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-07-27).
 
 ### miscellaneous
 
-- **literal** (awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in miscellaneous, which then held 14 picks, the most of any folder with a gem at that score; its type DSL is covered by dry-types and dry-struct, both picked.
-- **hashie** (catalog, awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in miscellaneous, which then held 16 picks, the most of any folder with a gem at that score; read only for its hash mixins, the narrowest reading reason among the folder's score-3 gems.
-- **addressable** (awesome-ruby, dependency): cut to keep the picks at 100: it scored 3, the lowest among the picks, in miscellaneous, which then held 13 picks, the most of any folder with a gem at that score; its URI parser is a narrower parsing reason than rdoc's Markdown parser, which stays.
-- **docile** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2024-07-25).
-- **memo_wise** (awesome-ruby): no release since 2025-10-21 (last release 2025-05-14).
-- **tzinfo** (agent): no release since 2025-10-21 (last release 2023-01-28).
-- **benchmark-ips** (agent): cut to keep the picks at 100: it scored 3, the lowest among the picks, in miscellaneous, which then held 15 picks, the most of any folder with a gem at that score; read for a small benchmark DSL, a narrower reason than rdoc's Markdown parser.
-- **diffy** (awesome-ruby): no release since 2025-10-21 (last release 2025-06-09).
+- **[literal](https://github.com/joeldrapper/literal)** (awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in miscellaneous, which then held 14 picks, the most of any folder with a gem at that score; its type DSL is covered by dry-types and dry-struct, both picked.
+- **[hashie](https://github.com/hashie/hashie)** (catalog, awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in miscellaneous, which then held 16 picks, the most of any folder with a gem at that score; read only for its hash mixins, the narrowest reading reason among the folder's score-3 gems.
+- **[addressable](https://github.com/sporkmonger/addressable)** (awesome-ruby, dependency): cut to keep the picks at 100: it scored 3, the lowest among the picks, in miscellaneous, which then held 13 picks, the most of any folder with a gem at that score; its URI parser is a narrower parsing reason than rdoc's Markdown parser, which stays.
+- **[docile](https://github.com/ms-ati/docile)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2024-07-25).
+- **[memo_wise](https://github.com/panorama-ed/memo_wise)** (awesome-ruby): no release since 2025-10-21 (last release 2025-05-14).
+- **[tzinfo](https://github.com/tzinfo/tzinfo)** (agent): no release since 2025-10-21 (last release 2023-01-28).
+- **[benchmark-ips](https://github.com/evanphx/benchmark-ips)** (agent): cut to keep the picks at 100: it scored 3, the lowest among the picks, in miscellaneous, which then held 15 picks, the most of any folder with a gem at that score; read for a small benchmark DSL, a narrower reason than rdoc's Markdown parser.
+- **[diffy](https://github.com/samg/diffy)** (awesome-ruby): no release since 2025-10-21 (last release 2025-06-09).
