@@ -4,7 +4,7 @@
 
 The answer to [#1](https://github.com/izkreny/markdownifico/issues/1): which Ruby gems are maintained and written well enough to read before building a gem, and what each is worth reading for. Every fact below was checked on 2026-10-21 unless its line says otherwise.
 
-83 gems were picked from 207 candidates across nine folders. Each pick is cloned as a read-only reference in the owner's reference-clone tree, one folder per category, at `<folder>/<owner>_<repo>`, and kept current by an update script modelled on the one that serves the Go reference repositories.
+83 gems were picked from 207 candidates across nine folders. Each pick is cloned as a read-only reference in the owner's reference-clone tree, one folder per category, at `<folder>/<owner>_<repo>`, beside a `compilers` folder that holds two references for #2 rather than picks (see *Also in the reference tree*), and kept current by an update script modelled on the one that serves the Go reference repositories.
 
 ## How they were picked
 
