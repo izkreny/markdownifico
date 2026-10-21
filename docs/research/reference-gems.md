@@ -345,14 +345,14 @@ Every candidate not picked, with the first criterion it failed, so a later pass 
 
 ### linters
 
-- **rubocop-performance** (awesome-ruby): tied at 4 with eleven other linters; its reading reason, cops shipped as a RuboCop plugin, is rubocop-rspec's.
+- **rubocop-performance** (awesome-ruby): tied at 4 with 11 other linters; its reading reason, cops shipped as a RuboCop plugin, is rubocop-rspec's.
 - **flay** (catalog, awesome-ruby): no CI configuration in the repository.
 - **flog** (catalog, awesome-ruby): no CI configuration in the repository.
 - **brakeman** (awesome-ruby): scored 3 where ten linters scored 4.
 - **fasterer** (awesome-ruby): no release since 2025-10-21 (last release 2023-11-20).
 - **rails_best_practices** (catalog, awesome-ruby): scored 3 where ten linters scored 4.
 - **erb_lint** (agent): no release since 2025-10-21 (last release 2025-01-20).
-- **slim_lint** (agent): tied at 4 with eleven other linters; same author and same linter registry design as haml_lint.
+- **slim_lint** (agent): tied at 4 with 11 other linters; same author and same linter registry design as haml_lint.
 - **mdl** (agent): scored 3 where ten linters scored 4; read it anyway for a Markdown rule DSL, since it is the one Markdown linter in the pool.
 - **debride** (agent): no CI configuration in the repository.
 
@@ -424,7 +424,7 @@ Every candidate not picked, with the first criterion it failed, so a later pass 
 - **jekyll** (agent): no release since 2025-10-21 (last release 2025-01-29).
 - **guard** (awesome-ruby): scored 3 where ten frameworks scored 4 or 5.
 - **trailblazer** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2023-06-15).
-- **padrino** (catalog, awesome-ruby): tied at 4 with ten other frameworks; its reading reason, a Sinatra-style app framework, is covered by roda and hanami.
+- **padrino** (catalog, awesome-ruby): tied at 4 with 9 other frameworks; its reading reason, a Sinatra-style app framework, is covered by roda and hanami.
 - **cuba** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2024-01-24).
 - **interactor** (awesome-ruby): no release since 2025-10-21 (last release 2025-07-10).
 - **wisper** (awesome-ruby): no release since 2025-10-21 (last release 2024-05-23).
@@ -451,13 +451,13 @@ Every candidate not picked, with the first criterion it failed, so a later pass 
 - **good_job** (catalog, awesome-ruby): no documentation beyond the README and generated API pages (scored 4).
 - **que** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2024-10-28).
 - **sucker_punch** (catalog, awesome-ruby): no documentation beyond the README and generated API pages (scored 5).
-- **shoryuken** (catalog, awesome-ruby): tied at 4 with ten other servers; its worker model overlaps sidekiq and karafka.
+- **shoryuken** (catalog, awesome-ruby): tied at 4 with 8 other servers; its worker model overlaps sidekiq and karafka.
 - **foreman** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-07-27).
-- **listen** (awesome-ruby, dependency): tied at 4 with ten other servers; a file-watching library more than a long-running process, and the folder was full.
+- **listen** (awesome-ruby, dependency): tied at 4 with 8 other servers; a file-watching library more than a long-running process, and the folder was full.
 
 ### miscellaneous
 
-- **dry-struct** (agent): tied at 4 with ten other miscellaneous gems; its attribute DSL is a thin layer over dry-types, which is picked.
+- **dry-struct** (agent): tied at 4 with 9 other miscellaneous gems; its attribute DSL is a thin layer over dry-types, which is picked.
 - **literal** (awesome-ruby): scored 3 where ten miscellaneous gems scored 4 or 5.
 - **hashie** (catalog, awesome-ruby): scored 3 where every pick in the folder scored 4 or more.
 - **addressable** (awesome-ruby, dependency): no documentation beyond the README and generated API pages (scored 3).
