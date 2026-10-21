@@ -4,7 +4,7 @@
 
 The answer to [#1](https://github.com/izkreny/markdownifico/issues/1): which Ruby gems are maintained and written well enough to read before building a gem, and what each is worth reading for. Every fact below was checked on 2026-10-21 unless its line says otherwise.
 
-83 gems were picked from 207 candidates across nine folders. Each pick is cloned as a read-only reference in the owner's reference-clone tree, one folder per category, at `<folder>/<owner>_<repo>`, beside a `compilers` folder that holds two references for #2 rather than picks (see *Also in the reference tree*), and kept current by an update script modelled on the one that serves the Go reference repositories.
+100 gems were picked from 207 candidates across nine folders. Each pick is cloned as a read-only reference in the owner's reference-clone tree, one folder per category, at `<folder>/<owner>_<repo>`, beside a `compilers` folder that holds two references for #2 rather than picks (see *Also in the reference tree*), and kept current by an update script modelled on the one that serves the Go reference repositories.
 
 ## How they were picked
 
@@ -12,20 +12,20 @@ The answer to [#1](https://github.com/izkreny/markdownifico/issues/1): which Rub
 2. **Release and archive cut.** Every candidate went to the [Ruby Toolbox compare endpoint](https://www.ruby-toolbox.com/pages/docs/api/projects); four it does not know (`unparser`, `yard-lint`, `tty-table`, `xdg`) were read from the RubyGems API instead. Cut: no release since 2025-10-21, or an archived repository. The Toolbox `score` was not used, since it measures popularity.
 3. **Repository cut.** The survivors' repositories were read through the GitHub API: a CI workflow (`.github/workflows` or another CI file), a licence (the gem's metadata, the repository's detected licence, or a licence file), a CHANGELOG, and every commit of the last 12 months up to 500, which gives the activity and bus-factor figures; on a repository that reached 500 the author counts cover those 500 commits only. Cut: no CI configuration or no licence.
 4. **Reading.** Every survivor was shallow-cloned and read against five yes/no points: a README that explains the design, a maintained CHANGELOG in the repository, a lib directory whose layout matches the concepts, a test suite worth copying, and code you would want to have written. Six subagents gathered the evidence against one written rubric and proposed the scores; the orchestrating session reviewed them, corrected the Spinel calls listed below, and made every pick.
-5. **Documentation.** A pick must also have documentation beyond its README: prose in the repository (a docs or guides directory, man pages, an architecture or upgrade document, worked examples), a GitHub wiki with pages, or a documentation site. API pages generated from bare signatures, such as rubydoc.info's, do not count; a project's own published reference written as prose in its source, such as Ruby's pages on docs.ruby-lang.org, does. Every external site and wiki named below answered HTTP 200 on 2026-10-21.
-6. **The pick.** At most 10 per folder, highest score first, with a floor of 3 of the 5 points. Where a tie crossed the 10th slot, the gem whose reading reason another pick already covers was left out, and its entry under *Rejected* says which. Bus factor is recorded, never disqualifying. Two picks from one repository share one clone, in the folder of the pick that comes first in this doc, and the second pick's entry names that folder.
+5. **Documentation.** A pick must also have documentation beyond its README: prose in the repository (a docs or guides directory, man pages, an architecture or upgrade document, worked examples), a GitHub wiki with pages, or a documentation site. API documentation written as prose in the source counts wherever it is published, rubydoc.info and docs.ruby-lang.org alike, when at least 50% of the gem's public methods carry a doc comment of four or more words; a script over each lib directory measured that for the gems with no other documentation, and pages generated from bare signatures do not count. Every external site and wiki named below answered HTTP 200 on 2026-10-21.
+6. **The pick.** At most 100 in all, with no limit per folder, so a folder short of qualifying gems leaves its room to the others; the floor is 3 of the 5 points. When more than 100 qualify, the lowest-scoring go first, and among equal scores the folder holding the most picks at that moment gives one up, a tie between folders going to the folder listed later here; within a folder, the gem whose reading reason another pick already covers goes first, and its entry under *Rejected* says which. Bus factor is recorded, never disqualifying. Two picks from one repository share one clone, in the folder of the pick that comes first in this doc, and the second pick's entry names that folder.
 
-A folder with fewer than 10 picks had fewer than 10 candidates meeting every criterion; it was not padded.
+No folder was padded: a folder's picks are the gems in it that met every criterion and survived the cut.
 
 ## Spinel candidates
 
 Checked against Spinel's limitations and require documents at commit `3a54c72` of [matz/spinel](https://github.com/matz/spinel): pure Ruby, no native extension, and a core free of string `eval`, `method_missing` dispatch, computed `define_method` or `send` names, and non-literal `require`, with code behind a `RUBY_ENGINE` check discounted. Spinel also resolves a bare `require` only to its bundled features, so a gem that loads its own files with `require` instead of `require_relative` needs those lines rewritten; that is a mechanical change and does not disqualify a gem. Runtime dependencies count against it.
 
 - **toml-rb** (picked, `parsers`): require_relative throughout, only date and strscan from the stdlib, both bundled by Spinel, no runtime dependencies
-- **tomlrb** (rejected, `parsers`): require_relative throughout, no runtime dependencies
+- **tomlrb** (picked, `parsers`): require_relative throughout, no runtime dependencies
 - **unicode-display_width** (rejected, `cli`): unverified past its core: depends on unicode-emoji, not read
 - **whirly** (rejected, `cli`): unverified past its core: depends on paint and unicode-display_width, not read
-- **dotenv** (rejected, `config`): unverified past its core: the reader agent found the parser free of refused constructs
+- **dotenv** (picked, `config`): unverified past its core: the reader agent found the parser free of refused constructs
 - **xdg** (picked, `config`): Forwardable and Data.define, both supported, no runtime dependencies; its own files are loaded with require, which Spinel resolves only to bundled features, so those lines become require_relative
 
 Every other pick is native, uses a refused construct in its core, or depends on a gem that is one of those, and its entry names which, with a file and line wherever the reason is a construct. A rejected survivor's call is recorded only when it is a candidate, as above.
@@ -44,24 +44,33 @@ Every other pick is native, uses a refused construct in its core, or depends on 
 4. **[kramdown](https://github.com/gettalong/kramdown)**: parsing: regexp-registered block/span parser rules; rendering: converter-per-output-format; docs: self-hosted webgen docs; testing: golden files
    - Score 4 of 5, missing README design. Docs: doc/ (documentation.page, syntax.page, options.page, quickref.page, parser/, converter/) and man/.
    - Latest release 2026-01-19 (2.5.2); 4 commits in the last 12 months, 1 authors, 1 with 3 or more commits; gettalong wrote 100%. Spinel: no, lib/kramdown/document.rb:113 method_missing dispatches output formats; converter/latex.rb:42 send with computed name. Clone: `parsers/gettalong_kramdown`.
-5. **[markly](https://github.com/socketry/markly)**: parsing: AST over cmark-gfm; rendering: renderer classes; docs: socketry guides + releases.md; release: bake tasks
+5. **[commonmarker](https://github.com/gjtorikian/commonmarker)**: API design: thin Ruby wrapper over a native Markdown engine, options/config validation; parsing: markdown AST access
+   - Score 4 of 5, missing README design. Docs: API documentation in the source, with doc comments on 73% of its 11 public methods.
+   - Latest release 2026-10-16 (2.10.1); 143 commits in the last 12 months, 6 authors, 3 with 3 or more commits; gjtorikian wrote 86%. Spinel: n/a, native. Clone: `parsers/gjtorikian_commonmarker`.
+6. **[markly](https://github.com/socketry/markly)**: parsing: AST over cmark-gfm; rendering: renderer classes; docs: socketry guides + releases.md; release: bake tasks
    - Score 4 of 5, missing README design. Docs: guides/ (getting-started, abstract-syntax-tree, extensions, headings, links.yaml).
    - Latest release 2026-09-09 (0.19.0); 37 commits in the last 12 months, 4 authors, 2 with 3 or more commits; ioquatix wrote 57%. Spinel: n/a, native. Clone: `parsers/socketry_markly`.
-6. **[nokogiri](https://github.com/sparklemotion/nokogiri)**: API design: one DOM API over libxml2/Gumbo/Java; release: dependencies.yml, native gem packaging; docs: ADRs
+7. **[nokogiri](https://github.com/sparklemotion/nokogiri)**: API design: one DOM API over libxml2/Gumbo/Java; release: dependencies.yml, native gem packaging; docs: ADRs
    - Score 4 of 5, missing craft. Docs: adr/ (architecture decision records), doc/, ROADMAP.md, AGENTS.md.
    - Latest release 2026-06-18 (1.19.4); 74 commits in the last 12 months, 5 authors, 1 with 3 or more commits; flavorjones wrote 95%. Spinel: n/a, native. Clone: `parsers/sparklemotion_nokogiri`.
-7. **[oga](https://github.com/yorickpeterse/oga)**: parsing: lexer plus racc parser plus XPath compiled to Ruby AST; API design: pull and SAX parsers; docs: topic guides
+8. **[oga](https://github.com/yorickpeterse/oga)**: parsing: lexer plus racc parser plus XPath compiled to Ruby AST; API design: pull and SAX parsers; docs: topic guides
    - Score 4 of 5, missing README design. Docs: doc/ (css_selectors.md, xml_namespaces.md, migrating_from_nokogiri.md, manually_creating_documents.md).
    - Latest release 2026-06-10 (3.5); 5 commits in the last 12 months, 2 authors, 1 with 3 or more commits; yorickpeterse wrote 60%. Spinel: n/a, native. Clone: `parsers/yorickpeterse_oga`.
-8. **[csv](https://github.com/ruby/csv)**: parsing: hand-written streaming parser and converter pipeline; API design: huge options surface; docs: recipes
+9. **[csv](https://github.com/ruby/csv)**: parsing: hand-written streaming parser and converter pipeline; API design: huge options surface; docs: recipes
    - Score 4 of 5, missing README design. Docs: doc/csv/ (recipes, arguments, options).
    - Latest release 2026-07-26 (3.3.6); 5 commits in the last 12 months, 4 authors, 0 with 3 or more commits; kou wrote 40%. Spinel: no, lib/csv/parser.rb:425 __send__(@parse_method); lib/csv.rb:2817 __send__(attr_name). Clone: `parsers/ruby_csv`.
-9. **[toml-rb](https://github.com/emancu/toml-rb)**: parsing: StringScanner-based hand parser with visitor nodes; testing: spec example corpus
+10. **[toml-rb](https://github.com/emancu/toml-rb)**: parsing: StringScanner-based hand parser with visitor nodes; testing: spec example corpus
    - Score 4 of 5, missing README design. Docs: GitHub wiki.
    - Latest release 2026-09-28 (6.0.0); 95 commits in the last 12 months, 4 authors, 2 with 3 or more commits; emancu wrote 94%. Spinel: candidate. Clone: `parsers/emancu_toml-rb`.
-10. **[json](https://github.com/ruby/json)**: parsing: native parser/generator with pure-Ruby fallback; API design: Coder and generator state; release: README Release section
+11. **[json](https://github.com/ruby/json)**: parsing: native parser/generator with pure-Ruby fallback; API design: Coder and generator state; release: README Release section
    - Score 3 of 5, missing README design, lib/ layout. Docs: docs.ruby-lang.org/en/master/JSON.html.
    - Latest release 2026-10-13 (3.1.0); 342 commits in the last 12 months, 35 authors, 11 with 3 or more commits; byroot wrote 59%. Spinel: n/a, native. Clone: `parsers/ruby_json`.
+12. **[psych](https://github.com/ruby/psych)**: parsing: libyaml event stream, handler and visitor pipeline; API design: safe_load and class_loader restrictions
+   - Score 3 of 5, missing README design, CHANGELOG. Docs: docs.ruby-lang.org/en/master/Psych.html.
+   - Latest release 2026-08-21 (5.5.0); 88 commits in the last 12 months, 14 authors, 6 with 3 or more commits; hsbt wrote 52%. Spinel: n/a, native. Clone: `parsers/ruby_psych`.
+13. **[tomlrb](https://github.com/fbernier/tomlrb)**: parsing: regex/StringScanner TOML 1.0/1.1 parser; testing: conformance suite
+   - Score 3 of 5, missing README design, lib/ layout. Docs: GitHub wiki.
+   - Latest release 2026-10-15 (3.0.0); 47 commits in the last 12 months, 2 authors, 2 with 3 or more commits; KitaitiMakoto wrote 72%. Spinel: candidate. Clone: `parsers/fbernier_tomlrb`.
 
 ## renderers
 
@@ -86,13 +95,16 @@ Every other pick is native, uses a refused construct in its core, or depends on 
 7. **[rouge](https://github.com/rouge-ruby/rouge)**: plugin loading: lexer registry with tags/aliases/filenames and lazy loading; rendering: formatters and themes; docs: lexer dev guide
    - Score 4 of 5, missing README design. Docs: docs/ (LexerDevelopment.md, Languages.md, DevEnvironment.md, Docker.md, sample app).
    - Latest release 2026-08-06 (5.1.0); 120 commits in the last 12 months, 32 authors, 6 with 3 or more commits; jneen wrote 44%. Spinel: no, lib/rouge/theme.rb:153 send("make_#{mode}!"); theme.rb:16 define_method mode. Clone: `renderers/rouge-ruby_rouge`.
-8. **[alba](https://github.com/okuramasafumi/alba)**: API design: resource DSL with attributes/associations/traits; testing: property-based tests
+8. **[unparser](https://github.com/mbj/unparser)**: rendering: AST to source emitters; testing: round-trip corpus; API design: node handler DSL
+   - Score 4 of 5, missing README design. Docs: API documentation in the source, with doc comments on 57% of its 184 public methods.
+   - Latest release 2026-03-20 (0.9.0); 46 commits in the last 12 months, 3 authors, 2 with 3 or more commits; sferik wrote 50%. Spinel: no, lib/unparser/dsl.rb:18 define_method(name) with computed name; abstract_type.rb:114 likewise. Clone: `renderers/mbj_unparser`.
+9. **[alba](https://github.com/okuramasafumi/alba)**: API design: resource DSL with attributes/associations/traits; testing: property-based tests
    - Score 4 of 5, missing README design. Docs: docs/ (migrate_from_jbuilder.md, migrate_from_active_model_serializers.md, rails.md), HACKING.md.
    - Latest release 2026-10-17 (4.0.1); 165 commits in the last 12 months, 9 authors, 4 with 3 or more commits; okuramasafumi wrote 88%. Spinel: no, lib/alba/association.rb:80 __send__(@name); conditional_attribute.rb:56 __send__(@body.name). Clone: `renderers/okuramasafumi_alba`.
-9. **[phlex](https://github.com/yippee-fun/phlex)**: rendering: components rendering straight to a buffer, optional method compiler; API design: view-as-object; testing: Quickdraw
+10. **[phlex](https://github.com/yippee-fun/phlex)**: rendering: components rendering straight to a buffer, optional method compiler; API design: view-as-object; testing: Quickdraw
    - Score 3 of 5, missing README design, CHANGELOG. Docs: phlex.fun.
    - Latest release 2026-02-06 (2.4.1); 170 commits in the last 12 months, 8 authors, 2 with 3 or more commits; joeldrapper wrote 94%. Spinel: no, lib/phlex/compiler.rb:174 eval; lib/phlex/sgml/elements.rb:79 class_eval with a string; also block.binding in lib/phlex.rb:59. Clone: `renderers/yippee-fun_phlex`.
-10. **[jbuilder](https://github.com/rails/jbuilder)**: API design: block DSL building JSON; rendering: Rails template handler
+11. **[jbuilder](https://github.com/rails/jbuilder)**: API design: block DSL building JSON; rendering: Rails template handler
    - Score 3 of 5, missing README design, CHANGELOG. Docs: GitHub wiki.
    - Latest release 2026-05-26 (2.15.1); 25 commits in the last 12 months, 7 authors, 2 with 3 or more commits; rafaelfranca wrote 56%. Spinel: no, lib/jbuilder.rb:237 alias_method :method_missing, :set!. Clone: `renderers/rails_jbuilder`.
 
@@ -110,24 +122,33 @@ Every other pick is native, uses a refused construct in its core, or depends on 
 4. **[rubocop-rspec](https://github.com/rubocop/rubocop-rspec)**: rule API (cop authoring with def_node_matcher, autocorrect); testing (offense/correction annotated specs)
    - Score 4 of 5, missing README design. Docs: docs/modules/ROOT/pages/ (cops_rspec.adoc generated, development.adoc, installation.adoc).
    - Latest release 2026-06-06 (3.10.2); 158 commits in the last 12 months, 19 authors, 8 with 3 or more commits; bquorning wrote 42%. Spinel: no, depends on rubocop (gemspec); rubocop-rspec runs only inside RuboCop's runtime plugin loading. Clone: `linters/rubocop_rubocop-rspec`.
-5. **[reek](https://github.com/troessner/reek)**: rule API (smell detector base class and registration); docs (per-smell docs and internals guide); testing (custom RSpec matcher reek_of)
+5. **[rubocop-performance](https://github.com/rubocop/rubocop-performance)**: rule API (small cops with node patterns); testing
+   - Score 4 of 5, missing README design. Docs: docs/modules/ROOT/pages/ (cops_performance.adoc, usage.adoc, installation.adoc).
+   - Latest release 2026-08-16 (1.27.0); 27 commits in the last 12 months, 2 authors, 1 with 3 or more commits; koic wrote 93%. Spinel: no, depends on rubocop and rubocop-ast at runtime. Clone: `linters/rubocop_rubocop-performance`.
+6. **[reek](https://github.com/troessner/reek)**: rule API (smell detector base class and registration); docs (per-smell docs and internals guide); testing (custom RSpec matcher reek_of)
    - Score 4 of 5, missing README design. Docs: docs/ (one .md per smell, How-reek-works-internally.md, How-To-Write-New-Detectors.md, API.md, Command-Line-Options.md, Reek-4-to-Reek-5-migration.md).
    - Latest release 2026-10-02 (6.6.0); 47 commits in the last 12 months, 3 authors, 1 with 3 or more commits; mvz wrote 94%. Spinel: no, lib/reek/context_builder.rb:66 send(context_processor, ...) computed; smell_detectors/base_detector.rb:132 and ast/ast_node_class_map.rb:30 const_get by name; depends on dry-schema (configuration/schema.rb:3) and parser. Clone: `linters/troessner_reek`.
-6. **[haml_lint](https://github.com/sds/haml-lint)**: rule API (Linter + LinterRegistry, directive comments); testing (linter shared context); CLI (runner/reporters)
+7. **[haml_lint](https://github.com/sds/haml-lint)**: rule API (Linter + LinterRegistry, directive comments); testing (linter shared context); CLI (runner/reporters)
    - Score 4 of 5, missing README design. Docs: lib/haml_lint/linter/README.md (per-linter docs); doc/ only an image.
    - Latest release 2026-08-20 (0.78.0); 48 commits in the last 12 months, 9 authors, 2 with 3 or more commits; sds wrote 54%. Spinel: no, lib/haml_lint/utils.rb:78 and :246 string eval with binding; depends on rubocop and haml. Clone: `linters/sds_haml-lint`.
-7. **[herb](https://github.com/marcoroth/herb)**: parsing (C lexer/parser for HTML+ERB with Prism annotation); testing (snapshot goldens); rendering (Herb::Engine)
+8. **[slim_lint](https://github.com/sds/slim-lint)**: rule API (on_start/on :tag visitor DSL for linters); testing (linter shared context)
+   - Score 4 of 5, missing README design. Docs: lib/slim_lint/linter/README.md.
+   - Latest release 2026-08-20 (0.37.0); 12 commits in the last 12 months, 6 authors, 2 with 3 or more commits; sds wrote 42%. Spinel: no, lib/slim_lint/atom.rb:70 method_missing, sexp_visitor.rb:109 define_method computed; depends on rubocop and slim. Clone: `linters/sds_slim-lint`.
+9. **[herb](https://github.com/marcoroth/herb)**: parsing (C lexer/parser for HTML+ERB with Prism annotation); testing (snapshot goldens); rendering (Herb::Engine)
    - Score 4 of 5, missing README design. Docs: docs/docs/ (VitePress source: overview, language, bindings, c-reference, configuration, integrations, blog).
    - Latest release 2026-10-20 (0.11.1); 435 commits in the last 12 months, 27 authors, 5 with 3 or more commits; marcoroth wrote 88%. Spinel: n/a, native. Clone: `linters/marcoroth_herb`.
-8. **[rubycritic](https://github.com/whitesmith/rubycritic)**: plugin loading (analyser pipeline composing flay/flog/reek); rendering (HTML generators with ERB); CLI (commands/ with compare mode)
+10. **[rubycritic](https://github.com/whitesmith/rubycritic)**: plugin loading (analyser pipeline composing flay/flog/reek); rendering (HTML generators with ERB); CLI (commands/ with compare mode)
    - Score 4 of 5, missing README design. Docs: docs/ (core-metrics.md, formatters.md, building-own-code-climate.md, jenkins-pr-reviews.md), ROADMAP.md, CONTRIBUTING.md.
    - Latest release 2026-01-27 (5.0.0); 24 commits in the last 12 months, 7 authors, 2 with 3 or more commits; faisal wrote 54%. Spinel: no, lib/rubycritic/configuration.rb:92 method_missing, generators/html/base.rb:49 binding objects for ERB; depends on reek, flay, flog, parser, simplecov. Clone: `linters/whitesmith_rubycritic`.
-9. **[yard-lint](https://github.com/mensfeld/yard-lint)**: rule API (validator = config + parser + result + messages_builder module); config (department/validator config, todo baseline, --check-todo); CLI (diff mode, SARIF output)
+11. **[yard-lint](https://github.com/mensfeld/yard-lint)**: rule API (validator = config + parser + result + messages_builder module); config (department/validator config, todo baseline, --check-todo); CLI (diff mode, SARIF output)
    - Score 4 of 5, missing README design. Docs: GitHub wiki.
    - Latest release 2026-09-23 (1.12.0); 341 commits in the last 12 months, 5 authors, 2 with 3 or more commits; mensfeld wrote 97%. Spinel: no, core depends on yard (heavy runtime metaprogramming) and zeitwerk (non-literal require, autoload); lib/yard/lint/config_loader.rb:21 and result_builder.rb:145 const_get, todo_generator.rb:86 send. Clone: `linters/mensfeld_yard-lint`.
-10. **[pronto](https://github.com/prontolabs/pronto)**: plugin loading (inherited-hook runner registry, runners discovered via Gem::Specification in gem_names.rb); CLI (Thor); API design (small Runner base class contract)
+12. **[pronto](https://github.com/prontolabs/pronto)**: plugin loading (inherited-hook runner registry, runners discovered via Gem::Specification in gem_names.rb); CLI (Thor); API design (small Runner base class contract)
    - Score 4 of 5, missing README design. Docs: GitHub wiki.
    - Latest release 2025-12-05 (0.11.5); 6 commits in the last 12 months, 5 authors, 0 with 3 or more commits; ashkulz wrote 33%. Spinel: no, lib/pronto/cli.rb:57 and rake_task/travis_pull_request.rb:37 require with non-literal name, gem_names.rb:10 Gem::Specification discovery of runtime-loaded gems; depends on rugged (native) and octokit. Clone: `linters/prontolabs_pronto`.
+13. **[mdl](https://github.com/markdownlint/markdownlint)**: rule API (Rule/RuleSet/Style DSL, custom rulesets); docs (rule documentation generation, RULES.md); testing (annotated markdown goldens)
+   - Score 3 of 5, missing README design, lib/ layout. Docs: docs/ (configuration.md, creating_rules.md, creating_styles.md, RULES.md, rolling_a_release.md).
+   - Latest release 2026-08-09 (0.18.1); 62 commits in the last 12 months, 10 authors, 2 with 3 or more commits; jaymzh wrote 81%. Spinel: no, lib/mdl/style.rb:73 and ruleset.rb:86 instance_eval(File.read(...)) string eval to load styles/rulesets; depends on kramdown, mixlib-*. Clone: `linters/markdownlint_markdownlint`.
 
 ## cli
 
@@ -143,7 +164,13 @@ Every other pick is native, uses a refused construct in its core, or depends on 
 4. **[cli-kit](https://github.com/Shopify/cli-kit)**: CLI: app skeleton with registry/resolver/executor; error handling and signal traps
    - Score 4 of 5, missing CHANGELOG. Docs: examples/ (minimal, single-file, todo-list), TODO.md.
    - Latest release 2026-09-21 (5.3.1); 22 commits in the last 12 months, 4 authors, 3 with 3 or more commits; vinistock wrote 50%. Spinel: no, lib/cli/kit/opts.rb:58 and many more obj.opt.send(name) with computed names; command_help.rb:127 const_get; depends on cli-ui (no). Clone: `cli/Shopify_cli-kit`.
-5. **[sod](https://github.com/bkuhlmann/sod)**: CLI: composable commands/actions on top of optparse, prefab actions (config, help, version)
+5. **[commander](https://github.com/commander-rb/commander)**: CLI: simple command-block DSL, help formatters (ERB templates)
+   - Score 3 of 5, missing README design, craft. Docs: API documentation in the source, with doc comments on 90% of its 90 public methods.
+   - Latest release 2026-08-02 (6.0.0); 2 commits in the last 12 months, 1 authors, 0 with 3 or more commits; ggilder wrote 100%. Spinel: no, lib/commander/command.rb:45 method_missing; lib/commander/delegates.rb:23 eval with binding; depends on highline. Clone: `cli/commander-rb_commander`.
+6. **[cli-ui](https://github.com/Shopify/cli-ui)**: rendering: boxed frames, spinners, prompts, progress bars; stdout routing (stdout_router.rb)
+   - Score 3 of 5, missing README design, CHANGELOG. Docs: API documentation in the source, with doc comments on 77% of its 173 public methods.
+   - Latest release 2025-11-05 (2.7.0); 23 commits in the last 12 months, 10 authors, 3 with 3 or more commits; rwstauner wrote 22%. Spinel: no, lib/cli/ui/stdout_router.rb:294 and :302 define_method(method) with computed names plus @stream.send(method, ...) at :297. Clone: `cli/Shopify_cli-ui`.
+7. **[sod](https://github.com/bkuhlmann/sod)**: CLI: composable commands/actions on top of optparse, prefab actions (config, help, version)
    - Score 3 of 5, missing README design, CHANGELOG. Docs: doc/architecture.msd (diagram source); alchemists.io/projects/sod.
    - Latest release 2026-09-17 (2.5.0); 44 commits in the last 12 months, 1 authors, 1 with 3 or more commits; bkuhlmann wrote 100%. Spinel: no, lib/sod/context.rb:22 method_missing; also depends on gems (zeitwerk, refinements, infusible) not checked. Clone: `cli/bkuhlmann_sod`.
 
@@ -167,10 +194,13 @@ Every other pick is native, uses a refused construct in its core, or depends on 
 6. **[ultra_settings](https://github.com/bdurand/ultra_settings)**: config (env var, runtime setting and YAML source hierarchy with source tracking); docs (ARCHITECTURE.md with diagram)
    - Score 4 of 5, missing README design. Docs: ARCHITECTURE.md, AGENTS.md, yard_plugin/.
    - Latest release 2026-08-15 (2.10.1); 90 commits in the last 12 months, 2 authors, 1 with 3 or more commits; bdurand wrote 98%. Spinel: no, lib/ultra_settings/configuration.rb:92 class_eval with string, config_helper.rb:23 define_method(config_alias) computed and :24 send, application_view.rb:42 binding objects for ERB. Clone: `config/bdurand_ultra_settings`.
-7. **[xdg](https://github.com/bkuhlmann/xdg)**: API design (small immutable objects with injected environment); config (XDG base directory lookup)
+7. **[dotenv](https://github.com/bkeepers/dotenv)**: parsing (.env grammar via commented extended regex and substitution pipeline); config; testing (Autorestore ENV in tests)
+   - Score 3 of 5, missing README design, CHANGELOG. Docs: API documentation in the source, with doc comments on 57% of its 37 public methods.
+   - Latest release 2025-12-03 (3.2.0); 12 commits in the last 12 months, 2 authors, 1 with 3 or more commits; bkeepers wrote 92%. Spinel: candidate. Clone: `config/bkeepers_dotenv`.
+8. **[xdg](https://github.com/bkuhlmann/xdg)**: API design (small immutable objects with injected environment); config (XDG base directory lookup)
    - Score 3 of 5, missing README design, CHANGELOG. Docs: alchemists.io/projects/xdg.
    - Latest release 2026-09-16 (10.4.0); 33 commits in the last 12 months, 1 authors, 1 with 3 or more commits; bkuhlmann wrote 100%. Spinel: candidate. Clone: `config/bkuhlmann_xdg`.
-8. **[runcom](https://github.com/bkuhlmann/runcom)**: config (locating rc files across XDG config/home paths, local vs global); API design
+9. **[runcom](https://github.com/bkuhlmann/runcom)**: config (locating rc files across XDG config/home paths, local vs global); API design
    - Score 3 of 5, missing README design, CHANGELOG. Docs: alchemists.io/projects/runcom.
    - Latest release 2026-09-16 (13.4.0); 38 commits in the last 12 months, 1 authors, 1 with 3 or more commits; bkuhlmann wrote 100%. Spinel: no, lib/runcom/paths/common.rb:9 `using Refinements::Pathname` (refinements) and runtime dependencies refinements, zeitwerk (lib/runcom.rb:3-4), xdg. Clone: `config/bkuhlmann_runcom`.
 
@@ -179,31 +209,37 @@ Every other pick is native, uses a refused construct in its core, or depends on 
 1. **[roda](https://github.com/jeremyevans/roda)**: plugin loading: plugin system via Module composition; rule API: matchers in the routing tree; API design
    - Score 5 of 5. Docs: doc/ (conventions.rdoc, release_notes/ with 146 files), www/ (site source with pages).
    - Latest release 2026-10-09 (3.109.0); 127 commits in the last 12 months, 5 authors, 1 with 3 or more commits; jeremyevans wrote 97%. Spinel: no, lib/roda.rb:127 class_eval with a string; :163 define_method(meth); :318 send(:include, ...). Clone: `frameworks/jeremyevans_roda`.
-2. **[rack](https://github.com/rack/rack)**: protocol: env/status-headers-body spec and Rack::Lint; API design: middleware composition (Builder)
+2. **[zeitwerk](https://github.com/fxn/zeitwerk)**: plugin loading: autoload/eager load/reload mechanics; config: inflector and collapse rules
+   - Score 5 of 5. Docs: API documentation in the source, with doc comments on 100% of its 89 public methods.
+   - Latest release 2026-08-01 (2.8.3); 89 commits in the last 12 months, 6 authors, 2 with 3 or more commits; fxn wrote 87%. Spinel: no, lib/zeitwerk/core_ext/kernel.rb:23 overrides Kernel#require and forwards a computed path via zeitwerk_original_require; autoload and const_get are the core mechanism (borderline: only the require decoration is on the refusal list). Clone: `frameworks/fxn_zeitwerk`.
+3. **[rack](https://github.com/rack/rack)**: protocol: env/status-headers-body spec and Rack::Lint; API design: middleware composition (Builder)
    - Score 4 of 5, missing README design. Docs: SPEC.rdoc (protocol spec), GETTING-STARTED.md, UPGRADE-GUIDE.md, docs/index.html.
    - Latest release 2026-08-13 (3.2.7); 80 commits in the last 12 months, 26 authors, 5 with 3 or more commits; jeremyevans wrote 41%. Spinel: no, lib/rack/builder.rb:108 eval(builder_script, binding, path) and :6 BUILDER_TOPLEVEL_BINDING. Clone: `frameworks/rack_rack`.
-3. **[hanami](https://github.com/hanami/hanami)**: config: app/slice configuration; plugin loading: providers and slices on dry-system
+4. **[hanami](https://github.com/hanami/hanami)**: config: app/slice configuration; plugin loading: providers and slices on dry-system
    - Score 4 of 5, missing README design. Docs: FEATURES.md, README.repo.md; no prose guides dir; hanakai.org/learn/hanami.
    - Latest release 2026-08-21 (3.0.2); 105 commits in the last 12 months, 10 authors, 5 with 3 or more commits; timriley wrote 71%. Spinel: no, lib/hanami.rb:61 require(app_path.to_s) with a computed argument; provider_registrar.rb:7 define_singleton_method; depends on dry-system (no). Clone: `frameworks/hanami_hanami`.
-4. **[dry-system](https://github.com/dry-rb/dry-system)**: plugin loading: container plugins, providers and auto-registration; config: container settings
+5. **[dry-system](https://github.com/dry-rb/dry-system)**: plugin loading: container plugins, providers and auto-registration; config: container settings
    - Score 4 of 5, missing README design. Docs: examples/ directory; docs on dry-rb.org; hanakai.org/learn/dry/dry-system.
    - Latest release 2025-11-30 (1.2.5); 15 commits in the last 12 months, 5 authors, 2 with 3 or more commits; timriley wrote 60%. Spinel: no, lib/dry/system/provider/source.rb:50 instance_eval with a heredoc string; manifest_registrar.rb:43 load(computed path). Clone: `frameworks/dry-rb_dry-system`.
-5. **[minitest](https://github.com/minitest/minitest)**: testing: runner, reporters, plugin hooks (Minitest.load); API design: assertions plus spec DSL
+6. **[minitest](https://github.com/minitest/minitest)**: testing: runner, reporters, plugin hooks (Minitest.load); API design: assertions plus spec DSL
    - Score 4 of 5, missing README design. Docs: design_rationale.rb (spec to unit-test mapping), README.rdoc FAQ; no docs dir.
    - Latest release 2026-05-01 (6.0.6); 109 commits in the last 12 months, 1 authors, 1 with 3 or more commits; zenspider wrote 100%. Spinel: no, lib/minitest.rb:140 require plugin_path (computed); test dispatch uses send on test method names. Clone: `frameworks/minitest_minitest`.
-6. **[rake](https://github.com/ruby/rake)**: rule API: tasks, file tasks and pattern rules; CLI: application options/loader
+7. **[rake](https://github.com/ruby/rake)**: rule API: tasks, file tasks and pattern rules; CLI: application options/loader
    - Score 4 of 5, missing README design. Docs: doc/ (rakefile.rdoc, command_line_usage.rdoc, glossary.rdoc, rational.rdoc, proto_rake.rdoc, rake.1 man page).
    - Latest release 2026-04-16 (13.4.2); 122 commits in the last 12 months, 9 authors, 3 with 3 or more commits; matzbot wrote 48%. Spinel: no, lib/rake/cpu_counter.rb:31 class_eval with a heredoc string; rake_module.rb:29 load(path) computed. Clone: `frameworks/ruby_rake`.
-7. **[bridgetown](https://github.com/bridgetownrb/bridgetown)**: plugin loading: PluginManager (bundler/gems/plugins folder); rendering: resources/converters/layouts; config
+8. **[bridgetown](https://github.com/bridgetownrb/bridgetown)**: plugin loading: PluginManager (bundler/gems/plugins folder); rendering: resources/converters/layouts; config
    - Score 4 of 5, missing README design. Docs: bridgetown-website/src/_docs (42 entries of prose docs; site source).
    - Latest release 2026-07-06 (2.2.2); 142 commits in the last 12 months, 15 authors, 3 with 3 or more commits; jaredcwhite wrote 60%. Spinel: no, bridgetown-core/lib/bridgetown-core.rb:13 require f (computed) (loads every file under a computed path). Clone: `frameworks/bridgetownrb_bridgetown`.
-8. **[yard](https://github.com/lsegal/yard)**: docs: parser -> handlers -> registry -> templates pipeline; parsing: Ruby/C handlers; rendering: templates
+9. **[yard](https://github.com/lsegal/yard)**: docs: parser -> handlers -> registry -> templates pipeline; parsing: Ruby/C handlers; rendering: templates
    - Score 4 of 5, missing README design. Docs: docs/ (Overview.md, Parser.md, Handlers.md, CodeObjects.md, Tags.md, TagsArch.md, Templates.md, GettingStarted.md, WhatsNew.md).
    - Latest release 2026-07-14 (0.9.45); 131 commits in the last 12 months, 11 authors, 5 with 3 or more commits; lsegal wrote 82%. Spinel: no, lib/yard.rb:66 require file (computed); handlers register by subclass and are loaded by path, templates are evaluated at runtime. Clone: `frameworks/lsegal_yard`.
-9. **[rails](https://github.com/rails/rails)**: plugin loading: Railtie/Engine/initializer graph; config: Rails::Application configuration; CLI: command classes
+10. **[padrino](https://github.com/padrino/padrino-framework)**: API design: Sinatra extension with mountable apps; plugin loading: reloader and mounter
+   - Score 4 of 5, missing README design. Docs: padrinorb.com/guides.
+   - Latest release 2026-10-15 (0.17.0); 120 commits in the last 12 months, 5 authors, 4 with 3 or more commits; nesquena wrote 73%. Spinel: no, padrino-core/lib/padrino-core/reloader/storage.rb:66 ObjectSpace.each_object; application/application_setup.rb:84 class_eval(&configuration) is block-only but ObjectSpace rules it out. Clone: `frameworks/padrino_padrino-framework`.
+11. **[rails](https://github.com/rails/rails)**: plugin loading: Railtie/Engine/initializer graph; config: Rails::Application configuration; CLI: command classes
    - Score 4 of 5, missing README design. Docs: rails_rails/guides/source (82 prose guides), railties/RDOC_MAIN.md, RELEASING_RAILS.md.
    - Latest release 2026-09-24 (8.1.4); 500+ commits in the last 12 months, 64 authors, 22 with 3 or more commits; amatsuda wrote 19%. Spinel: no, railties/lib/rails/configuration.rb:174 method_missing; all.rb:19 require railtie (computed). Clone: `frameworks/rails_rails`.
-10. **[pry](https://github.com/pry/pry)**: plugin loading: command sets and commands; API design: embeddable REPL; testing: mock input helpers in spec/helper.rb
+12. **[pry](https://github.com/pry/pry)**: plugin loading: command sets and commands; API design: embeddable REPL; testing: mock input helpers in spec/helper.rb
    - Score 4 of 5, missing README design. Docs: GitHub wiki.
    - Latest release 2026-10-20 (0.16.1); 40 commits in the last 12 months, 5 authors, 1 with 3 or more commits; andrehjr wrote 90%. Spinel: no, lib/pry/cli.rb:99 eval(opts[:context]); lib/pry/code.rb:335 method_missing; the REPL core is built on Binding. Clone: `frameworks/pry_pry`.
 
@@ -272,6 +308,15 @@ Every other pick is native, uses a refused construct in its core, or depends on 
 10. **[puma](https://github.com/puma/puma)**: concurrency: thread pool + reactor + cluster/fork_worker supervision; config: DSL in dsl.rb; protocol: HTTP/1.1 parsing and TLS (minissl)
    - Score 4 of 5, missing craft. Docs: docs/ (architecture.md, deployment.md, signals.md, restart.md, fork_worker.md, plugins.md, stats.md, systemd.md, kubernetes.md, nginx.md, 5.0-8.0 upgrade guides).
    - Latest release 2026-05-26 (8.0.2); 150 commits in the last 12 months, 41 authors, 6 with 3 or more commits; nateberkopec wrote 30%. Spinel: n/a, native. Clone: `servers/puma_puma`.
+11. **[good_job](https://github.com/bensheldon/good_job)**: concurrency: Postgres advisory locks, LISTEN/NOTIFY notifier, thread scheduler; API design: ActiveJob adapter and extensions
+   - Score 4 of 5, missing README design. Docs: API documentation in the source, with doc comments on 68% of its 300 public methods.
+   - Latest release 2026-10-13 (4.22.1); 163 commits in the last 12 months, 38 authors, 6 with 3 or more commits; bensheldon wrote 62%. Spinel: no, core is built on ActiveRecord/ActiveJob/Rails engine; own code uses string class_eval (log_subscriber.rb:365) and send with passed-in method name (good_job.rb:284). Clone: `servers/bensheldon_good_job`.
+12. **[shoryuken](https://github.com/ruby-shoryuken/shoryuken)**: concurrency: thread-based SQS polling with manager/fetcher; API design: server middleware chain
+   - Score 4 of 5, missing README design. Docs: GitHub wiki.
+   - Latest release 2026-09-23 (7.0.4); 82 commits in the last 12 months, 4 authors, 1 with 3 or more commits; mensfeld wrote 95%. Spinel: no, lib/shoryuken/worker.rb:295,304,318 define_method with computed name; runner.rb:94 ObjectSpace.each_object; depends on aws-sdk-sqs and thor. Clone: `servers/ruby-shoryuken_shoryuken`.
+13. **[listen](https://github.com/guard/listen)**: concurrency: event queue, FSM-driven listener lifecycle; testing: adapter specs with fakes; API design: adapter selection
+   - Score 4 of 5, missing CHANGELOG. Docs: GitHub wiki.
+   - Latest release 2026-10-01 (3.10.1); 25 commits in the last 12 months, 4 authors, 3 with 3 or more commits; rymai wrote 60%. Spinel: no, lib/listen/options.rb:19 method_missing; depends on rb-inotify and rb-fsevent (FFI). Clone: `servers/guard_listen`.
 
 ## miscellaneous
 
@@ -284,27 +329,33 @@ Every other pick is native, uses a refused construct in its core, or depends on 
 3. **[dry-monads](https://github.com/dry-rb/dry-monads)**: API design: monad/functor interfaces and do-notation; concurrency: Task monad over concurrent-ruby
    - Score 4 of 5, missing README design. Docs: hanakai.org/learn/dry/dry-monads.
    - Latest release 2026-09-11 (1.11.0); 25 commits in the last 12 months, 5 authors, 2 with 3 or more commits; timriley wrote 60%. Spinel: no, lib/dry/monads/do.rb:126 string module_eval; lib/dry/monads/maybe.rb:184 method_missing. Clone: `miscellaneous/dry-rb_dry-monads`.
-4. **[activesupport](https://github.com/rails/rails)**: API design: Concern, callbacks, notifications, core_ext layout; config: lazy_load_hooks and ordered options
+4. **[dry-struct](https://github.com/dry-rb/dry-struct)**: API design: attribute DSL over dry-types schemas; class-level interface split (ClassInterface)
+   - Score 4 of 5, missing README design. Docs: hanakai.org/learn/dry/dry-struct.
+   - Latest release 2026-03-03 (1.8.1); 11 commits in the last 12 months, 2 authors, 1 with 3 or more commits; timriley wrote 82%. Spinel: no, lib/dry/struct/class_interface.rb:455 string class_eval; runtime dependency dry-types is itself no. Clone: `miscellaneous/dry-rb_dry-struct`.
+5. **[activesupport](https://github.com/rails/rails)**: API design: Concern, callbacks, notifications, core_ext layout; config: lazy_load_hooks and ordered options
    - Score 4 of 5, missing README design. Docs: rails_rails/guides/source/active_support_core_extensions.md, active_support_instrumentation.md, api_documentation_guidelines.md; extensive RDoc in source.
    - Latest release 2026-09-24 (8.1.4); 500+ commits in the last 12 months, 64 authors, 22 with 3 or more commits; amatsuda wrote 19%. Spinel: no, lib/active_support/time_with_zone.rb:601 method_missing; time_with_zone.rb:493 string class_eval. Clone: `frameworks/rails_rails`, shared with the rails pick, since one repository is cloned once.
-5. **[webmock](https://github.com/bblimke/webmock)**: testing: stub and expectation API; protocol: swapping HTTP client adapters behind one registry
+6. **[webmock](https://github.com/bblimke/webmock)**: testing: stub and expectation API; protocol: swapping HTTP client adapters behind one registry
    - Score 4 of 5, missing README design. Docs: GitHub wiki.
    - Latest release 2026-10-14 (3.34.0); 125 commits in the last 12 months, 18 authors, 3 with 3 or more commits; bblimke wrote 58%. Spinel: no, lib/webmock/webmock.rb:188 string class_eval; lib/webmock/util/query_mapper.rb:90 __send__ with computed name. Clone: `miscellaneous/bblimke_webmock`.
-6. **[vcr](https://github.com/vcr/vcr)**: testing: cassette record/replay design; plugin loading: library_hooks and hook registry; config
+7. **[vcr](https://github.com/vcr/vcr)**: testing: cassette record/replay design; plugin loading: library_hooks and hook registry; config
    - Score 4 of 5, missing README design. Docs: docs/ (docsify site: cassettes, configuration, hooks, record_modes, request_matching) and features/.
    - Latest release 2025-12-22 (6.4.0); 11 commits in the last 12 months, 7 authors, 1 with 3 or more commits; fkmy wrote 27%. Spinel: no, lib/vcr.rb:257 eval('self', block.binding); lib/vcr/util/hooks.rb:55 define_method with computed name. Clone: `miscellaneous/vcr_vcr`.
-7. **[factory_bot](https://github.com/thoughtbot/factory_bot)**: API design: Ruby DSL with instance_eval and evaluator; testing: fixtures/factories and strategy objects
+8. **[factory_bot](https://github.com/thoughtbot/factory_bot)**: API design: Ruby DSL with instance_eval and evaluator; testing: fixtures/factories and strategy objects
    - Score 4 of 5, missing README design. Docs: docs/src (mdbook: defining, traits, sequences, callbacks, cookbook, ref) and GETTING_STARTED.md.
    - Latest release 2026-05-04 (6.6.0); 31 commits in the last 12 months, 16 authors, 1 with 3 or more commits; neilvcarvalho wrote 45%. Spinel: no, lib/factory_bot/definition_proxy.rb:91 method_missing; lib/factory_bot/evaluator.rb method_missing; depends on activesupport. Clone: `miscellaneous/thoughtbot_factory_bot`.
-8. **[mutant](https://github.com/mbj/mutant)**: testing: mutation testing engine; parsing: AST node mutators; CLI/concurrency: parallel runner and isolation
+9. **[mutant](https://github.com/mbj/mutant)**: testing: mutation testing engine; parsing: AST node mutators; CLI/concurrency: parallel runner and isolation
    - Score 4 of 5, missing README design. Docs: docs/ (nomenclature.md, configuration.md, hooks.md, concurrency.md, limitations.md, reading-reports.md, ast-pattern.md, mutant-rspec.md).
    - Latest release 2026-10-21 (0.17.1); 312 commits in the last 12 months, 8 authors, 4 with 3 or more commits; mbj wrote 62%. Spinel: no, ruby/lib/mutant/zombifier.rb:77 kernel.eval; ruby/lib/mutant/hooks.rb:65 binding.eval; also require_highjack.rb overrides require. Clone: `miscellaneous/mbj_mutant`.
-9. **[simplecov](https://github.com/simplecov-ruby/simplecov)**: testing: coverage collection, merging and reporting; config: configuration DSL and profiles; CLI
+10. **[simplecov](https://github.com/simplecov-ruby/simplecov)**: testing: coverage collection, merging and reporting; config: configuration DSL and profiles; CLI
    - Score 4 of 5, missing README design. Docs: docs/ (Configuration.md, CLI.md, Formatters.md, Parallelism.md, Production.md, Troubleshooting.md, Roadmap.md) and man/simplecov.1.
    - Latest release 2026-09-30 (1.3.2); 473 commits in the last 12 months, 11 authors, 3 with 3 or more commits; sferik wrote 96%. Spinel: no, lib/simplecov/profiles.rb:32 require with interpolated name; depends on prism. Clone: `miscellaneous/simplecov-ruby_simplecov`.
-10. **[timecop](https://github.com/travisjeffery/timecop)**: testing: clock mocking via a time stack and monkeypatching Time/Date
+11. **[timecop](https://github.com/travisjeffery/timecop)**: testing: clock mocking via a time stack and monkeypatching Time/Date
    - Score 4 of 5, missing craft. Docs: GitHub wiki.
    - Latest release 2026-04-12 (0.9.11); 6 commits in the last 12 months, 6 authors, 0 with 3 or more commits; NikolasPilavakis wrote 17%. Spinel: no, lib/timecop/time_extensions.rb:11 captures Time.now with alias_method and :17 rebinds :now to a method that calls the captured alias, which Spinel's limitations list as refused. Clone: `miscellaneous/travisjeffery_timecop`.
+12. **[rdoc](https://github.com/ruby/rdoc)**: parsing: Ruby/C/Markdown source into code objects; rendering: markup formatters and generators; docs: markup reference
+   - Score 3 of 5, missing README design, CHANGELOG. Docs: doc/markup_reference/{rdoc.rdoc,markdown.md}, doc/configuration.md, man/ri.1.
+   - Latest release 2026-09-28 (8.1.0); 226 commits in the last 12 months, 23 authors, 10 with 3 or more commits; st0012 wrote 48%. Spinel: no, lib/rdoc/generator/darkfish.rb:297 binding for ERB templates; core depends on erb and prism. Clone: `miscellaneous/ruby_rdoc`.
 
 ## Also in the reference tree
 
@@ -319,13 +370,10 @@ Every candidate not picked, with the first criterion it failed, so a later pass 
 
 ### parsers
 
-- **commonmarker** (catalog): no documentation beyond the README and generated API pages (scored 4).
 - **redcarpet** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-02-25).
 - **ox** (catalog, awesome-ruby): scored 2 of 5 (missing README design, tests, craft).
 - **rexml** (catalog): no release since 2025-10-21 (last release 2025-09-10).
 - **oj** (catalog): scored 2 of 5 (missing README design, lib/ layout, craft).
-- **psych** (agent): tied at 3 with json and tomlrb for the last parsers slot; json was picked because no other pick shows a native extension with a pure-Ruby fallback.
-- **tomlrb** (agent): tied at 3 for the last parsers slot; toml-rb already covers a pure-Ruby TOML parser and a Spinel candidate. Spinel: candidate.
 - **parslet** (agent): no release since 2025-10-21 (last release 2020-02-16).
 - **racc** (agent): no release since 2025-10-21 (last release 2024-07-30).
 - **citrus** (agent): no release since 2025-10-21 (last release 2015-02-19).
@@ -333,27 +381,23 @@ Every candidate not picked, with the first criterion it failed, so a later pass 
 ### renderers
 
 - **erubi** (catalog): no release since 2025-10-21 (last release 2024-12-19).
-- **tilt** (catalog, awesome-ruby): no documentation beyond the README and generated API pages (scored 4).
+- **tilt** (catalog, awesome-ruby): no documentation beyond the README: its generated API pages carry doc comments on 28% of its 102 public methods, under the 50% the condition asks (scored 4).
 - **coderay** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2020-05-30).
 - **syntax_tree** (agent): no release since 2025-10-21 (last release 2025-07-17).
 - **rufo** (agent): scored 2 of 5 (missing README design, lib/ layout, craft).
-- **unparser** (agent): no documentation beyond the README and generated API pages (scored 4).
-- **blueprinter** (catalog): no documentation beyond the README and generated API pages (scored 4).
+- **blueprinter** (catalog): no documentation beyond the README: its generated API pages carry doc comments on 43% of its 60 public methods, under the 50% the condition asks (scored 4).
 - **terminal-table** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-01-27).
 - **tty-markdown** (catalog): no release since 2025-10-21 (last release 2023-03-12).
 - **prawn** (agent): no release since 2025-10-21 (last release 2024-03-05).
 
 ### linters
 
-- **rubocop-performance** (awesome-ruby): tied at 4 with 11 other linters; its reading reason, cops shipped as a RuboCop plugin, is rubocop-rspec's.
 - **flay** (catalog, awesome-ruby): no CI configuration in the repository.
 - **flog** (catalog, awesome-ruby): no CI configuration in the repository.
-- **brakeman** (awesome-ruby): scored 3 where ten linters scored 4.
+- **brakeman** (awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in linters, which then held 14 picks, the most of any folder with a gem at that score; Rails-only security checks, while mdl stays as the one Markdown linter in the pool.
 - **fasterer** (awesome-ruby): no release since 2025-10-21 (last release 2023-11-20).
-- **rails_best_practices** (catalog, awesome-ruby): scored 3 where ten linters scored 4.
+- **rails_best_practices** (catalog, awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in linters, which then held 15 picks, the most of any folder with a gem at that score; Rails-only rules over the same kind of AST walk rubocop covers.
 - **erb_lint** (agent): no release since 2025-10-21 (last release 2025-01-20).
-- **slim_lint** (agent): tied at 4 with 11 other linters; same author and same linter registry design as haml_lint.
-- **mdl** (agent): scored 3 where ten linters scored 4; read it anyway for a Markdown rule DSL, since it is the one Markdown linter in the pool.
 - **debride** (agent): no CI configuration in the repository.
 
 ### cli
@@ -363,11 +407,9 @@ Every candidate not picked, with the first criterion it failed, so a later pass 
 - **gli** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-01-27).
 - **slop** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2023-02-26).
 - **optimist** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-03-19).
-- **commander** (catalog, awesome-ruby): no documentation beyond the README and generated API pages (scored 3).
 - **cri** (catalog): no release since 2025-10-21 (last release 2024-06-09).
 - **tty-option** (catalog): no release since 2025-10-21 (last release 2023-05-29).
 - **command_kit** (catalog): no release since 2025-10-21 (last release 2024-06-20).
-- **cli-ui** (catalog): no documentation beyond the README and generated API pages (scored 3).
 - **tty-prompt** (catalog): no release since 2025-10-21 (last release 2021-04-17).
 - **tty-table** (catalog): no release since 2025-10-21 (last release 2020-09-20).
 - **pastel** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2020-07-04).
@@ -382,8 +424,8 @@ Every candidate not picked, with the first criterion it failed, so a later pass 
 - **getoptions** (catalog): no release since 2025-10-21 (last release 2009-07-25).
 - **reline** (agent): scored 2 of 5 (missing README design, CHANGELOG, craft).
 - **io-console** (agent): scored 0 of 5 (missing README design, CHANGELOG, lib/ layout, tests, craft).
-- **amazing_print** (agent): no documentation beyond the README and generated API pages (scored 4).
-- **unicode-display_width** (dependency): no documentation beyond the README and generated API pages (scored 5). Spinel: candidate.
+- **amazing_print** (agent): no documentation beyond the README: its generated API pages carry doc comments on 37% of its 89 public methods, under the 50% the condition asks (scored 4).
+- **unicode-display_width** (dependency): no documentation beyond the README: its generated API pages carry doc comments on 46% of its 13 public methods, under the 50% the condition asks (scored 5). Spinel: candidate.
 - **colorize** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2023-06-23).
 - **paint** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2022-07-05).
 - **ruby-progressbar** (awesome-ruby): no release since 2025-10-21 (last release 2023-03-04).
@@ -396,7 +438,6 @@ Every candidate not picked, with the first criterion it failed, so a later pass 
 ### config
 
 - **config** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-07-11).
-- **dotenv** (catalog, awesome-ruby): no documentation beyond the README and generated API pages (scored 3). Spinel: candidate.
 - **figaro** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-06-25).
 - **configatron** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2017-03-08).
 - **global** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2024-12-04).
@@ -408,23 +449,21 @@ Every candidate not picked, with the first criterion it failed, so a later pass 
 - **econfig** (awesome-ruby): no release since 2025-10-21 (last release 2018-10-17).
 - **configus** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2014-01-17).
 - **envyable** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2016-11-08).
-- **json_schemer** (agent): no documentation beyond the README and generated API pages (scored 4).
-- **json-schema** (agent): no documentation beyond the README and generated API pages (scored 3).
+- **json_schemer** (agent): no documentation beyond the README: its generated API pages carry doc comments on 0% of its 254 public methods, under the 50% the condition asks (scored 4).
+- **json-schema** (agent): no documentation beyond the README: its generated API pages carry doc comments on 18% of its 171 public methods, under the 50% the condition asks (scored 3).
 - **sail** (awesome-ruby): no release since 2025-10-21 (last release 2022-02-24).
 - **ledermann-rails-settings** (catalog): no release since 2025-10-21 (last release 2024-05-30).
 - **climate_control** (agent): no release since 2025-10-21 (last release 2022-07-15).
-- **figjam** (agent): no documentation beyond the README and generated API pages (scored 3).
+- **figjam** (agent): no documentation beyond the README: its generated API pages carry doc comments on 0% of its 19 public methods, under the 50% the condition asks (scored 3).
 - **configurations** (catalog): no release since 2025-10-21 (last release 2016-11-12).
 
 ### frameworks
 
 - **sinatra** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-10-10).
-- **zeitwerk** (awesome-ruby): no documentation beyond the README and generated API pages (scored 5).
 - **rspec-core** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-10-19).
 - **jekyll** (agent): no release since 2025-10-21 (last release 2025-01-29).
-- **guard** (awesome-ruby): scored 3 where ten frameworks scored 4 or 5.
+- **guard** (awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in frameworks, which then held 13 picks, the most of any folder with a gem at that score; its plugin host is covered by rake, yard and bridgetown.
 - **trailblazer** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2023-06-15).
-- **padrino** (catalog, awesome-ruby): tied at 4 with 9 other frameworks; its reading reason, a Sinatra-style app framework, is covered by roda and hanami.
 - **cuba** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2024-01-24).
 - **interactor** (awesome-ruby): no release since 2025-10-21 (last release 2025-07-10).
 - **wisper** (awesome-ruby): no release since 2025-10-21 (last release 2024-05-23).
@@ -436,34 +475,29 @@ Every candidate not picked, with the first criterion it failed, so a later pass 
 - **httparty** (catalog, awesome-ruby): scored 2 of 5 (missing README design, CHANGELOG, craft).
 - **rest-client** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2019-08-21).
 - **octokit** (awesome-ruby): no release since 2025-10-21 (last release 2025-04-24).
-- **redis-client** (agent): no documentation beyond the README and generated API pages (scored 5).
+- **redis-client** (agent): no documentation beyond the README: its generated API pages carry doc comments on 1% of its 181 public methods, under the 50% the condition asks (scored 5).
 - **mysql2** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-09-22).
-- **trilogy** (catalog, awesome-ruby): no documentation beyond the README and generated API pages (scored 3).
+- **trilogy** (catalog, awesome-ruby): no documentation beyond the README: its generated API pages carry doc comments on 0% of its 13 public methods, under the 50% the condition asks (scored 3).
 - **stripe** (agent): scored 2 of 5 (missing README design, lib/ layout, craft).
 - **anthropic** (agent): scored 2 of 5 (missing README design, lib/ layout, craft).
 
 ### servers
 
 - **unicorn** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2021-12-25).
-- **iodine** (catalog, awesome-ruby): scored 3 where every pick in the folder scored 4 or more.
+- **iodine** (catalog, awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in servers, which then held 15 picks, the most of any folder with a gem at that score; a C server whose Ruby side is a thin binding, while puma and falcon carry the server design in Ruby.
 - **agoo** (catalog, awesome-ruby): scored 2 of 5 (missing README design, tests, craft).
-- **webrick** (catalog): no documentation beyond the README and generated API pages (scored 3).
-- **good_job** (catalog, awesome-ruby): no documentation beyond the README and generated API pages (scored 4).
+- **webrick** (catalog): cut to keep the picks at 100: it scored 3, the lowest among the picks, in servers, which then held 14 picks, the most of any folder with a gem at that score; the folder's last score-3 gem, and puma, falcon and pitchfork already cover the server design.
 - **que** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2024-10-28).
-- **sucker_punch** (catalog, awesome-ruby): no documentation beyond the README and generated API pages (scored 5).
-- **shoryuken** (catalog, awesome-ruby): tied at 4 with 8 other servers; its worker model overlaps sidekiq and karafka.
+- **sucker_punch** (catalog, awesome-ruby): no documentation beyond the README: its generated API pages carry doc comments on 0% of its 50 public methods, under the 50% the condition asks (scored 5).
 - **foreman** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2025-07-27).
-- **listen** (awesome-ruby, dependency): tied at 4 with 8 other servers; a file-watching library more than a long-running process, and the folder was full.
 
 ### miscellaneous
 
-- **dry-struct** (agent): tied at 4 with 9 other miscellaneous gems; its attribute DSL is a thin layer over dry-types, which is picked.
-- **literal** (awesome-ruby): scored 3 where ten miscellaneous gems scored 4 or 5.
-- **hashie** (catalog, awesome-ruby): scored 3 where every pick in the folder scored 4 or more.
-- **addressable** (awesome-ruby, dependency): no documentation beyond the README and generated API pages (scored 3).
+- **literal** (awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in miscellaneous, which then held 14 picks, the most of any folder with a gem at that score; its type DSL is covered by dry-types and dry-struct, both picked.
+- **hashie** (catalog, awesome-ruby): cut to keep the picks at 100: it scored 3, the lowest among the picks, in miscellaneous, which then held 16 picks, the most of any folder with a gem at that score; read only for its hash mixins, the narrowest reading reason among the folder's score-3 gems.
+- **addressable** (awesome-ruby, dependency): cut to keep the picks at 100: it scored 3, the lowest among the picks, in miscellaneous, which then held 13 picks, the most of any folder with a gem at that score; its URI parser is a narrower parsing reason than rdoc's Markdown parser, which stays.
 - **docile** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2024-07-25).
 - **memo_wise** (awesome-ruby): no release since 2025-10-21 (last release 2025-05-14).
 - **tzinfo** (agent): no release since 2025-10-21 (last release 2023-01-28).
-- **rdoc** (catalog, awesome-ruby): scored 3 where ten miscellaneous gems scored 4 or 5; read it for its Markdown parser regardless.
-- **benchmark-ips** (agent): scored 3 where every pick in the folder scored 4 or more.
+- **benchmark-ips** (agent): cut to keep the picks at 100: it scored 3, the lowest among the picks, in miscellaneous, which then held 15 picks, the most of any folder with a gem at that score; read for a small benchmark DSL, a narrower reason than rdoc's Markdown parser.
 - **diffy** (awesome-ruby): no release since 2025-10-21 (last release 2025-06-09).
