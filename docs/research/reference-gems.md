@@ -323,7 +323,7 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
 
 1. **[mustermann](https://github.com/sinatra/mustermann)**: parsing: pattern string to AST to Regexp pipeline; API design: pattern types, composition, expand and peek
    - Score 5 of 5. Docs: docs/ (patterns/*.md per pattern type, custom-patterns.md, performance.md).
-   - Latest release 2026-10-10 (4.0.1); 127 commits in the last 12 months, 4 authors, 2 with 3 or more commits; rkh wrote 94%. Spinel: no, lib/mustermann.rb:93 try_require with an interpolated path; lib/mustermann/equality_map.rb:27 ObjectSpace::WeakMap. Clone: `miscellaneous/sinatra_mustermann`.
+   - Latest release 2026-10-10 (4.0.1); 127 commits in the last 12 months, 4 authors, 2 with 3 or more commits; rkh wrote 94%. Spinel: no, lib/mustermann.rb:93 try_require with an interpolated path. Clone: `miscellaneous/sinatra_mustermann`.
 2. **[dry-types](https://github.com/dry-rb/dry-types)**: API design: composable type objects (/ & constrained, default, schema); parsing/coercion pipelines (call_safe vs call_unsafe)
    - Score 4 of 5, missing README design. Docs: hanakai.org/learn/dry/dry-types.
    - Latest release 2026-02-06 (1.9.1); 18 commits in the last 12 months, 4 authors, 2 with 3 or more commits; timriley wrote 67%. Spinel: no, lib/dry/types/constructor.rb:176 method_missing; lib/dry/types/constructor/function.rb:63 string module_eval. Clone: `miscellaneous/dry-rb_dry-types`.
