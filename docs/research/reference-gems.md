@@ -23,7 +23,7 @@ Found in two passes. **Reading** first, against Spinel's limitations and require
 
 - **tomlrb** (picked, `parsers`): compiles. A smoke program parsing a TOML document with tables, an array, a datetime and an array of tables is refused once, at lib/tomlrb/parser.rb:192 (`{}.compare_by_identity`); with that hash keyed by `object_id` instead, an 11-line change, Spinel builds a 1.2 MB binary that links only libc and libm and prints exactly what CRuby prints.
 - **toml-rb** (picked, `parsers`): refused: `LocalDateTime = Class.new(Time)` at lib/toml-rb/datetime.rb:4, which Spinel reports as subclassing Time, not supported yet. Its `require "date"` compiles, so the require document's listing of `date` as unsatisfiable is stale.
-- **xdg** (picked, `config`): refused: 18 errors, all Strings that are shared and changed in place (matz/spinel#9258), the first at lib/xdg/paths/directory.rb:12, once its own files are found through `-I`.
+- **xdg** (picked, `config`): refused, once its own files are found through `-I`: the compile stops at its first refusal, a String shared with another name at lib/xdg/paths/directory.rb:12 (matz/spinel#9258), and `--emit-types`, which reports every refusal, lists 18 errors at 13 places, 16 of them Strings shared and changed in place and 2 unsupported `Pathname` calls.
 - **dotenv** (picked, `config`): refused at `require "English"`, a standard library Spinel does not provide.
 - **unicode-display_width** (rejected, `cli`): refused at `require "unicode/emoji"`, its runtime dependency.
 - **whirly** (rejected, `cli`): refused at `require "unicode/display_width"`, its runtime dependency.
@@ -200,7 +200,7 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
    - Latest release 2025-12-03 (3.2.0); 12 commits in the last 12 months, 2 authors, 1 with 3 or more commits; bkeepers wrote 92%. Spinel: no, Spinel stops at `require "English"`, a standard library it does not provide. Clone: `config/bkeepers_dotenv`.
 8. **[xdg](https://github.com/bkuhlmann/xdg)**: API design (small immutable objects with injected environment); config (XDG base directory lookup)
    - Score 3 of 5, missing README design, CHANGELOG. Docs: alchemists.io/projects/xdg. CI: .circleci. Licence: Hippocratic-2.1.
-   - Latest release 2026-09-16 (10.4.0); 33 commits in the last 12 months, 1 authors, 1 with 3 or more commits; bkuhlmann wrote 100%. Spinel: no, with its own files found through -I, Spinel refuses 18 places where Strings are shared and changed in place (matz/spinel#9258), the first at lib/xdg/paths/directory.rb:12. Clone: `config/bkuhlmann_xdg`.
+   - Latest release 2026-09-16 (10.4.0); 33 commits in the last 12 months, 1 authors, 1 with 3 or more commits; bkuhlmann wrote 100%. Spinel: no, with its own files found through -I, Spinel stops at lib/xdg/paths/directory.rb:12, a String shared with another name (matz/spinel#9258), and --emit-types lists 18 errors at 13 places. Clone: `config/bkuhlmann_xdg`.
 9. **[runcom](https://github.com/bkuhlmann/runcom)**: config (locating rc files across XDG config/home paths, local vs global); API design
    - Score 3 of 5, missing README design, CHANGELOG. Docs: alchemists.io/projects/runcom. CI: .circleci. Licence: Hippocratic-2.1.
    - Latest release 2026-09-16 (13.4.0); 38 commits in the last 12 months, 1 authors, 1 with 3 or more commits; bkuhlmann wrote 100%. Spinel: no, lib/runcom/paths/common.rb:9 `using Refinements::Pathname` (refinements) and runtime dependencies refinements, zeitwerk (lib/runcom.rb:3-4), xdg. Clone: `config/bkuhlmann_runcom`.
