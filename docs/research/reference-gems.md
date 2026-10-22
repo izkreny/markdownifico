@@ -250,7 +250,7 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
    - Score 5 of 5. Docs: doc/ (33 rdoc guides, release_notes/), www/ site source.
    - Latest release 2026-10-01 (5.109.0); 208 commits in the last 12 months, 14 authors, 2 with 3 or more commits; jeremyevans wrote 91%. Spinel: no, lib/sequel/sql.rb:112 and :280 string class_eval/module_eval, model/plugins.rb:33 string class_eval. Clone: `clients/jeremyevans_sequel`.
 2. **[pg](https://github.com/ged/ruby-pg)**: protocol (type casting, COPY, pipeline), concurrency (fiber scheduler, GVL wrappers)
-   - Score 5 of 5. Docs: README-OS_X.rdoc, README-Windows.rdoc, README.ja.md, sample/, translation/, POSTGRES.
+   - Score 5 of 5. Docs: README-OS_X.rdoc and README-Windows.rdoc, the platform install guides; README.ja.md, a Japanese README; sample/, worked examples.
    - Latest release 2026-10-02 (1.7.0); 155 commits in the last 12 months, 8 authors, 5 with 3 or more commits; larskanis wrote 79%. Spinel: n/a, native. Clone: `clients/ged_ruby-pg`.
 3. **[typhoeus](https://github.com/typhoeus/typhoeus)**: concurrency (Hydra parallel queue), API design (concern modules)
    - Score 5 of 5. Docs: UPGRADE.md, perf/; usage docs only in the long README.
