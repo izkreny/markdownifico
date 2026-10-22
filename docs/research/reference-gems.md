@@ -254,7 +254,7 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
    - Latest release 2026-10-02 (1.7.0); 155 commits in the last 12 months, 8 authors, 5 with 3 or more commits; larskanis wrote 79%. Spinel: n/a, native. Clone: `clients/ged_ruby-pg`.
 3. **[typhoeus](https://github.com/typhoeus/typhoeus)**: concurrency (Hydra parallel queue), API design (concern modules)
    - Score 5 of 5. Docs: UPGRADE.md, perf/; usage docs only in the long README.
-   - Latest release 2026-03-10 (1.6.0); 8 commits in the last 12 months, 2 authors, 2 with 3 or more commits; felipedmesquita wrote 63%. Spinel: no, lib is free of listed constructs, but it needs ethon (FFI-based, not in clones; from memory it generates option setters with computed define_method), so counted as no. Clone: `clients/typhoeus_typhoeus`.
+   - Latest release 2026-03-10 (1.6.0); 8 commits in the last 12 months, 2 authors, 2 with 3 or more commits; felipedmesquita wrote 63%. Spinel: no, its runtime dependency ethon, read at cb1d7ea, calls define_method with a computed name at lib/ethon/curls/options.rb:208 and send(method, value) at lib/ethon/easy.rb:240, and depends on the ffi gem, a native extension. Clone: `clients/typhoeus_typhoeus`.
 4. **[async-http](https://github.com/socketry/async-http)**: concurrency (Async fibers, connection pool), protocol (HTTP/1 and HTTP/2), testing
    - Score 4 of 5, missing README design. Docs: guides/ (4 prose guides), context/, releases.md.
    - Latest release 2026-09-15 (0.105.0); 66 commits in the last 12 months, 5 authors, 2 with 3 or more commits; ioquatix wrote 61%. Spinel: no, depends on async, whose scheduler rests on the io-event native extension. Clone: `clients/socketry_async-http`.
