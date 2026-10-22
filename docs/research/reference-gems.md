@@ -19,16 +19,17 @@ No folder was padded: a folder's picks are the gems in it that met every criteri
 
 ## Spinel candidates
 
-Checked against Spinel's limitations and require documents at commit `3a54c72` of [matz/spinel](https://github.com/matz/spinel): pure Ruby, no native extension, and a core free of string `eval`, `method_missing` dispatch, computed `define_method` or `send` names, and non-literal `require`, with code behind a `RUBY_ENGINE` check discounted. Spinel also resolves a bare `require` only to its bundled features, so a gem that loads its own files with `require` instead of `require_relative` needs those lines rewritten; that is a mechanical change and does not disqualify a gem. Runtime dependencies count against it.
+Found in two passes. **Reading** first, against Spinel's limitations and require documents at commit `3a54c72` of [matz/spinel](https://github.com/matz/spinel): pure Ruby, no native extension, and a core free of string `eval`, `method_missing` dispatch, computed `define_method` or `send` names, and non-literal `require`, with code behind a `RUBY_ENGINE` check discounted and runtime dependencies counting against a gem. **Compiling** second: every gem the reading left standing, and kramdown as the one pure-Ruby Markdown parser, had its entry point compiled by Spinel `2026.09.12+11963 (6577e8393)`, built from master, with `--require-gate` on 2026-10-22. The compiler outranks the reading, and only one gem survives it:
 
-- **toml-rb** (picked, `parsers`): require_relative throughout, only date and strscan from the stdlib, both bundled by Spinel, no runtime dependencies
-- **tomlrb** (picked, `parsers`): require_relative throughout, no runtime dependencies
-- **unicode-display_width** (rejected, `cli`): unverified past its core: depends on unicode-emoji, not read
-- **whirly** (rejected, `cli`): unverified past its core: depends on paint and unicode-display_width, not read
-- **dotenv** (picked, `config`): unverified past its core: the reader agent found the parser free of refused constructs
-- **xdg** (picked, `config`): Forwardable and Data.define, both supported, no runtime dependencies; its own files are loaded with require, which Spinel resolves only to bundled features, so those lines become require_relative
+- **tomlrb** (picked, `parsers`): compiles. A smoke program parsing a TOML document with tables, an array, a datetime and an array of tables is refused once, at lib/tomlrb/parser.rb:192 (`{}.compare_by_identity`); with that hash keyed by `object_id` instead, an 11-line change, Spinel builds a 1.2 MB binary that links only libc and libm and prints exactly what CRuby prints.
+- **toml-rb** (picked, `parsers`): refused: `class LocalDateTime < Time` at lib/toml-rb/datetime.rb:4, since subclassing Time is not supported yet. Its `require "date"` compiles, so the require document's listing of `date` as unsatisfiable is stale.
+- **xdg** (picked, `config`): refused: 18 errors, all Strings that are shared and changed in place (matz/spinel#9258), the first at lib/xdg/paths/directory.rb:12, once its own files are found through `-I`.
+- **dotenv** (picked, `config`): refused at `require "English"`, a standard library Spinel does not provide.
+- **unicode-display_width** (rejected, `cli`): refused at `require "unicode/emoji"`, its runtime dependency.
+- **whirly** (rejected, `cli`): refused at `require "unicode/display_width"`, its runtime dependency.
+- **kramdown** (picked, `parsers`): refused at `require "rexml/parsers/baseparser"`, once its own files are found through `-I`.
 
-Every other pick is native, uses a refused construct in its core, or depends on a gem that is one of those, and its entry names which, with a file and line wherever the reason is a construct. A rejected survivor's call is recorded only when it is a candidate, as above.
+Every other pick was ruled out by the reading: it is native, uses a refused construct in its core, or depends on a gem that is one of those, and its entry names which, with a file and line wherever the reason is a construct. A rejected survivor's call is recorded only when it was compiled, as above.
 
 ## parsers
 
@@ -61,7 +62,7 @@ Every other pick is native, uses a refused construct in its core, or depends on 
    - Latest release 2026-07-26 (3.3.6); 5 commits in the last 12 months, 4 authors, 0 with 3 or more commits; kou wrote 40%. Spinel: no, lib/csv/parser.rb:425 __send__(@parse_method); lib/csv.rb:2817 __send__(attr_name). Clone: `parsers/ruby_csv`.
 10. **[toml-rb](https://github.com/emancu/toml-rb)**: parsing: StringScanner-based hand parser with visitor nodes; testing: spec example corpus
    - Score 4 of 5, missing README design. Docs: GitHub wiki.
-   - Latest release 2026-09-28 (6.0.0); 95 commits in the last 12 months, 4 authors, 2 with 3 or more commits; emancu wrote 94%. Spinel: candidate. Clone: `parsers/emancu_toml-rb`.
+   - Latest release 2026-09-28 (6.0.0); 95 commits in the last 12 months, 4 authors, 2 with 3 or more commits; emancu wrote 94%. Spinel: no, Spinel refuses its Time subclass, `class LocalDateTime < Time` at lib/toml-rb/datetime.rb:4, when compiling lib/toml-rb.rb. Clone: `parsers/emancu_toml-rb`.
 11. **[json](https://github.com/ruby/json)**: parsing: native parser/generator with pure-Ruby fallback; API design: Coder and generator state; release: README Release section
    - Score 3 of 5, missing README design, lib/ layout. Docs: docs.ruby-lang.org/en/master/JSON.html.
    - Latest release 2026-10-13 (3.1.0); 342 commits in the last 12 months, 35 authors, 11 with 3 or more commits; byroot wrote 59%. Spinel: n/a, native. Clone: `parsers/ruby_json`.
@@ -196,10 +197,10 @@ Every other pick is native, uses a refused construct in its core, or depends on 
    - Latest release 2026-08-15 (2.10.1); 90 commits in the last 12 months, 2 authors, 1 with 3 or more commits; bdurand wrote 98%. Spinel: no, lib/ultra_settings/configuration.rb:92 class_eval with string, config_helper.rb:23 define_method(config_alias) computed and :24 send, application_view.rb:42 binding objects for ERB. Clone: `config/bdurand_ultra_settings`.
 7. **[dotenv](https://github.com/bkeepers/dotenv)**: parsing (.env grammar via commented extended regex and substitution pipeline); config; testing (Autorestore ENV in tests)
    - Score 3 of 5, missing README design, CHANGELOG. Docs: API documentation in the source, with doc comments on 57% of its 37 public methods.
-   - Latest release 2025-12-03 (3.2.0); 12 commits in the last 12 months, 2 authors, 1 with 3 or more commits; bkeepers wrote 92%. Spinel: candidate. Clone: `config/bkeepers_dotenv`.
+   - Latest release 2025-12-03 (3.2.0); 12 commits in the last 12 months, 2 authors, 1 with 3 or more commits; bkeepers wrote 92%. Spinel: no, Spinel stops at `require "English"`, a standard library it does not provide. Clone: `config/bkeepers_dotenv`.
 8. **[xdg](https://github.com/bkuhlmann/xdg)**: API design (small immutable objects with injected environment); config (XDG base directory lookup)
    - Score 3 of 5, missing README design, CHANGELOG. Docs: alchemists.io/projects/xdg.
-   - Latest release 2026-09-16 (10.4.0); 33 commits in the last 12 months, 1 authors, 1 with 3 or more commits; bkuhlmann wrote 100%. Spinel: candidate. Clone: `config/bkuhlmann_xdg`.
+   - Latest release 2026-09-16 (10.4.0); 33 commits in the last 12 months, 1 authors, 1 with 3 or more commits; bkuhlmann wrote 100%. Spinel: no, with its own files found through -I, Spinel refuses 18 places where Strings are shared and changed in place (matz/spinel#9258), the first at lib/xdg/paths/directory.rb:12. Clone: `config/bkuhlmann_xdg`.
 9. **[runcom](https://github.com/bkuhlmann/runcom)**: config (locating rc files across XDG config/home paths, local vs global); API design
    - Score 3 of 5, missing README design, CHANGELOG. Docs: alchemists.io/projects/runcom.
    - Latest release 2026-09-16 (13.4.0); 38 commits in the last 12 months, 1 authors, 1 with 3 or more commits; bkuhlmann wrote 100%. Spinel: no, lib/runcom/paths/common.rb:9 `using Refinements::Pathname` (refinements) and runtime dependencies refinements, zeitwerk (lib/runcom.rb:3-4), xdg. Clone: `config/bkuhlmann_runcom`.
@@ -425,7 +426,7 @@ Every candidate not picked, with the first criterion it failed, so a later pass 
 - **[reline](https://github.com/ruby/reline)** (agent): scored 2 of 5 (missing README design, CHANGELOG, craft).
 - **[io-console](https://github.com/ruby/io-console)** (agent): scored 0 of 5 (missing README design, CHANGELOG, lib/ layout, tests, craft).
 - **[amazing_print](https://github.com/amazing-print/amazing_print)** (agent): no documentation beyond the README: its generated API pages carry doc comments on 37% of its 89 public methods, under the 50% the condition asks (scored 4).
-- **[unicode-display_width](https://github.com/janlelis/unicode-display_width)** (dependency): no documentation beyond the README: its generated API pages carry doc comments on 46% of its 13 public methods, under the 50% the condition asks (scored 5). Spinel: candidate.
+- **[unicode-display_width](https://github.com/janlelis/unicode-display_width)** (dependency): no documentation beyond the README: its generated API pages carry doc comments on 46% of its 13 public methods, under the 50% the condition asks (scored 5).
 - **[colorize](https://github.com/fazibear/colorize)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2023-06-23).
 - **[paint](https://github.com/janlelis/paint)** (catalog, awesome-ruby): no release since 2025-10-21 (last release 2022-07-05).
 - **[ruby-progressbar](https://github.com/jfelchner/ruby-progressbar)** (awesome-ruby): no release since 2025-10-21 (last release 2023-03-04).
@@ -433,7 +434,7 @@ Every candidate not picked, with the first criterion it failed, so a later pass 
 - **[tty-progressbar](https://github.com/piotrmurach/tty-progressbar)** (catalog): no release since 2025-10-21 (last release 2024-11-10).
 - **[tty-screen](https://github.com/piotrmurach/tty-screen)** (catalog): no release since 2025-10-21 (last release 2023-12-17).
 - **[formatador](https://github.com/geemus/formatador)** (awesome-ruby): scored 2 of 5 (missing README design, tests, craft).
-- **[whirly](https://github.com/janlelis/whirly)** (awesome-ruby): scored 2 of 5 (missing README design, tests, craft). Spinel: candidate.
+- **[whirly](https://github.com/janlelis/whirly)** (awesome-ruby): scored 2 of 5 (missing README design, tests, craft).
 
 ### config
 
