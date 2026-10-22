@@ -238,7 +238,7 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
    - Score 4 of 5, missing README design. Docs: padrinorb.com/guides.
    - Latest release 2026-10-15 (0.17.0); 120 commits in the last 12 months, 5 authors, 4 with 3 or more commits; nesquena wrote 73%. Spinel: no, padrino-core/lib/padrino-core/reloader/storage.rb:66 ObjectSpace.each_object; application/application_setup.rb:84 class_eval(&configuration) is block-only but ObjectSpace rules it out. Clone: `frameworks/padrino_padrino-framework`.
 11. **[rails](https://github.com/rails/rails)**: plugin loading: Railtie/Engine/initializer graph; config: Rails::Application configuration; CLI: command classes
-   - Score 4 of 5, missing README design. Docs: rails_rails/guides/source (82 prose guides), railties/RDOC_MAIN.md, RELEASING_RAILS.md.
+   - Score 4 of 5, missing README design. Docs: guides/source (82 prose guides), railties/RDOC_MAIN.md, RELEASING_RAILS.md.
    - Latest release 2026-09-24 (8.1.4); 500+ commits in the last 12 months, 64 authors, 22 with 3 or more commits; amatsuda wrote 19%. Spinel: no, railties/lib/rails/configuration.rb:174 method_missing; all.rb:19 require railtie (computed). Clone: `frameworks/rails_rails`.
 12. **[pry](https://github.com/pry/pry)**: plugin loading: command sets and commands; API design: embeddable REPL; testing: mock input helpers in spec/helper.rb
    - Score 4 of 5, missing README design. Docs: GitHub wiki.
@@ -260,7 +260,7 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
    - Latest release 2026-09-15 (0.105.0); 66 commits in the last 12 months, 5 authors, 2 with 3 or more commits; ioquatix wrote 61%. Spinel: no, depends on async, whose scheduler rests on the io-event native extension. Clone: `clients/socketry_async-http`.
 5. **[aws-sdk-core](https://github.com/aws/aws-sdk-ruby)**: plugin loading (seahorse plugins and handler stack), protocol (xml/json/query/rest serializers), API design
    - Score 4 of 5, missing README design. Docs: AWS SDK for Ruby developer guide.
-   - Latest release 2026-10-19 (3.258.0); 350 commits in the last 12 months, 23 authors, 6 with 3 or more commits; aws-sdk-ruby-automation wrote 70%. Spinel: no, lib/seahorse/client/configuration.rb:222 method_missing, plugin_list.rb:135 require(@gem_name), plugins/operation_methods.rb:42 define_method with computed name. Clone: `clients/aws_aws-sdk-ruby`.
+   - Latest release 2026-10-19 (3.258.0); 350 commits in the last 12 months, 23 authors, 6 with 3 or more commits; aws-sdk-ruby-automation wrote 70%. Spinel: no, gems/aws-sdk-core/lib/seahorse/client/configuration.rb:222 method_missing, gems/aws-sdk-core/lib/seahorse/client/plugin_list.rb:135 require(@gem_name), gems/aws-sdk-core/lib/seahorse/client/plugins/operation_methods.rb:42 define_method with computed name. Clone: `clients/aws_aws-sdk-ruby`.
 6. **[sqlite3](https://github.com/sparklemotion/sqlite3-ruby)**: docs (ADR practice, install guide), release (vendored sqlite packaging), testing
    - Score 4 of 5, missing README design. Docs: adr/2024-09-fork-safety.md, FAQ.md, INSTALLATION.md.
    - Latest release 2026-10-19 (2.10.1); 92 commits in the last 12 months, 11 authors, 2 with 3 or more commits; flavorjones wrote 83%. Spinel: n/a, native. Clone: `clients/sparklemotion_sqlite3-ruby`.
@@ -323,7 +323,7 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
 
 1. **[mustermann](https://github.com/sinatra/mustermann)**: parsing: pattern string to AST to Regexp pipeline; API design: pattern types, composition, expand and peek
    - Score 5 of 5. Docs: docs/ (patterns/*.md per pattern type, custom-patterns.md, performance.md).
-   - Latest release 2026-10-10 (4.0.1); 127 commits in the last 12 months, 4 authors, 2 with 3 or more commits; rkh wrote 94%. Spinel: no, lib/mustermann.rb:93 try_require with an interpolated path. Clone: `miscellaneous/sinatra_mustermann`.
+   - Latest release 2026-10-10 (4.0.1); 127 commits in the last 12 months, 4 authors, 2 with 3 or more commits; rkh wrote 94%. Spinel: no, mustermann/lib/mustermann.rb:93 try_require with an interpolated path. Clone: `miscellaneous/sinatra_mustermann`.
 2. **[dry-types](https://github.com/dry-rb/dry-types)**: API design: composable type objects (/ & constrained, default, schema); parsing/coercion pipelines (call_safe vs call_unsafe)
    - Score 4 of 5, missing README design. Docs: hanakai.org/learn/dry/dry-types.
    - Latest release 2026-02-06 (1.9.1); 18 commits in the last 12 months, 4 authors, 2 with 3 or more commits; timriley wrote 67%. Spinel: no, lib/dry/types/constructor.rb:176 method_missing; lib/dry/types/constructor/function.rb:63 string module_eval. Clone: `miscellaneous/dry-rb_dry-types`.
@@ -334,8 +334,8 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
    - Score 4 of 5, missing README design. Docs: hanakai.org/learn/dry/dry-struct.
    - Latest release 2026-03-03 (1.8.1); 11 commits in the last 12 months, 2 authors, 1 with 3 or more commits; timriley wrote 82%. Spinel: no, lib/dry/struct/class_interface.rb:455 string class_eval; runtime dependency dry-types is itself no. Clone: `miscellaneous/dry-rb_dry-struct`.
 5. **[activesupport](https://github.com/rails/rails)**: API design: Concern, callbacks, notifications, core_ext layout; config: lazy_load_hooks and ordered options
-   - Score 4 of 5, missing README design. Docs: rails_rails/guides/source/active_support_core_extensions.md, active_support_instrumentation.md, api_documentation_guidelines.md; extensive RDoc in source.
-   - Latest release 2026-09-24 (8.1.4); 500+ commits in the last 12 months, 64 authors, 22 with 3 or more commits; amatsuda wrote 19%. Spinel: no, lib/active_support/time_with_zone.rb:601 method_missing; time_with_zone.rb:493 string class_eval. Clone: `frameworks/rails_rails`, shared with the rails pick, since one repository is cloned once.
+   - Score 4 of 5, missing README design. Docs: guides/source/active_support_core_extensions.md, active_support_instrumentation.md, api_documentation_guidelines.md; extensive RDoc in source.
+   - Latest release 2026-09-24 (8.1.4); 500+ commits in the last 12 months, 64 authors, 22 with 3 or more commits; amatsuda wrote 19%. Spinel: no, activesupport/lib/active_support/time_with_zone.rb:601 method_missing; activesupport/lib/active_support/time_with_zone.rb:493 string class_eval. Clone: `frameworks/rails_rails`, shared with the rails pick, since one repository is cloned once.
 6. **[webmock](https://github.com/bblimke/webmock)**: testing: stub and expectation API; protocol: swapping HTTP client adapters behind one registry
    - Score 4 of 5, missing README design. Docs: GitHub wiki.
    - Latest release 2026-10-14 (3.34.0); 125 commits in the last 12 months, 18 authors, 3 with 3 or more commits; bblimke wrote 58%. Spinel: no, lib/webmock/webmock.rb:188 string class_eval; lib/webmock/util/query_mapper.rb:90 __send__ with computed name. Clone: `miscellaneous/bblimke_webmock`.
