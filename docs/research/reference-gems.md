@@ -360,10 +360,12 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
 
 ## Also in the reference tree
 
-Cloned for [#2](https://github.com/izkreny/markdownifico/issues/2) rather than picked, so they went through none of the steps above:
+Cloned for [#2](https://github.com/izkreny/markdownifico/issues/2) and [#3](https://github.com/izkreny/markdownifico/issues/3) rather than picked, so they went through none of the steps above:
 
 - **[roundhouse](https://github.com/rubys/roundhouse)**: the largest program compiled with Spinel, read for how it rewrites libraries that do not compile as they are. Clone: `compilers/rubys_roundhouse`.
 - **[spinel](https://github.com/matz/spinel)**: the ahead-of-time compiler #2 tries, read for the subset it accepts, its FFI and its package format. Clone: `compilers/matz_spinel`.
+- **[motion-markdown-it](https://github.com/digitalmoksha/motion-markdown-it)**: a pure-Ruby port of markdown-it and a CommonMark parser #1's survey did not cover, cloned for #2 as an existing parser to compile first. Spinel `2026.09.12+12405 (907e5556f)` refuses it at its runtime gems; with those on the path, 29 lines patched and a flat entry file it builds and matches 220 of 222 block-level spec examples, as `docs/research/spinel.md` records. Clone: `parsers/digitalmoksha_motion-markdown-it`.
+- **[psych-pure](https://github.com/kddnewton/psych-pure)**: Kevin Newton's pure-Ruby YAML 1.2 parser, cloned for #3 as the front matter parser. The same Spinel refuses it at `require "delegate"` and at `class Parser < StringScanner` (lib/psych/pure.rb:930), which stops the compile before its `method_missing` and `define_method`; `docs/research/spinel.md` has the detail. Clone: `parsers/kddnewton_psych-pure`.
 
 ## Rejected
 
