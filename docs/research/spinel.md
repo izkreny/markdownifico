@@ -63,7 +63,7 @@ Version 0.3.1 at `901859e`, for the three questions the 2026-10-23 comment on #2
 Keep the zero-runtime binary on the table: #3's ADR can keep the gem's core inside Spinel's subset at a known cost. What the two candidates say that cost is:
 
 1. **Code shaped like the prototype compiles cleanly**: typed classes, `case` dispatch, loops, no regexps and no metaprogramming gave zero refusals and zero widened slots.
-2. **Widening is the real risk, not refusals.** motion-markdown-it's options hashes, lambda rule tables and mixed-value hashes widened 855 slots, and every runtime failure and both C failures sat on a widened value. `spinel --emit-types` reports each widened slot, so it is the check to run in CI, not only the refusals.
+2. **Widening is the real risk, not refusals.** motion-markdown-it's options hashes, lambda rule tables and mixed-value hashes widened 855 slots, and every runtime failure and the first C failure sat on a widened value. The second C failure, the `rescue []` literal, needed nothing widened, so CI runs `spinel --emit-types`, which reports each widened slot as well as each refusal, beside building and running the binary, never instead of it.
 3. **String buffers start unfrozen**, with `+""` or `String.new`, since Spinel freezes literals.
 4. **Requires stay unconditional and relative**, in a flat entry file, which mise's `spinel:` backend wants anyway.
 5. **Source positions follow comrak's rules** wherever they must agree with commonmarker; commonmark.js's differ on item and list ends.
