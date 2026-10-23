@@ -61,17 +61,17 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
    - Score 4 of 5, missing README design. Docs: doc/csv/ (recipes, arguments, options). CI: GitHub Actions, 3 workflows. Licence: Ruby, BSD-2-Clause.
    - Latest release 2026-07-26 (3.3.6); 5 commits in the last 12 months, 4 authors, 0 with 3 or more commits; kou wrote 40%. Spinel: no, lib/csv/parser.rb:425 __send__(@parse_method); lib/csv.rb:2817 __send__(attr_name). Clone: `parsers/ruby_csv`.
 10. **[toml-rb](https://github.com/emancu/toml-rb)**: parsing: StringScanner-based hand parser with visitor nodes; testing: spec example corpus
-   - Score 4 of 5, missing README design. Docs: GitHub wiki. CI: GitHub Actions, 3 workflows. Licence: MIT.
-   - Latest release 2026-09-28 (6.0.0); 95 commits in the last 12 months, 4 authors, 2 with 3 or more commits; emancu wrote 94%. Spinel: no, Spinel refuses its Time subclass, `LocalDateTime = Class.new(Time)` at lib/toml-rb/datetime.rb:4, when compiling lib/toml-rb.rb. Clone: `parsers/emancu_toml-rb`.
+    - Score 4 of 5, missing README design. Docs: GitHub wiki. CI: GitHub Actions, 3 workflows. Licence: MIT.
+    - Latest release 2026-09-28 (6.0.0); 95 commits in the last 12 months, 4 authors, 2 with 3 or more commits; emancu wrote 94%. Spinel: no, Spinel refuses its Time subclass, `LocalDateTime = Class.new(Time)` at lib/toml-rb/datetime.rb:4, when compiling lib/toml-rb.rb. Clone: `parsers/emancu_toml-rb`.
 11. **[json](https://github.com/ruby/json)**: parsing: native parser/generator with pure-Ruby fallback; API design: Coder and generator state; release: README Release section
-   - Score 3 of 5, missing README design, lib/ layout. Docs: docs.ruby-lang.org/en/master/JSON.html. CI: GitHub Actions, 2 workflows. Licence: Ruby.
-   - Latest release 2026-10-13 (3.1.0); 342 commits in the last 12 months, 35 authors, 11 with 3 or more commits; byroot wrote 59%. Spinel: n/a, native. Clone: `parsers/ruby_json`.
+    - Score 3 of 5, missing README design, lib/ layout. Docs: docs.ruby-lang.org/en/master/JSON.html. CI: GitHub Actions, 2 workflows. Licence: Ruby.
+    - Latest release 2026-10-13 (3.1.0); 342 commits in the last 12 months, 35 authors, 11 with 3 or more commits; byroot wrote 59%. Spinel: n/a, native. Clone: `parsers/ruby_json`.
 12. **[psych](https://github.com/ruby/psych)**: parsing: libyaml event stream, handler and visitor pipeline; API design: safe_load and class_loader restrictions
-   - Score 3 of 5, missing README design, CHANGELOG. Docs: docs.ruby-lang.org/en/master/Psych.html. CI: GitHub Actions, 5 workflows. Licence: MIT.
-   - Latest release 2026-08-21 (5.5.0); 88 commits in the last 12 months, 14 authors, 6 with 3 or more commits; hsbt wrote 52%. Spinel: n/a, native. Clone: `parsers/ruby_psych`.
+    - Score 3 of 5, missing README design, CHANGELOG. Docs: docs.ruby-lang.org/en/master/Psych.html. CI: GitHub Actions, 5 workflows. Licence: MIT.
+    - Latest release 2026-08-21 (5.5.0); 88 commits in the last 12 months, 14 authors, 6 with 3 or more commits; hsbt wrote 52%. Spinel: n/a, native. Clone: `parsers/ruby_psych`.
 13. **[tomlrb](https://github.com/fbernier/tomlrb)**: parsing: regex/StringScanner TOML 1.0/1.1 parser; testing: conformance suite
-   - Score 3 of 5, missing README design, lib/ layout. Docs: GitHub wiki. CI: GitHub Actions, 2 workflows. Licence: MIT.
-   - Latest release 2026-10-15 (3.0.0); 47 commits in the last 12 months, 2 authors, 2 with 3 or more commits; KitaitiMakoto wrote 72%. Spinel: candidate. Clone: `parsers/fbernier_tomlrb`.
+    - Score 3 of 5, missing README design, lib/ layout. Docs: GitHub wiki. CI: GitHub Actions, 2 workflows. Licence: MIT.
+    - Latest release 2026-10-15 (3.0.0); 47 commits in the last 12 months, 2 authors, 2 with 3 or more commits; KitaitiMakoto wrote 72%. Spinel: candidate. Clone: `parsers/fbernier_tomlrb`.
 
 ## renderers
 
@@ -103,11 +103,11 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
    - Score 4 of 5, missing README design. Docs: docs/ (migrate_from_jbuilder.md, migrate_from_active_model_serializers.md, rails.md), HACKING.md. CI: GitHub Actions, 6 workflows. Licence: MIT.
    - Latest release 2026-10-17 (4.0.1); 165 commits in the last 12 months, 9 authors, 4 with 3 or more commits; okuramasafumi wrote 88%. Spinel: no, lib/alba/association.rb:80 __send__(@name); conditional_attribute.rb:56 __send__(@body.name). Clone: `renderers/okuramasafumi_alba`.
 10. **[phlex](https://github.com/yippee-fun/phlex)**: rendering: components rendering straight to a buffer, optional method compiler; API design: view-as-object; testing: Quickdraw
-   - Score 3 of 5, missing README design, CHANGELOG. Docs: phlex.fun. CI: GitHub Actions, 2 workflows. Licence: MIT.
-   - Latest release 2026-02-06 (2.4.1); 170 commits in the last 12 months, 8 authors, 2 with 3 or more commits; joeldrapper wrote 94%. Spinel: no, lib/phlex/compiler.rb:174 eval; lib/phlex/sgml/elements.rb:79 class_eval with a string; also block.binding in lib/phlex.rb:59. Clone: `renderers/yippee-fun_phlex`.
+    - Score 3 of 5, missing README design, CHANGELOG. Docs: phlex.fun. CI: GitHub Actions, 2 workflows. Licence: MIT.
+    - Latest release 2026-02-06 (2.4.1); 170 commits in the last 12 months, 8 authors, 2 with 3 or more commits; joeldrapper wrote 94%. Spinel: no, lib/phlex/compiler.rb:174 eval; lib/phlex/sgml/elements.rb:79 class_eval with a string; also block.binding in lib/phlex.rb:59. Clone: `renderers/yippee-fun_phlex`.
 11. **[jbuilder](https://github.com/rails/jbuilder)**: API design: block DSL building JSON; rendering: Rails template handler
-   - Score 3 of 5, missing README design, CHANGELOG. Docs: GitHub wiki. CI: GitHub Actions, 1 workflow. Licence: MIT.
-   - Latest release 2026-05-26 (2.15.1); 25 commits in the last 12 months, 7 authors, 2 with 3 or more commits; rafaelfranca wrote 56%. Spinel: no, lib/jbuilder.rb:237 alias_method :method_missing, :set!. Clone: `renderers/rails_jbuilder`.
+    - Score 3 of 5, missing README design, CHANGELOG. Docs: GitHub wiki. CI: GitHub Actions, 1 workflow. Licence: MIT.
+    - Latest release 2026-05-26 (2.15.1); 25 commits in the last 12 months, 7 authors, 2 with 3 or more commits; rafaelfranca wrote 56%. Spinel: no, lib/jbuilder.rb:237 alias_method :method_missing, :set!. Clone: `renderers/rails_jbuilder`.
 
 ## linters
 
@@ -139,17 +139,17 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
    - Score 4 of 5, missing README design. Docs: docs/docs/ (VitePress source: overview, language, bindings, c-reference, configuration, integrations, blog). CI: GitHub Actions, 8 workflows. Licence: MIT.
    - Latest release 2026-10-20 (0.11.1); 435 commits in the last 12 months, 27 authors, 5 with 3 or more commits; marcoroth wrote 88%. Spinel: n/a, native. Clone: `linters/marcoroth_herb`.
 10. **[rubycritic](https://github.com/whitesmith/rubycritic)**: plugin loading (analyser pipeline composing flay/flog/reek); rendering (HTML generators with ERB); CLI (commands/ with compare mode)
-   - Score 4 of 5, missing README design. Docs: docs/ (core-metrics.md, formatters.md, building-own-code-climate.md, jenkins-pr-reviews.md), ROADMAP.md, CONTRIBUTING.md. CI: GitHub Actions, 1 workflow. Licence: MIT.
-   - Latest release 2026-01-27 (5.0.0); 24 commits in the last 12 months, 7 authors, 2 with 3 or more commits; faisal wrote 54%. Spinel: no, lib/rubycritic/configuration.rb:92 method_missing, generators/html/base.rb:49 binding objects for ERB; depends on reek, flay, flog, parser, simplecov. Clone: `linters/whitesmith_rubycritic`.
+    - Score 4 of 5, missing README design. Docs: docs/ (core-metrics.md, formatters.md, building-own-code-climate.md, jenkins-pr-reviews.md), ROADMAP.md, CONTRIBUTING.md. CI: GitHub Actions, 1 workflow. Licence: MIT.
+    - Latest release 2026-01-27 (5.0.0); 24 commits in the last 12 months, 7 authors, 2 with 3 or more commits; faisal wrote 54%. Spinel: no, lib/rubycritic/configuration.rb:92 method_missing, generators/html/base.rb:49 binding objects for ERB; depends on reek, flay, flog, parser, simplecov. Clone: `linters/whitesmith_rubycritic`.
 11. **[yard-lint](https://github.com/mensfeld/yard-lint)**: rule API (validator = config + parser + result + messages_builder module); config (department/validator config, todo baseline, --check-todo); CLI (diff mode, SARIF output)
-   - Score 4 of 5, missing README design. Docs: GitHub wiki. CI: GitHub Actions, 2 workflows. Licence: MIT.
-   - Latest release 2026-09-23 (1.12.0); 341 commits in the last 12 months, 5 authors, 2 with 3 or more commits; mensfeld wrote 97%. Spinel: no, core depends on yard (heavy runtime metaprogramming) and zeitwerk (non-literal require, autoload); lib/yard/lint/config_loader.rb:21 and result_builder.rb:145 const_get, todo_generator.rb:86 send. Clone: `linters/mensfeld_yard-lint`.
+    - Score 4 of 5, missing README design. Docs: GitHub wiki. CI: GitHub Actions, 2 workflows. Licence: MIT.
+    - Latest release 2026-09-23 (1.12.0); 341 commits in the last 12 months, 5 authors, 2 with 3 or more commits; mensfeld wrote 97%. Spinel: no, core depends on yard (heavy runtime metaprogramming) and zeitwerk (non-literal require, autoload); lib/yard/lint/config_loader.rb:21 and result_builder.rb:145 const_get, todo_generator.rb:86 send. Clone: `linters/mensfeld_yard-lint`.
 12. **[pronto](https://github.com/prontolabs/pronto)**: plugin loading (inherited-hook runner registry, runners discovered via Gem::Specification in gem_names.rb); CLI (Thor); API design (small Runner base class contract)
-   - Score 4 of 5, missing README design. Docs: GitHub wiki. CI: GitHub Actions, 3 workflows. Licence: MIT.
-   - Latest release 2025-12-05 (0.11.5); 6 commits in the last 12 months, 5 authors, 0 with 3 or more commits; ashkulz wrote 33%. Spinel: no, lib/pronto/cli.rb:57 and rake_task/travis_pull_request.rb:37 require with non-literal name, gem_names.rb:10 Gem::Specification discovery of runtime-loaded gems; depends on rugged (native) and octokit. Clone: `linters/prontolabs_pronto`.
+    - Score 4 of 5, missing README design. Docs: GitHub wiki. CI: GitHub Actions, 3 workflows. Licence: MIT.
+    - Latest release 2025-12-05 (0.11.5); 6 commits in the last 12 months, 5 authors, 0 with 3 or more commits; ashkulz wrote 33%. Spinel: no, lib/pronto/cli.rb:57 and rake_task/travis_pull_request.rb:37 require with non-literal name, gem_names.rb:10 Gem::Specification discovery of runtime-loaded gems; depends on rugged (native) and octokit. Clone: `linters/prontolabs_pronto`.
 13. **[mdl](https://github.com/markdownlint/markdownlint)**: rule API (Rule/RuleSet/Style DSL, custom rulesets); docs (rule documentation generation, RULES.md); testing (annotated markdown goldens)
-   - Score 3 of 5, missing README design, lib/ layout. Docs: docs/ (configuration.md, creating_rules.md, creating_styles.md, RULES.md, rolling_a_release.md). CI: GitHub Actions, 3 workflows. Licence: MIT.
-   - Latest release 2026-08-09 (0.18.1); 62 commits in the last 12 months, 10 authors, 2 with 3 or more commits; jaymzh wrote 81%. Spinel: no, lib/mdl/style.rb:73 and ruleset.rb:86 instance_eval(File.read(...)) string eval to load styles/rulesets; depends on kramdown, mixlib-*. Clone: `linters/markdownlint_markdownlint`.
+    - Score 3 of 5, missing README design, lib/ layout. Docs: docs/ (configuration.md, creating_rules.md, creating_styles.md, RULES.md, rolling_a_release.md). CI: GitHub Actions, 3 workflows. Licence: MIT.
+    - Latest release 2026-08-09 (0.18.1); 62 commits in the last 12 months, 10 authors, 2 with 3 or more commits; jaymzh wrote 81%. Spinel: no, lib/mdl/style.rb:73 and ruleset.rb:86 instance_eval(File.read(...)) string eval to load styles/rulesets; depends on kramdown, mixlib-*. Clone: `linters/markdownlint_markdownlint`.
 
 ## cli
 
@@ -235,14 +235,14 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
    - Score 4 of 5, missing README design. Docs: docs/ (Overview.md, Parser.md, Handlers.md, CodeObjects.md, Tags.md, TagsArch.md, Templates.md, GettingStarted.md, WhatsNew.md). CI: GitHub Actions, 2 workflows. Licence: MIT.
    - Latest release 2026-07-14 (0.9.45); 131 commits in the last 12 months, 11 authors, 5 with 3 or more commits; lsegal wrote 82%. Spinel: no, lib/yard.rb:66 require file (computed); handlers register by subclass and are loaded by path, templates are evaluated at runtime. Clone: `frameworks/lsegal_yard`.
 10. **[padrino](https://github.com/padrino/padrino-framework)**: API design: Sinatra extension with mountable apps; plugin loading: reloader and mounter
-   - Score 4 of 5, missing README design. Docs: padrinorb.com/guides. CI: GitHub Actions, 1 workflow. Licence: MIT.
-   - Latest release 2026-10-15 (0.17.0); 120 commits in the last 12 months, 5 authors, 4 with 3 or more commits; nesquena wrote 73%. Spinel: no, padrino-core/lib/padrino-core/reloader/storage.rb:66 ObjectSpace.each_object; application/application_setup.rb:84 class_eval(&configuration) is block-only but ObjectSpace rules it out. Clone: `frameworks/padrino_padrino-framework`.
+    - Score 4 of 5, missing README design. Docs: padrinorb.com/guides. CI: GitHub Actions, 1 workflow. Licence: MIT.
+    - Latest release 2026-10-15 (0.17.0); 120 commits in the last 12 months, 5 authors, 4 with 3 or more commits; nesquena wrote 73%. Spinel: no, padrino-core/lib/padrino-core/reloader/storage.rb:66 ObjectSpace.each_object; application/application_setup.rb:84 class_eval(&configuration) is block-only but ObjectSpace rules it out. Clone: `frameworks/padrino_padrino-framework`.
 11. **[rails](https://github.com/rails/rails)**: plugin loading: Railtie/Engine/initializer graph; config: Rails::Application configuration; CLI: command classes
-   - Score 4 of 5, missing README design. Docs: guides/source (82 prose guides), railties/RDOC_MAIN.md, RELEASING_RAILS.md. CI: GitHub Actions, 10 workflows. Licence: MIT.
-   - Latest release 2026-09-24 (8.1.4); 500+ commits in the last 12 months, 64 authors, 22 with 3 or more commits; amatsuda wrote 19%. Spinel: no, railties/lib/rails/configuration.rb:174 method_missing; all.rb:19 require railtie (computed). Clone: `frameworks/rails_rails`.
+    - Score 4 of 5, missing README design. Docs: guides/source (82 prose guides), railties/RDOC_MAIN.md, RELEASING_RAILS.md. CI: GitHub Actions, 10 workflows. Licence: MIT.
+    - Latest release 2026-09-24 (8.1.4); 500+ commits in the last 12 months, 64 authors, 22 with 3 or more commits; amatsuda wrote 19%. Spinel: no, railties/lib/rails/configuration.rb:174 method_missing; all.rb:19 require railtie (computed). Clone: `frameworks/rails_rails`.
 12. **[pry](https://github.com/pry/pry)**: plugin loading: command sets and commands; API design: embeddable REPL; testing: mock input helpers in spec/helper.rb
-   - Score 4 of 5, missing README design. Docs: GitHub wiki. CI: GitHub Actions, 1 workflow. Licence: MIT.
-   - Latest release 2026-10-20 (0.16.1); 40 commits in the last 12 months, 5 authors, 1 with 3 or more commits; andrehjr wrote 90%. Spinel: no, lib/pry/cli.rb:99 eval(opts[:context]); lib/pry/code.rb:335 method_missing; the REPL core is built on Binding. Clone: `frameworks/pry_pry`.
+    - Score 4 of 5, missing README design. Docs: GitHub wiki. CI: GitHub Actions, 1 workflow. Licence: MIT.
+    - Latest release 2026-10-20 (0.16.1); 40 commits in the last 12 months, 5 authors, 1 with 3 or more commits; andrehjr wrote 90%. Spinel: no, lib/pry/cli.rb:99 eval(opts[:context]); lib/pry/code.rb:335 method_missing; the REPL core is built on Binding. Clone: `frameworks/pry_pry`.
 
 ## clients
 
@@ -274,8 +274,8 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
    - Score 3 of 5, missing README design, CHANGELOG. Docs: SPEC.md, example/. CI: GitHub Actions, 2 workflows. Licence: MIT.
    - Latest release 2025-10-23 (0.9.3); 5 commits in the last 12 months, 2 authors, 1 with 3 or more commits; iMacTia wrote 60%. Spinel: no, lib/sawyer/resource.rb:81 method_missing, resource.rb:108 define_method per attribute. Clone: `clients/lostisland_sawyer`.
 10. **[faraday](https://github.com/lostisland/faraday)**: plugin loading (middleware stack and registries), API design (adapter abstraction)
-   - Score 3 of 5, missing README design, CHANGELOG. Docs: docs/ (documentation-site source: getting-started, middleware, adapters, advanced, customization), UPGRADING.md. CI: GitHub Actions, 4 workflows. Licence: MIT.
-   - Latest release 2026-10-16 (2.15.0); 68 commits in the last 12 months, 19 authors, 5 with 3 or more commits; iMacTia wrote 31%. Spinel: no, lib/faraday.rb:176 method_missing, lib/faraday.rb:150 and connection.rb:198 string class_eval. Clone: `clients/lostisland_faraday`.
+    - Score 3 of 5, missing README design, CHANGELOG. Docs: docs/ (documentation-site source: getting-started, middleware, adapters, advanced, customization), UPGRADING.md. CI: GitHub Actions, 4 workflows. Licence: MIT.
+    - Latest release 2026-10-16 (2.15.0); 68 commits in the last 12 months, 19 authors, 5 with 3 or more commits; iMacTia wrote 31%. Spinel: no, lib/faraday.rb:176 method_missing, lib/faraday.rb:150 and connection.rb:198 string class_eval. Clone: `clients/lostisland_faraday`.
 
 ## servers
 
@@ -307,17 +307,17 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
    - Score 4 of 5, missing craft. Docs: docs/ (DESIGN, PHILOSOPHY, FORK_SAFETY, REFORKING, SIGNALS, TUNING, CONFIGURATION, MIGRATING_FROM_UNICORN, Application_Timeouts). CI: GitHub Actions, 2 workflows. Licence: GPL-2.0+, Ruby.
    - Latest release 2026-01-28 (0.18.2); 73 commits in the last 12 months, 7 authors, 4 with 3 or more commits; byroot wrote 44%. Spinel: n/a, native. Clone: `servers/Shopify_pitchfork`.
 10. **[puma](https://github.com/puma/puma)**: concurrency: thread pool + reactor + cluster/fork_worker supervision; config: DSL in dsl.rb; protocol: HTTP/1.1 parsing and TLS (minissl)
-   - Score 4 of 5, missing craft. Docs: docs/ (architecture.md, deployment.md, signals.md, restart.md, fork_worker.md, plugins.md, stats.md, systemd.md, kubernetes.md, nginx.md, 5.0-8.0 upgrade guides). CI: GitHub Actions, 7 workflows. Licence: BSD-3-Clause.
-   - Latest release 2026-05-26 (8.0.2); 150 commits in the last 12 months, 41 authors, 6 with 3 or more commits; nateberkopec wrote 30%. Spinel: n/a, native. Clone: `servers/puma_puma`.
+    - Score 4 of 5, missing craft. Docs: docs/ (architecture.md, deployment.md, signals.md, restart.md, fork_worker.md, plugins.md, stats.md, systemd.md, kubernetes.md, nginx.md, 5.0-8.0 upgrade guides). CI: GitHub Actions, 7 workflows. Licence: BSD-3-Clause.
+    - Latest release 2026-05-26 (8.0.2); 150 commits in the last 12 months, 41 authors, 6 with 3 or more commits; nateberkopec wrote 30%. Spinel: n/a, native. Clone: `servers/puma_puma`.
 11. **[good_job](https://github.com/bensheldon/good_job)**: concurrency: Postgres advisory locks, LISTEN/NOTIFY notifier, thread scheduler; API design: ActiveJob adapter and extensions
-   - Score 4 of 5, missing README design. Docs: API documentation in the source, with doc comments on 68% of its 300 public methods. CI: GitHub Actions, 2 workflows. Licence: MIT.
-   - Latest release 2026-10-13 (4.22.1); 163 commits in the last 12 months, 38 authors, 6 with 3 or more commits; bensheldon wrote 62%. Spinel: no, core is built on ActiveRecord/ActiveJob/Rails engine; own code uses string class_eval (log_subscriber.rb:365) and send with passed-in method name (good_job.rb:284). Clone: `servers/bensheldon_good_job`.
+    - Score 4 of 5, missing README design. Docs: API documentation in the source, with doc comments on 68% of its 300 public methods. CI: GitHub Actions, 2 workflows. Licence: MIT.
+    - Latest release 2026-10-13 (4.22.1); 163 commits in the last 12 months, 38 authors, 6 with 3 or more commits; bensheldon wrote 62%. Spinel: no, core is built on ActiveRecord/ActiveJob/Rails engine; own code uses string class_eval (log_subscriber.rb:365) and send with passed-in method name (good_job.rb:284). Clone: `servers/bensheldon_good_job`.
 12. **[shoryuken](https://github.com/ruby-shoryuken/shoryuken)**: concurrency: thread-based SQS polling with manager/fetcher; API design: server middleware chain
-   - Score 4 of 5, missing README design. Docs: GitHub wiki. CI: GitHub Actions, 3 workflows. Licence: LGPL-3.0.
-   - Latest release 2026-09-23 (7.0.4); 82 commits in the last 12 months, 4 authors, 1 with 3 or more commits; mensfeld wrote 95%. Spinel: no, lib/shoryuken/worker.rb:295,304,318 define_method with computed name; runner.rb:94 ObjectSpace.each_object; depends on aws-sdk-sqs and thor. Clone: `servers/ruby-shoryuken_shoryuken`.
+    - Score 4 of 5, missing README design. Docs: GitHub wiki. CI: GitHub Actions, 3 workflows. Licence: LGPL-3.0.
+    - Latest release 2026-09-23 (7.0.4); 82 commits in the last 12 months, 4 authors, 1 with 3 or more commits; mensfeld wrote 95%. Spinel: no, lib/shoryuken/worker.rb:295,304,318 define_method with computed name; runner.rb:94 ObjectSpace.each_object; depends on aws-sdk-sqs and thor. Clone: `servers/ruby-shoryuken_shoryuken`.
 13. **[listen](https://github.com/guard/listen)**: concurrency: event queue, FSM-driven listener lifecycle; testing: adapter specs with fakes; API design: adapter selection
-   - Score 4 of 5, missing CHANGELOG. Docs: GitHub wiki. CI: GitHub Actions, 2 workflows. Licence: MIT.
-   - Latest release 2026-10-01 (3.10.1); 25 commits in the last 12 months, 4 authors, 3 with 3 or more commits; rymai wrote 60%. Spinel: no, lib/listen/options.rb:19 method_missing; depends on rb-inotify and rb-fsevent (FFI). Clone: `servers/guard_listen`.
+    - Score 4 of 5, missing CHANGELOG. Docs: GitHub wiki. CI: GitHub Actions, 2 workflows. Licence: MIT.
+    - Latest release 2026-10-01 (3.10.1); 25 commits in the last 12 months, 4 authors, 3 with 3 or more commits; rymai wrote 60%. Spinel: no, lib/listen/options.rb:19 method_missing; depends on rb-inotify and rb-fsevent (FFI). Clone: `servers/guard_listen`.
 
 ## miscellaneous
 
@@ -349,14 +349,14 @@ Every other pick was ruled out by the reading: it is native, uses a refused cons
    - Score 4 of 5, missing README design. Docs: docs/ (nomenclature.md, configuration.md, hooks.md, concurrency.md, limitations.md, reading-reports.md, ast-pattern.md, mutant-rspec.md). CI: GitHub Actions, 1 workflow. Licence: Nonstandard.
    - Latest release 2026-10-21 (0.17.1); 312 commits in the last 12 months, 8 authors, 4 with 3 or more commits; mbj wrote 62%. Spinel: no, ruby/lib/mutant/zombifier.rb:77 kernel.eval; ruby/lib/mutant/hooks.rb:65 binding.eval; also require_highjack.rb overrides require. Clone: `miscellaneous/mbj_mutant`.
 10. **[simplecov](https://github.com/simplecov-ruby/simplecov)**: testing: coverage collection, merging and reporting; config: configuration DSL and profiles; CLI
-   - Score 4 of 5, missing README design. Docs: docs/ (Configuration.md, CLI.md, Formatters.md, Parallelism.md, Production.md, Troubleshooting.md, Roadmap.md) and man/simplecov.1. CI: GitHub Actions, 7 workflows. Licence: MIT.
-   - Latest release 2026-09-30 (1.3.2); 473 commits in the last 12 months, 11 authors, 3 with 3 or more commits; sferik wrote 96%. Spinel: no, lib/simplecov/profiles.rb:32 require with interpolated name; depends on prism. Clone: `miscellaneous/simplecov-ruby_simplecov`.
+    - Score 4 of 5, missing README design. Docs: docs/ (Configuration.md, CLI.md, Formatters.md, Parallelism.md, Production.md, Troubleshooting.md, Roadmap.md) and man/simplecov.1. CI: GitHub Actions, 7 workflows. Licence: MIT.
+    - Latest release 2026-09-30 (1.3.2); 473 commits in the last 12 months, 11 authors, 3 with 3 or more commits; sferik wrote 96%. Spinel: no, lib/simplecov/profiles.rb:32 require with interpolated name; depends on prism. Clone: `miscellaneous/simplecov-ruby_simplecov`.
 11. **[timecop](https://github.com/travisjeffery/timecop)**: testing: clock mocking via a time stack and monkeypatching Time/Date
-   - Score 4 of 5, missing craft. Docs: GitHub wiki. CI: GitHub Actions, 1 workflow. Licence: MIT.
-   - Latest release 2026-04-12 (0.9.11); 6 commits in the last 12 months, 6 authors, 0 with 3 or more commits; NikolasPilavakis wrote 17%. Spinel: no, lib/timecop/time_extensions.rb:11 captures Time.now with alias_method and :17 rebinds :now to a method that calls the captured alias, which Spinel's limitations list as refused. Clone: `miscellaneous/travisjeffery_timecop`.
+    - Score 4 of 5, missing craft. Docs: GitHub wiki. CI: GitHub Actions, 1 workflow. Licence: MIT.
+    - Latest release 2026-04-12 (0.9.11); 6 commits in the last 12 months, 6 authors, 0 with 3 or more commits; NikolasPilavakis wrote 17%. Spinel: no, lib/timecop/time_extensions.rb:11 captures Time.now with alias_method and :17 rebinds :now to a method that calls the captured alias, which Spinel's limitations list as refused. Clone: `miscellaneous/travisjeffery_timecop`.
 12. **[rdoc](https://github.com/ruby/rdoc)**: parsing: Ruby/C/Markdown source into code objects; rendering: markup formatters and generators; docs: markup reference
-   - Score 3 of 5, missing README design, CHANGELOG. Docs: doc/markup_reference/{rdoc.rdoc,markdown.md}, doc/configuration.md, man/ri.1. CI: GitHub Actions, 8 workflows. Licence: Ruby, GPL-2.0-only.
-   - Latest release 2026-09-28 (8.1.0); 226 commits in the last 12 months, 23 authors, 10 with 3 or more commits; st0012 wrote 48%. Spinel: no, lib/rdoc/generator/darkfish.rb:297 binding for ERB templates; core depends on erb and prism. Clone: `miscellaneous/ruby_rdoc`.
+    - Score 3 of 5, missing README design, CHANGELOG. Docs: doc/markup_reference/{rdoc.rdoc,markdown.md}, doc/configuration.md, man/ri.1. CI: GitHub Actions, 8 workflows. Licence: Ruby, GPL-2.0-only.
+    - Latest release 2026-09-28 (8.1.0); 226 commits in the last 12 months, 23 authors, 10 with 3 or more commits; st0012 wrote 48%. Spinel: no, lib/rdoc/generator/darkfish.rb:297 binding for ERB templates; core depends on erb and prism. Clone: `miscellaneous/ruby_rdoc`.
 
 ## Also in the reference tree
 
