@@ -399,7 +399,7 @@ Each tool links its repository at the tag, then one line per row that is not `n/
 - Footnotes: [parser_options.…#L16](https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L16)
 - Frontmatter: [front_matter_u…#L202](https://github.com/rvben/rumdl/blob/v0.3.0/src/rules/front_matter_utils.rs#L202)
 - Math: [parser_options.…#L21](https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L21)
-- Other extensions: [parser_options.…#L19](https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L19-L26), [lib.rs#L719-L722](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L719-L722) (pulldown-cmark)
+- Other extensions: [parser_options.…#L19](https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L19-L26), [lib.rs#L719-L722](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.4/pulldown-cmark/src/lib.rs#L719-L722) (pulldown-cmark)
 - Built-in rule count: [mod.rs#L218](https://github.com/rvben/rumdl/blob/v0.3.0/src/rules/mod.rs#L218)
 - markdownlint `MD###` ids: [mod.rs#L220](https://github.com/rvben/rumdl/blob/v0.3.0/src/rules/mod.rs#L220)
 - Inline disable comments: [inline_config.rs#L6](https://github.com/rvben/rumdl/blob/v0.3.0/src/inline_config.rs#L6)
