@@ -35,7 +35,7 @@ Every cell was read on 2026-10-23 at the version its column header names. The su
 | Rules | markdownlint `MD###` ids | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | yes | yes, partial | yes | yes, partial | yes | no | yes | no | yes, partial | no | yes | no | no |
 | Rules | Inline disable comments | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | yes | yes, markdownlint | no | yes, own | no | yes, own | yes, markdownlint | no | no | yes, own | no | yes, own | no |
 | Fixing | Autofix | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | yes | yes | yes | yes | no | no | yes | yes | no | no | yes | yes | yes, LSP only |
-| Fixing | Fix shape | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | yes, patch | yes, patch | yes, patch | yes, both | n/a | n/a | yes, patch | yes, patch | n/a | n/a | yes, patch | yes, patch | yes, patch |
+| Fixing | Fix shape | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | yes, patch | yes, both | yes, patch | yes, both | n/a | n/a | yes, patch | yes, patch | n/a | n/a | yes, patch | yes, patch | yes, patch |
 | Fixing | Dry run or diff | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | no | yes | no | no | n/a | n/a | yes | yes | n/a | n/a | yes | yes | no |
 | Output | HTML | yes | yes | yes | yes | yes | yes | yes | yes | yes | yes | n/a | n/a | n/a | yes, internal | n/a | n/a | n/a | yes, library | n/a | n/a | n/a | n/a | n/a |
 | Output | CommonMark back out | yes | yes | no | yes | yes | yes | no | no | no | no | n/a | n/a | n/a | yes, internal | n/a | n/a | n/a | n/a | n/a | yes, plugin | n/a | n/a | n/a |
@@ -404,7 +404,7 @@ Each tool links its repository at the tag, then one line per row that is not `n/
 - markdownlint `MD###` ids: [mod.rs#L220](https://github.com/rvben/rumdl/blob/v0.3.0/src/rules/mod.rs#L220)
 - Inline disable comments: [inline_config.rs#L6](https://github.com/rvben/rumdl/blob/v0.3.0/src/inline_config.rs#L6)
 - Autofix: [cli_types.rs#L158](https://github.com/rvben/rumdl/blob/v0.3.0/src/cli_types.rs#L158)
-- Fix shape: [rule.rs#L79](https://github.com/rvben/rumdl/blob/v0.3.0/src/rule.rs#L79)
+- Fix shape: [fix_coordinator…#L36](https://github.com/rvben/rumdl/blob/v0.3.0/src/fix_coordinator.rs#L36-L40), [fix_coordinato…#L835](https://github.com/rvben/rumdl/blob/v0.3.0/src/fix_coordinator.rs#L835-L844)
 - Dry run or diff: [cli_types.rs#L164](https://github.com/rvben/rumdl/blob/v0.3.0/src/cli_types.rs#L164)
 - AST dump: [main.rs#L109](https://github.com/rvben/rumdl/blob/v0.3.0/src/main.rs#L109)
 - Lint report formats: [cli_types.rs#L444](https://github.com/rvben/rumdl/blob/v0.3.0/src/cli_types.rs#L444)
