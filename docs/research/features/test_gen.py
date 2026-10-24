@@ -1,4 +1,4 @@
-"""gen.py refuses a citation it cannot label, naming the cell, and leaves the doc alone."""
+"""gen.py refuses a citation it cannot label, and the committed doc is what it renders."""
 import sys
 import unittest
 from pathlib import Path
@@ -25,6 +25,13 @@ class Citations(unittest.TestCase):
         finally:
             gen.SOURCES[key] = saved
         self.assertEqual(DOC.read_bytes(), before)
+
+
+class CommittedDoc(unittest.TestCase):
+    def test_the_doc_is_what_gen_renders(self):
+        text, problems = gen.render()
+        self.assertEqual(problems, [])
+        self.assertEqual(text, DOC.read_text(encoding="utf-8"), "rerun gen.py, or move a hand edit into matrix.py, head.md or tail.md")
 
 
 if __name__ == "__main__":

@@ -34,7 +34,7 @@ def cite(url, repo):
     return text if link_repo == repo else f"{text} ({link_repo.split('/')[1]})"
 
 
-def main():
+def render():
     grid = []
     for n, g, f, cells in ROWS:
         c = [x.strip() for x in cells.split(" | ")]
@@ -64,19 +64,25 @@ def main():
             except ValueError as e:
                 bad.append((key, n, str(e)))
         src.append("")
-    for m in missing:
-        print("no citation:", m, file=sys.stderr)
-    for b in bad:
-        print("bad citation:", b, file=sys.stderr)
-    if missing or bad:
-        return 1
+    problems = [f"no citation: {m}" for m in missing] + [f"bad citation: {b}" for b in bad]
+    if problems:
+        return None, problems
     parts = [
         (HERE / "head.md").read_text(encoding="utf-8"),
         "\n".join(table) + "\n",
         (HERE / "tail.md").read_text(encoding="utf-8"),
         "\n".join(src) + "\n",
     ]
-    (HERE.parent / "features.md").write_text("".join(parts), encoding="utf-8")
+    return "".join(parts), []
+
+
+def main():
+    text, problems = render()
+    for p in problems:
+        print(p, file=sys.stderr)
+    if problems:
+        return 1
+    (HERE.parent / "features.md").write_text(text, encoding="utf-8")
     return 0
 
 
