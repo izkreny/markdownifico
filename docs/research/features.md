@@ -89,7 +89,7 @@ Every cell was read on 2026-10-23 at the version its column header names. The su
 
 ## Scope
 
-Every feature markdownifico wants, in the first two lists, becomes an issue on the tracker. The first release's are written as full issues, each with its acceptance criteria; the later ones go in as draft issues, which record the feature and the tools that have it, with no plan yet for building it. The third list is what gets no issue at all.
+The first two lists sort what markdownifico wants by how much is known about building it. A first-release feature gets its full technical detail, its acceptance criteria and the design it rests on, before it is built; a later one goes in as a draft issue, the feature and the tools that have it, with no plan yet for building it. How the features divide into issues is decided when they are written, and the third list is what gets none.
 
 ### First release
 

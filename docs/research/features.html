@@ -908,7 +908,7 @@
 <li><strong>contextlint</strong>: checks tables, section order, cross-file references and checklists, and leaves syntax to markdownlint. remark-gfm is on, but no rule reads its nodes. Fixes exist in its language server only, and its core package exports <code>runRules</code> and the <code>Rule</code> type for rules of a library user's own; the CLI loads none.</li>
 </ul>
 <h2 id="scope">Scope</h2>
-<p>Every feature markdownifico wants, in the first two lists, becomes an issue on the tracker. The first release's are written as full issues, each with its acceptance criteria; the later ones go in as draft issues, which record the feature and the tools that have it, with no plan yet for building it. The third list is what gets no issue at all.</p>
+<p>The first two lists sort what markdownifico wants by how much is known about building it. A first-release feature gets its full technical detail, its acceptance criteria and the design it rests on, before it is built; a later one goes in as a draft issue, the feature and the tools that have it, with no plan yet for building it. How the features divide into issues is decided when they are written, and the third list is what gets none.</p>
 <h3 id="first-release">First release</h3>
 <ol type="1">
 <li><strong>CommonMark 0.31.2, the whole spec suite.</strong> cmark, commonmark.js, commonmark-java, comrak, pulldown-cmark and md4c all run 0.31.2's tests, and goldmark claims it; the parsers still on 0.29 are the ones a reader has to correct for.</li>
