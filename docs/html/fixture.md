@@ -4,6 +4,7 @@ A paragraph long enough to fill the text column, so the check can compare the wi
 
 ## A wide table
 
+<!-- freeze-columns: 2 -->
 | Group | Feature | Tool 1 1.1.0 | Tool 2 1.2.0 | Tool 3 1.3.0 | Tool 4 1.4.0 | Tool 5 1.5.0 | Tool 6 1.6.0 | Tool 7 1.7.0 | Tool 8 1.8.0 | Tool 9 1.9.0 | Tool 10 1.10.0 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | Group 1 | Feature number 1 | yes, value 1.1 | yes, value 1.2 | yes, value 1.3 | yes, value 1.4 | yes, value 1.5 | yes, value 1.6 | yes, value 1.7 | yes, value 1.8 | yes, value 1.9 | yes, value 1.10 |

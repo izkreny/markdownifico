@@ -1,9 +1,6 @@
-const TWO_FROZEN_FROM_COLUMNS = 6;
-
-function freeze(table) {
+function freeze(table, count) {
   const header = table.tHead?.rows[0];
   if (!header) return;
-  const count = header.cells.length >= TWO_FROZEN_FROM_COLUMNS ? 2 : 1;
   let left = 0;
   for (let col = 0; col < count; col++) {
     for (const row of table.rows) {
@@ -34,6 +31,6 @@ for (const figure of document.querySelectorAll("main > figure")) {
   const table = scroller?.querySelector(":scope > table");
   if (!table) continue;
   if (table.scrollWidth > scroller.clientWidth) figure.dataset.wide = "";
-  freeze(table);
+  freeze(table, Number(figure.dataset.freezeColumns ?? 0));
   addFullscreen(figure);
 }

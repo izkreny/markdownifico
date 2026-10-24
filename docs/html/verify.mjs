@@ -87,6 +87,8 @@ for (const scheme of ["light", "dark"]) {
   check(`${tag}: second column frozen`, a.c2[0] === b.c2[0], `left ${b.c2[0]} -> ${a.c2[0]}`);
   check(`${tag}: control, third column scrolls away (expected)`, b.c3[0] - a.c3[0] === frozen.scrolled[0], `left ${b.c3[0]} -> ${a.c3[0]}, scrolled ${frozen.scrolled[0]}`);
   check(`${tag}: header row frozen`, a.th[1] === b.th[1], `top ${b.th[1]} -> ${a.th[1]}`);
+  const marked = await evaluate(`(() => { const f = document.querySelector("main > figure"); return { attr: f.dataset.freezeColumns, frozen: f.querySelectorAll("[data-frozen]").length, rows: f.querySelectorAll("tr").length }; })()`);
+  check(`${tag}: marked table freezes its two columns`, marked.attr === "2" && marked.frozen === 2 * marked.rows, `data-freeze-columns=${marked.attr} frozen cells=${marked.frozen} rows=${marked.rows}`);
   check(`${tag}: frozen cells opaque`, !transparent(frozen.bg1) && !transparent(frozen.bg2) && !transparent(frozen.thBg), `c1=${frozen.bg1} c2=${frozen.bg2} th=${frozen.thBg}`);
 
   // WHY: a synthetic CDP mouse event missed the button in headless runs; click() under userGesture is the same handler with user activation.
@@ -106,7 +108,7 @@ for (const scheme of ["light", "dark"]) {
 await open("light");
 const narrow = await evaluate(`(() => { const f = document.querySelectorAll("main > figure")[1]; const p = document.querySelector("main > p"); return { wide: f.hasAttribute("data-wide"), w: Math.round(f.getBoundingClientRect().width), text: Math.round(p.getBoundingClientRect().width), scroll: f.querySelector(":scope > div").scrollWidth, client: f.querySelector(":scope > div").clientWidth, frozen: f.querySelectorAll("[data-frozen]").length, rows: f.querySelectorAll("tr").length }; })()`);
 check("narrow table: wraps inside the text column", !narrow.wide && Math.abs(narrow.w - narrow.text) <= 1 && narrow.scroll <= narrow.client, `wide=${narrow.wide} figure=${narrow.w}px scroll=${narrow.scroll} client=${narrow.client}`);
-check("narrow table: freezes one column", narrow.frozen === narrow.rows, `frozen cells=${narrow.frozen} rows=${narrow.rows}`);
+check("unmarked table: freezes no column", narrow.frozen === 0, `frozen cells=${narrow.frozen}`);
 
 for (const scheme of ["light", "dark"]) {
   await open(scheme);

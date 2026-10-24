@@ -1,12 +1,27 @@
 local has_mermaid = false
 
+local function freeze_marker(block)
+  if block and block.t == "RawBlock" and block.format == "html" then
+    return block.text:match("^%s*<!%-%-%s*freeze%-columns:%s*(%d+)%s*%-%->%s*$")
+  end
+end
+
+-- WHY: a table's frozen columns depend on what it holds, so the count comes from a comment written above it, which GitHub does not render.
 -- WHY: the inner div is the scroll container, so the figure can carry the fullscreen button outside the scrolling area.
-function Table(tbl)
-  return {
-    pandoc.RawBlock("html", "<figure>\n<div>"),
-    tbl,
-    pandoc.RawBlock("html", "</div>\n</figure>"),
-  }
+function Blocks(blocks)
+  local out = pandoc.List()
+  for i, block in ipairs(blocks) do
+    if block.t == "Table" then
+      local count = freeze_marker(blocks[i - 1])
+      local open = count and string.format('<figure data-freeze-columns="%s">', count) or "<figure>"
+      out:insert(pandoc.RawBlock("html", open .. "\n<div>"))
+      out:insert(block)
+      out:insert(pandoc.RawBlock("html", "</div>\n</figure>"))
+    elseif not (freeze_marker(block) and blocks[i + 1] and blocks[i + 1].t == "Table") then
+      out:insert(block)
+    end
+  end
+  return out
 end
 
 -- WHY: Simple.css wraps long strings only in paragraphs and headings, so a bare URL in a list item needs its own break points.
@@ -62,6 +77,6 @@ function Pandoc(doc)
 end
 
 return {
-  { Table = Table, CodeBlock = CodeBlock, Link = Link },
+  { Blocks = Blocks, CodeBlock = CodeBlock, Link = Link },
   { Pandoc = Pandoc },
 }
