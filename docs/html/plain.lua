@@ -27,8 +27,12 @@ function Link(link)
   if text ~= link.target then
     return nil
   end
-  local path = link.target:match("^https://github%.com/[^/]+/[^/]+/blob/[^/]+/(.+)$")
-  link.content = breakable(path or text)
+  local repo, ref, path = link.target:match("^https://github%.com/[^/]+/([^/]+)/blob/([^/]+)/(.+)$")
+  if repo then
+    -- WHY: a sources block cites dependencies too, so the text names the repository and ref, not just the path.
+    text = repo .. "@" .. ref:gsub("%%40", "@") .. "/" .. path
+  end
+  link.content = breakable(text)
   return link
 end
 
