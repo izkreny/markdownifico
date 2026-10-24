@@ -1,0 +1,49 @@
+figure > div {
+  overflow: auto;
+  max-height: 80vh;
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--standard-border-radius);
+}
+figure > div > table {
+  /* WHY: collapsed borders are drawn by the table, not the cell, so they scroll away from sticky cells; separate borders stay on them. */
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0;
+}
+/* WHY: a wide table scrolls anyway, so its cells stay on one line instead of wrapping into tall rows. */
+figure[data-wide] > div > table {
+  width: max-content;
+}
+figure > div > table :is(th, td) {
+  border-width: 0 var(--border-width) var(--border-width) 0;
+}
+figure > div > table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+figure > div > table [data-frozen] {
+  position: sticky;
+  z-index: 1;
+  background-color: var(--bg);
+}
+figure > div > table tr:nth-child(even) > [data-frozen] {
+  background-color: var(--accent-bg);
+}
+figure > div > table thead [data-frozen] {
+  z-index: 3;
+  background-color: var(--accent-bg);
+}
+
+figure > button {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+}
+figure:fullscreen {
+  background-color: var(--bg);
+  padding: 1rem;
+}
+figure:fullscreen > div {
+  max-height: calc(100vh - 4.5rem);
+}
