@@ -24,28 +24,6 @@ function Blocks(blocks)
   return out
 end
 
--- WHY: Simple.css wraps long strings only in paragraphs and headings, so a bare URL in a list item needs its own break points.
-local function breakable(text)
-  local inlines = {}
-  for part, slash in text:gmatch("([^/]*)(/?)") do
-    if part ~= "" then table.insert(inlines, pandoc.Str(part)) end
-    if slash ~= "" then
-      table.insert(inlines, pandoc.Str("/"))
-      table.insert(inlines, pandoc.RawInline("html", "<wbr>"))
-    end
-  end
-  return inlines
-end
-
-function Link(link)
-  local text = pandoc.utils.stringify(link.content)
-  if text ~= link.target then
-    return nil
-  end
-  link.content = breakable(text)
-  return link
-end
-
 function CodeBlock(block)
   if block.classes[1] ~= "mermaid" then
     return nil
@@ -72,6 +50,6 @@ function Pandoc(doc)
 end
 
 return {
-  { Blocks = Blocks, CodeBlock = CodeBlock, Link = Link },
+  { Blocks = Blocks, CodeBlock = CodeBlock },
   { Pandoc = Pandoc },
 }
