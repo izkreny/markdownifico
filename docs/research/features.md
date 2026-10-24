@@ -112,6 +112,7 @@ The first two lists sort what markdownifico wants by how much is known about bui
 2. **Publishing the parser extension API to other gems.** Its design is #3's and the first release's own GFM, footnotes and math already use it; what waits is making it a public, documented API that outside gems can build on. cmark-gfm, commonmark-java, goldmark, mdsmith and remark have one, and markdownlint-cli2 has one for the markdown-it parser its custom rules can use; the other parsers add syntax only by changing their own code.
 3. **Per-directory config.** markdownlint-cli2, rumdl, quickmark and remark-lint apply a config to its subtree.
 4. **GitHub alerts**, through the extension API. comrak, commonmark-java, markd, pulldown-cmark and rumdl parse them.
+5. **psych-pure for frontmatter, once Spinel compiles it.** Its `Psych::Pure.parse` gives a YAML syntax tree, so a rule can point at the exact key and value, and it keeps comments and parses exactly to YAML 1.2, none of which Spinel's bundled `psych` offers. The two blockers #2 found are to be reported upstream to psych-pure: its `require "delegate"`, a library Spinel does not provide, and its `class Parser < StringScanner`, which Spinel refuses and suggests replacing with a scanner held in an instance variable.
 
 ### Never
 
