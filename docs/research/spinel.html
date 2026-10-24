@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spinel and a CommonMark block parser</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simpledotcss@2.3.7/simple.min.css" integrity="sha384-w3/JhK7GP1jIgYT9phdYXYeUKzhTc4AxDpfqFZO1tkmCHBZrEmZ2c68gaD1yKhZq" crossorigin="anonymous">
+<link rel="stylesheet" href="../assets/docs.css">
+<script src="../assets/docs.js" defer></script>
+</head>
+<body>
+<main>
+<blockquote>
+<p>🤖 Written by AI --- read/modified by izkreny! 🤓</p>
+</blockquote>
+<h1 id="spinel-and-a-commonmark-block-parser">Spinel and a CommonMark block parser</h1>
+<p>The answer to <a href="https://github.com/izkreny/markdownifico/issues/2">#2</a>: can <a href="https://github.com/matz/spinel">Spinel</a> compile a pure-Ruby CommonMark block parser into a native binary whose block tree matches commonmarker's? Every fact below was checked on 2026-10-23. The prototype, the harness and the patched gems lived outside this repository and are thrown away, as the issue asks.</p>
+<h2 id="answer">Answer</h2>
+<p><strong>Go.</strong> A block parser written for Spinel's subset compiles with no refusal and no widened slot, and its binary matches commonmarker's block tree on all 222 in-scope spec examples, printing exactly what the same source prints under CRuby on every one. It needed no <code>RUBY_ENGINE</code> guard, hit none of Spinel's regexp or YAML limits, and one rewrite for the subset: a string buffer unfrozen with <code>+""</code>.</p>
+<p>An existing parser gets close too: motion-markdown-it, with 29 lines added or removed across seven files and a flat entry file, builds and matches 220 of 222, also without one binary-only difference. Its patches are the better map of what the subset costs a gem that was not written for it.</p>
+<h2 id="what-was-run">What was run</h2>
+<figure>
+<div>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spinel</td>
+<td><code>spinel 2026.09.12+12405 (907e5556f) [gcc 16.2.1 (cc)]</code>, built from master</td>
+</tr>
+<tr>
+<td>Reference</td>
+<td>commonmarker 2.10.1, which wraps comrak 0.56, under Ruby 4.0.7</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td>CommonMark spec 0.31.2, commonmark-spec at <code>8a5f764</code></td>
+</tr>
+<tr>
+<td>Models read</td>
+<td>commonmark.js at <code>8988869</code>, comrak at <code>0b465a9</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+<p><strong>The examples</strong> are the spec's sections for the block types the issue names, Thematic breaks, ATX headings, Setext headings, Indented code blocks, Fenced code blocks, Paragraphs, Block quotes, List items and Lists, plus Tabs, Precedence and Blank lines, which test block structure too: 225 examples, less 310 and 311, which need an HTML block, and 319, which needs a link reference definition, so 222.</p>
+<p><strong>A match</strong> is an equal printout of the block tree: block types and their nesting, heading level, list bullet or ordered with its start and tightness, a code block's info string and literal, and each block's start and end line as commonmarker's source positions give them. Inline nodes are dropped, so paragraph and heading text is not compared; the document's own range is left out, since it only restates the input's length.</p>
+<p><strong>The harness</strong> runs under CRuby and compares three printouts per example: commonmarker's, the candidate run by <code>ruby</code>, and the candidate compiled by Spinel. A mismatch under both is the parser's logic and a mismatch only in the binary is Spinel's. Fed commonmarker's own printout it reports 0 of 222 mismatched and exits 0; with one example's printout corrupted it reports exactly that example and exits 1.</p>
+<h2 id="the-prototype">The prototype</h2>
+<p>About 750 lines: plain classes with typed fields, <code>case</code> dispatch on the block type instead of a table of lambdas, <code>while</code> loops and hand-written character scanning instead of regexps, and an explicit stack wherever the tree is walked, as the issue's notes on matz/spinel#2948 advise. The block rules are a port of commonmark.js's lib/blocks.js, without HTML blocks and link reference definitions.</p>
+<ul>
+<li><strong>Compile.</strong> <code>spinel blocks.rb --emit-types</code> exits 0 with no diagnostics at all: no refusal, and not one parameter or return widened to untyped. The build takes 2.4 s and gives a 502 KB binary that links only libc and libm.</li>
+<li><strong>The one rewrite.</strong> The node's content buffer started as <code>""</code>, which compiled and then raised <code>FrozenError</code> on its first <code>&lt;&lt;</code>: Spinel treats string literals as frozen where CRuby without the magic comment does not. <code>+""</code> fixed it.</li>
+<li><strong>Speed.</strong> On a 326 KB input, the 222 examples repeated, the binary takes 0.02 to 0.04 s against CRuby's 0.20 s.</li>
+<li><strong>Result.</strong> 222 of 222 match, with no difference between the binary and CRuby on any example.</li>
+</ul>
+<p>The first version was a faithful commonmark.js port and scored 219: it failed 259, 262 and 315, every one on an item's or a list's end line, while the binary still agreed with CRuby everywhere. commonmark.js ends an item at its last child; comrak, which commonmarker wraps, ends a block on the line before the one that closes it, repairs column-0 ends when a list closes, widens each list to its widest descendant at the end, and lets a new block close only the containers that cannot hold it, so an item can close after its own list did. Ported from comrak's src/parser/mod.rs, those rules took the prototype to 222. One consequence worth knowing for any tool that reports lines from commonmarker: in 259 and 315 it reports an item ending one line after its own list.</p>
+<h2 id="motion-markdown-it">motion-markdown-it</h2>
+<p>Version 13.0.1 at <code>37443f7</code>, the pure-Ruby port of markdown-it, with its runtime gems mdurl-rb at <code>6d5202e</code>, uc.micro-rb at <code>6b6da1b</code> and linkify-it-rb at <code>b3a52a7</code>. Each step below is what the compiler or the binary reported and what got it past:</p>
+<ol type="1">
+<li><strong>Runtime gems.</strong> With <code>--require-gate</code> the compile stops at <code>require "linkify-it-rb"</code>. The three gems were cloned and put on the path with <code>-I</code>.</li>
+<li><strong>rules_inline/autolink.rb:8.</strong> <code>EMAIL_RE</code> contains <code>#$\%</code>, which Ruby reads as an interpolated <code>$\</code>, and Spinel refuses the global read. This is a latent bug in the gem: under CRuby <code>$\</code> is nil, so the interpolation removes <code>#</code>, <code>$</code> and the backslash from the character class, and an address containing <code>#</code> or <code>$</code> no longer matches. Escaped as <code>\#\$%</code>.</li>
+<li><strong>The entry file.</strong> motion-markdown-it.rb wraps its requires in <code>if defined?(Motion::Project::Config) … else … end</code>, and through it Spinel reports <code>MDUrl::Url</code> and <code>UNICODE_PUNCT_RE</code> as defined nowhere, refuses a <code>slice</code> at rules_core/linkify.rb:76, and leaves a refusal at index.rb:33. A flat entry file holding the same requires compiles past all four. Reduced afterwards with <code>spinel-reduce</code> to three files: a dead <code>if defined?(…)</code> branch that requires a file, which itself requires two files inside its own <code>defined?</code> conditional, loses the last of those, and mdurl-rb and uc.micro-rb are both shaped that way.</li>
+<li><strong>linkify-it-rb/index.rb:161.</strong> <code>schemaError(name, val)</code> calls a local lambda as if it were a method, a latent bug that would raise <code>NoMethodError</code> under CRuby if reached. Changed to <code>schemaError.call</code>.</li>
+<li><strong>mdurl-rb/encode.rb:83.</strong> It uses <code>CGI</code> without requiring it, relying on CRuby having loaded it; Spinel asks for <code>require "cgi"</code>, which was added.</li>
+<li><strong>C that does not compile.</strong> Spinel accepted the program twice and generated C that gcc rejected: <code>state.pending += state.src[state.pos]</code> at parser_inline.rb:140 adds a boxed value to a String (an added <code>.to_s</code> still failed; <code>state.pending = state.pending + … .to_s</code> compiled), and <code>domain.split(".") rescue []</code> at common/simpleidn.rb:216 and 233 assigns an empty literal typed as an Integer array to a String array. The <code>rescue []</code> was dropped.</li>
+<li><strong>Missing methods at run time.</strong> The binary raised <code>NoMethodError</code> for <code>merge!</code> in linkify-it-rb, whose <code>Linkify#initialize(schemas = {}, options = {})</code> builds <code>{}.merge!(DEFAULT_SCHEMAS).merge!(schemas)</code>; reduced afterwards, a <code>{}</code> default parameter is the trigger, <code>def mk(extra = {}) = {}.merge!(extra)</code> failing where <code>mk({})</code> works, and the <code>merge!</code> also patched at common/utils.rb:13 turned out not to need it. A <code>gsub</code> on a String taken from linkify-it-rb's hash of mixed Strings and Regexps at index.rb:129 failed the same way, and is not reduced. The <code>merge!</code> calls became loops, and the <code>Linkify</code> instance, which the CommonMark preset never uses, is skipped behind <code>if RUBY_ENGINE == "spinel"</code>: the escape hatch, needed here and not in the prototype.</li>
+</ol>
+<p>The result, through a printer of its block tokens that runs inside the binary: a 1.97 MB binary built in 23 s, matching 220 of 222, with no binary-only difference. The two failures, 259 and 315, are the comrak end-line convention above, which markdown-it's line maps do not follow. The patches are 29 lines added or removed across seven files. None of the C failures or the entry-file behaviour was reported upstream.</p>
+<h2 id="psych-pure">psych-pure</h2>
+<p>Version 0.3.1 at <code>901859e</code>, for the three questions the 2026-10-23 comment on #2 asks:</p>
+<ol type="1">
+<li><strong><code>require "psych"</code></strong> resolves to Spinel's bundled package, as do <code>pp</code>, <code>strscan</code> and <code>stringio</code>. <code>require "delegate"</code> does not: under <code>--require-gate</code> it is the first refusal, and without the gate a warning.</li>
+<li><strong><code>class Parser &lt; StringScanner</code></strong> at lib/psych/pure.rb:930 is refused, subclassing StringScanner not being supported yet, and Spinel suggests holding a StringScanner in an instance variable instead. The refusal stops the compile even with <code>--defer-refusals</code>.</li>
+<li><strong>The <code>method_missing</code></strong> at lib/psych/pure.rb:243 <strong>and the <code>define_method</code></strong> at line 4080 were not reached, since the compile stops at the subclass. Answering them means rewriting the 3,200-line parser around a held scanner first.</li>
+</ol>
+<h2 id="recommendation">Recommendation</h2>
+<p>Keep the zero-runtime binary on the table: #3's ADR can keep the gem's core inside Spinel's subset at a known cost. What the two candidates say that cost is:</p>
+<ol type="1">
+<li><strong>Code shaped like the prototype compiles cleanly</strong>: typed classes, <code>case</code> dispatch, loops, no regexps and no metaprogramming gave zero refusals and zero widened slots.</li>
+<li><strong>What compiles can still fail, so refusals are not the whole check.</strong> motion-markdown-it's options hashes, lambda rule tables and mixed-value hashes widened 855 slots, and the first C failure sat on a widened value, but the <code>merge!</code> <code>NoMethodError</code> and the <code>rescue []</code> C failure needed nothing widened. So CI runs <code>spinel --emit-types</code>, which reports each widened slot as well as each refusal, beside building the binary and comparing its output with CRuby's, never instead of it.</li>
+<li><strong>String buffers start unfrozen</strong>, with <code>+""</code> or <code>String.new</code>, since Spinel freezes literals.</li>
+<li><strong>Requires stay unconditional and relative</strong>, in a flat entry file, which mise's <code>spinel:</code> backend wants anyway.</li>
+<li><strong>Source positions follow comrak's rules</strong> wherever they must agree with commonmarker; commonmark.js's differ on item and list ends.</li>
+</ol>
+</main>
+</body>
+</html>
