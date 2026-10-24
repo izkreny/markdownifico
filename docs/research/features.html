@@ -878,7 +878,7 @@
 <ul>
 <li><strong>cmark</strong>: no extensions beyond smart punctuation; GFM lives in the cmark-gfm fork. Its XML renderer is the AST dump, and man and LaTeX are its other renderers.</li>
 <li><strong>cmark-gfm</strong>: tests against the GFM spec 0.29, which is built on CommonMark 0.29, not 0.31. Tables, strikethrough, autolinks, task lists and the tagfilter are registered syntax extensions attached by name; footnotes are a core option flag instead.</li>
-<li><strong>commonmark.js</strong>: source positions on block nodes only, as its README says. Its XML renderer is the AST dump.</li>
+<li><strong>commonmark.js</strong>: source positions on block nodes only: lib/blocks.js gives every block a start line and column, and lib/inlines.js creates inline nodes without one. Its XML renderer is the AST dump.</li>
 <li><strong>commonmark-java</strong>: positions are source spans of line, column, input offset and length, so an end is computed rather than stored. Its ten extension modules include YAML frontmatter, parsed by a built-in YAML subset parser; the four outside GFM are alerts, heading anchors, image attributes and <code>++ins++</code>. No tree dump beyond a per-node <code>toString()</code>.</li>
 <li><strong>comrak</strong>: the spec is a submodule pinned at 0.31.2, and its CI also runs the GFM spec. Every extension beyond the GFM set is off by default, among them alerts, description lists, wikilinks, heading ids, superscript, subscript, underline and spoilers. Plugins exist for rendering only, such as syntax highlighting; nothing adds syntax.</li>
 <li><strong>commonmarker</strong>: its own suite runs the GFM spec 0.29 fixture, while the comrak 0.56 it wraps targets 0.31.2. From comrak 0.56 it does not expose the attribute extensions, <code>phoenix_heex</code>, the URL rewriters, the broken-link callback, <code>tasklist_in_table</code>, the list-style and figure render options, the heading and code-fence render plugins other than syntax highlighting, and XML output. Every node carries start and end line and column through <code>source_position</code>.</li>
@@ -994,13 +994,13 @@
 <li>Footnotes: <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/node.js#L1-L30">lib/<wbr>node.js#L1-L30</a></li>
 <li>Frontmatter: <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/blocks.js">lib/<wbr>blocks.js</a></li>
 <li>Math: <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/blocks.js">lib/<wbr>blocks.js</a></li>
-<li>Other extensions: <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/README.md#L102">README.md#L102</a></li>
+<li>Other extensions: <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/inlines.js#L786">lib/<wbr>inlines.js#L786</a></li>
 <li>HTML: <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/render/html.js#L34">lib/<wbr>render/<wbr>html.js#L34</a></li>
 <li>CommonMark back out: <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/index.js#L11-L15">lib/<wbr>index.js#L11-L15</a></li>
 <li>AST dump: <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/bin/commonmark#L70">bin/<wbr>commonmark#L70</a></li>
 <li>Other renderers: <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/render/xml.js#L12">lib/<wbr>render/<wbr>xml.js#L12</a></li>
 <li>On nodes: <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/node.js#L69-L76">lib/<wbr>node.js#L69-L76</a></li>
-<li>With columns: <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/README.md#L152-L153">README.md#L152-L153</a></li>
+<li>With columns: <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/blocks.js#L104-L107">lib/<wbr>blocks.js#L104-L107</a>, <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/inlines.js#L93">lib/<wbr>inlines.js#L93</a></li>
 <li>With end positions: <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/blocks.js#L906">lib/<wbr>blocks.js#L906</a></li>
 <li>Parser extension API: <a href="https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/index.js#L11-L15">lib/<wbr>index.js#L11-L15</a></li>
 </ul>
@@ -1015,7 +1015,7 @@
 <li>Footnotes: <a href="https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-ext-footnotes/src/main/java/org/commonmark/ext/footnotes/FootnotesExtension.java#L52">commonmark-ext-footnotes/<wbr>src/<wbr>main/<wbr>java/<wbr>org/<wbr>commonmark/<wbr>ext/<wbr>footnotes/<wbr>FootnotesExtension.java#L52</a></li>
 <li>Frontmatter: <a href="https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-ext-yaml-front-matter/src/main/java/org/commonmark/ext/front/matter/YamlFrontMatterExtension.java#L53">commonmark-ext-yaml-front-matter/<wbr>src/<wbr>main/<wbr>java/<wbr>org/<wbr>commonmark/<wbr>ext/<wbr>front/<wbr>matter/<wbr>YamlFrontMatterExtension.java#L53</a></li>
 <li>Math: <a href="https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/CHANGELOG.md#L198">CHANGELOG.md#L198</a></li>
-<li>Other extensions: <a href="https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/README.md#L338">README.md#L338</a></li>
+<li>Other extensions: <a href="https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0/commonmark-ext-gfm-alerts">https:/<wbr>/<wbr>github.com/<wbr>commonmark/<wbr>commonmark-java/<wbr>tree/<wbr>commonmark-parent-0.31.0/<wbr>commonmark-ext-gfm-alerts</a>, <a href="https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0/commonmark-ext-heading-anchor">https:/<wbr>/<wbr>github.com/<wbr>commonmark/<wbr>commonmark-java/<wbr>tree/<wbr>commonmark-parent-0.31.0/<wbr>commonmark-ext-heading-anchor</a>, <a href="https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0/commonmark-ext-image-attributes">https:/<wbr>/<wbr>github.com/<wbr>commonmark/<wbr>commonmark-java/<wbr>tree/<wbr>commonmark-parent-0.31.0/<wbr>commonmark-ext-image-attributes</a>, <a href="https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0/commonmark-ext-ins">https:/<wbr>/<wbr>github.com/<wbr>commonmark/<wbr>commonmark-java/<wbr>tree/<wbr>commonmark-parent-0.31.0/<wbr>commonmark-ext-ins</a></li>
 <li>HTML: <a href="https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/renderer/html/HtmlRenderer.java#L20">commonmark/<wbr>src/<wbr>main/<wbr>java/<wbr>org/<wbr>commonmark/<wbr>renderer/<wbr>html/<wbr>HtmlRenderer.java#L20</a></li>
 <li>CommonMark back out: <a href="https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/renderer/markdown/MarkdownRenderer.java#L28">commonmark/<wbr>src/<wbr>main/<wbr>java/<wbr>org/<wbr>commonmark/<wbr>renderer/<wbr>markdown/<wbr>MarkdownRenderer.java#L28</a></li>
 <li>AST dump: <a href="https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/node/Node.java#L154">commonmark/<wbr>src/<wbr>main/<wbr>java/<wbr>org/<wbr>commonmark/<wbr>node/<wbr>Node.java#L154</a></li>
@@ -1172,22 +1172,22 @@
 <li>Other extensions: <a href="https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L25-L34">lib/<wbr>micromark-parse.mjs#L25-L34</a></li>
 <li>Built-in rule count: <a href="https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/rules.mjs#L59-L116">lib/<wbr>rules.mjs#L59-L116</a></li>
 <li>markdownlint <code>MD###</code> ids: <a href="https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/md001.mjs#L9">lib/<wbr>md001.mjs#L9</a></li>
-<li>Inline disable comments: <a href="https://github.com/DavidAnson/markdownlint/blob/v0.42.0/README.md#L215-L226">README.md#L215-L226</a></li>
+<li>Inline disable comments: <a href="https://github.com/DavidAnson/markdownlint/blob/v0.42.0/helpers/helpers.cjs#L27">helpers/<wbr>helpers.cjs#L27</a>, <a href="https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.mjs#L353-L373">lib/<wbr>markdownlint.mjs#L353-L373</a></li>
 <li>Autofix: <a href="https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L984-L985">markdownlint-cli2.mjs#L984-L985</a></li>
 <li>Fix shape: <a href="https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.mjs#L1206-L1215">lib/<wbr>markdownlint.mjs#L1206-L1215</a></li>
 <li>Dry run or diff: <a href="https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L248-L283">markdownlint-cli2.mjs#L248-L283</a></li>
 <li>AST dump: <a href="https://github.com/DavidAnson/markdownlint/blob/v0.42.0/doc/CustomRules.md#L113-L115">doc/<wbr>CustomRules.md#L113-L115</a></li>
-<li>Lint report formats: <a href="https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/README.md#L232-L247">README.md#L232-L247</a></li>
+<li>Lint report formats: <a href="https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/formatter-json/markdownlint-cli2-formatter-json.js">formatter-json/<wbr>markdownlint-cli2-formatter-json.js</a>, <a href="https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/formatter-sarif/markdownlint-cli2-formatter-sarif.js">formatter-sarif/<wbr>markdownlint-cli2-formatter-sarif.js</a>, <a href="https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/formatter-junit/markdownlint-cli2-formatter-junit.js">formatter-junit/<wbr>markdownlint-cli2-formatter-junit.js</a></li>
 <li>On nodes: <a href="https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.d.mts#L268-L275">lib/<wbr>markdownlint.d.mts#L268-L275</a></li>
 <li>With columns: <a href="https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.d.mts#L272-L275">lib/<wbr>markdownlint.d.mts#L272-L275</a></li>
 <li>With end positions: <a href="https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.d.mts#L276-L283">lib/<wbr>markdownlint.d.mts#L276-L283</a></li>
 <li>On findings, line and column: <a href="https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.d.mts#L674-L680">lib/<wbr>markdownlint.d.mts#L674-L680</a></li>
 <li>Config file formats: <a href="https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L159-L170">markdownlint-cli2.mjs#L159-L170</a></li>
 <li>Reads <code>.markdownlint.*</code>: <a href="https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L315-L320">markdownlint-cli2.mjs#L315-L320</a></li>
-<li>Per-directory config: <a href="https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/README.md#L438-L440">README.md#L438-L440</a></li>
+<li>Per-directory config: <a href="https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L661-L685">markdownlint-cli2.mjs#L661-L685</a></li>
 <li>Parser extension API: <a href="https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L60-L74">lib/<wbr>micromark-parse.mjs#L60-L74</a></li>
 <li>Custom rule API: <a href="https://github.com/DavidAnson/markdownlint/blob/v0.42.0/doc/CustomRules.md#L89-L98">doc/<wbr>CustomRules.md#L89-L98</a></li>
-<li>Plugin discovery: <a href="https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/README.md#L340-L343">README.md#L340-L343</a></li>
+<li>Plugin discovery: <a href="https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L600-L609">markdownlint-cli2.mjs#L600-L609</a></li>
 </ul>
 <h3 id="rumdl-030">rumdl 0.3.0</h3>
 <p><a href="https://github.com/rvben/rumdl/tree/v0.3.0">https:/<wbr>/<wbr>github.com/<wbr>rvben/<wbr>rumdl/<wbr>tree/<wbr>v0.3.0</a></p>
