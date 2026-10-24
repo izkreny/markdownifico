@@ -28,7 +28,7 @@ def label(url):
 def cite(url, repo):
     m = re.match(r"https://github\.com/([^/]+/[^/]+)/", url)
     if not m:
-        raise ValueError(f"not a GitHub link: {url}")
+        raise ValueError(f"not a https://github.com/<owner>/<repo>/... link: {url}")
     link_repo = m.group(1)
     text = f"[{label(url)}]({url})"
     return text if link_repo == repo else f"{text} ({link_repo.split('/')[1]})"
