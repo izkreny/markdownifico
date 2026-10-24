@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$pagetitle$</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simpledotcss@2.3.7/simple.min.css" integrity="sha384-w3/JhK7GP1jIgYT9phdYXYeUKzhTc4AxDpfqFZO1tkmCHBZrEmZ2c68gaD1yKhZq" crossorigin="anonymous">
+<link rel="stylesheet" href="$assets$/docs.css">
+<script src="$assets$/docs.js" defer></script>
+$if(mermaid)$
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@12.1.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({ startOnLoad: true, theme: matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "default" });
+</script>
+$endif$
+</head>
+<body>
+<main>
+$body$
+</main>
+</body>
+</html>
