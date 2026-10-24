@@ -89,6 +89,8 @@ Every cell was read on 2026-10-23 at the version its column header names. The su
 
 ## Scope
 
+Every feature markdownifico wants, in the first two lists, becomes an issue on the tracker. The first release's are written as full issues, each with its acceptance criteria; the later ones go in as draft issues, which record the feature and the tools that have it, with no plan yet for building it. The third list is what gets no issue at all.
+
 ### First release
 
 1. **CommonMark 0.31.2, the whole spec suite.** cmark, commonmark.js, commonmark-java, comrak, pulldown-cmark and md4c all run 0.31.2's tests, and goldmark claims it; the parsers still on 0.29 are the ones a reader has to correct for.
@@ -101,9 +103,9 @@ Every cell was read on 2026-10-23 at the version its column header names. The su
 8. **Reading .markdownlint.json, .jsonc, .yaml and .yml.** markdownlint-cli2, rumdl and goldmark-lint read them, and mdmend reads the JSON one. #3 asks the same question as for the ids, and the same answer holds.
 9. **An AST dump.** cmark, cmark-gfm, commonmark.js and comrak print XML, goldmark and commonmarker pretty-print, remark-cli prints JSON. A rule author needs to see the tree a rule walks, and #2's harness already compared parsers by printing it.
 
-### Later
+### Later, as draft issues
 
-1. **GFM: tables, task lists, strikethrough, extended autolinks and footnotes.** cmark-gfm, commonmark-java, comrak, commonmarker, goldmark and md4c parse all five, and every Markdown linter with a parser has tables. A table read as plain CommonMark lints as paragraphs, so this is the first feature after the first release, and it arrives through the extension API rather than in the core.
+1. **GFM's tables, task lists, strikethrough and extended autolinks, and footnotes.** cmark-gfm, commonmark-java, comrak, commonmarker, goldmark and md4c parse all five, and every Markdown linter with a parser has tables. A table read as plain CommonMark lints as paragraphs, so this is the first feature after the first release, and it arrives through the extension API rather than in the core.
 2. **Autofix as patches, with a dry run or diff.** Every fixing linter here patches, with pymarkdownlnt's token fixes and a few rumdl rules the only ones that rewrite the whole document; rumdl, goldmark-lint, mdsmith and mdmend show fixes without writing them. It waits on the positions of the first release.
 3. **A custom rule API, loaded by name or path from config.** markdownlint-cli2, mdl, pymarkdownlnt, remark-lint and Vale load rules from config; rumdl, goldmark-lint, mdmend and contextlint take them only through their libraries, and the rest take none. #3's extensibility ADR, with skills-guru's rules as its test case, decides the shape.
 4. **A public parser extension API.** cmark-gfm, commonmark-java, goldmark, mdsmith and remark have one, and markdownlint-cli2 has one for the markdown-it parser its custom rules can use; the other parsers add syntax only by changing their own code. GFM goes through it first, before it is published.
