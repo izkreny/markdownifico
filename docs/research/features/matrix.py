@@ -1,4 +1,4 @@
-"""The final cells, by hand, from the gather files and the re-reads."""
+"""The tools, every cell and each cell's citations, which gen.py writes into docs/research/features.md."""
 
 TOOLS = [
     ("cmark", "cmark 0.31.2", "commonmark/cmark", "0.31.2"),
