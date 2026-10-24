@@ -122,639 +122,639 @@ Every cell was read on 2026-10-23 at the version its column header names. The su
 
 ## Sources
 
-Each tool links its tree at the tag, then one line per row that is not `n/a`, citing the file and line that decided the cell.
+Each tool links its repository at the tag, then one line per row that is not `n/a`, citing the file and line that decided the cell; a citation from another repository, such as a dependency's, names that repository after the link.
 
 ### cmark 0.31.2
 
-https://github.com/commonmark/cmark/tree/0.31.2
+[repository](https://github.com/commonmark/cmark/tree/0.31.2) at 0.31.2
 
-- CommonMark spec version: https://github.com/commonmark/cmark/blob/0.31.2/test/spec.txt#L4
-- GFM tables: https://github.com/commonmark/cmark/blob/0.31.2/src/cmark.h#L36-L66
-- GFM task lists: https://github.com/commonmark/cmark/blob/0.31.2/src/cmark.h#L36-L66
-- GFM strikethrough: https://github.com/commonmark/cmark/blob/0.31.2/src/cmark.h#L36-L66
-- GFM extended autolinks: https://github.com/commonmark/cmark/blob/0.31.2/src/inlines.c
-- Footnotes: https://github.com/commonmark/cmark/blob/0.31.2/src/cmark.h#L36-L66
-- Frontmatter: https://github.com/commonmark/cmark/blob/0.31.2/src/blocks.c
-- Math: https://github.com/commonmark/cmark/blob/0.31.2/src/cmark.h#L36-L66
-- Other extensions: https://github.com/commonmark/cmark/blob/0.31.2/src/cmark.h#L642
-- HTML: https://github.com/commonmark/cmark/blob/0.31.2/src/html.c#L329
-- CommonMark back out: https://github.com/commonmark/cmark/blob/0.31.2/src/commonmark.c#L466
-- AST dump: https://github.com/commonmark/cmark/blob/0.31.2/src/xml.c#L209
-- Other renderers: https://github.com/commonmark/cmark/blob/0.31.2/src/man.c#L279
-- On nodes: https://github.com/commonmark/cmark/blob/0.31.2/src/node.h#L70
-- With columns: https://github.com/commonmark/cmark/blob/0.31.2/src/node.h#L71
-- With end positions: https://github.com/commonmark/cmark/blob/0.31.2/src/node.h#L72-L73
-- Parser extension API: https://github.com/commonmark/cmark/blob/0.31.2/src/cmark.h
+- CommonMark spec version: [spec.txt#L4](https://github.com/commonmark/cmark/blob/0.31.2/test/spec.txt#L4)
+- GFM tables: [cmark.h#L36-L66](https://github.com/commonmark/cmark/blob/0.31.2/src/cmark.h#L36-L66)
+- GFM task lists: [cmark.h#L36-L66](https://github.com/commonmark/cmark/blob/0.31.2/src/cmark.h#L36-L66)
+- GFM strikethrough: [cmark.h#L36-L66](https://github.com/commonmark/cmark/blob/0.31.2/src/cmark.h#L36-L66)
+- GFM extended autolinks: [inlines.c](https://github.com/commonmark/cmark/blob/0.31.2/src/inlines.c)
+- Footnotes: [cmark.h#L36-L66](https://github.com/commonmark/cmark/blob/0.31.2/src/cmark.h#L36-L66)
+- Frontmatter: [blocks.c](https://github.com/commonmark/cmark/blob/0.31.2/src/blocks.c)
+- Math: [cmark.h#L36-L66](https://github.com/commonmark/cmark/blob/0.31.2/src/cmark.h#L36-L66)
+- Other extensions: [cmark.h#L642](https://github.com/commonmark/cmark/blob/0.31.2/src/cmark.h#L642)
+- HTML: [html.c#L329](https://github.com/commonmark/cmark/blob/0.31.2/src/html.c#L329)
+- CommonMark back out: [commonmark.c#L466](https://github.com/commonmark/cmark/blob/0.31.2/src/commonmark.c#L466)
+- AST dump: [xml.c#L209](https://github.com/commonmark/cmark/blob/0.31.2/src/xml.c#L209)
+- Other renderers: [man.c#L279](https://github.com/commonmark/cmark/blob/0.31.2/src/man.c#L279)
+- On nodes: [node.h#L70](https://github.com/commonmark/cmark/blob/0.31.2/src/node.h#L70)
+- With columns: [node.h#L71](https://github.com/commonmark/cmark/blob/0.31.2/src/node.h#L71)
+- With end positions: [node.h#L72-L73](https://github.com/commonmark/cmark/blob/0.31.2/src/node.h#L72-L73)
+- Parser extension API: [cmark.h](https://github.com/commonmark/cmark/blob/0.31.2/src/cmark.h)
 
 ### cmark-gfm 0.29.0.gfm.13
 
-https://github.com/github/cmark-gfm/tree/0.29.0.gfm.13
+[repository](https://github.com/github/cmark-gfm/tree/0.29.0.gfm.13) at 0.29.0.gfm.13
 
-- CommonMark spec version: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/test/spec.txt#L1-L3
-- GFM tables: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/extensions/table.c#L853
-- GFM task lists: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/extensions/tasklist.c#L143
-- GFM strikethrough: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/extensions/strikethrough.c#L144
-- GFM extended autolinks: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/extensions/autolink.c#L495
-- Footnotes: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/cmark-gfm.h#L753-L755
-- Frontmatter: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/blocks.c
-- Math: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/extensions/core-extensions.c#L11-L19
-- Other extensions: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/extensions/tagfilter.c#L56
-- HTML: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/html.c#L472
-- CommonMark back out: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/commonmark.c#L507
-- AST dump: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/xml.c#L162
-- Other renderers: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/main.c#L48-L50
-- On nodes: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/node.h#L75
-- With columns: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/node.h#L76
-- With end positions: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/node.h#L77-L78
-- Parser extension API: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/cmark-gfm-extension_api.h#L275
-- Plugin discovery: https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/registry.c#L54
+- CommonMark spec version: [spec.txt#L1-L3](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/test/spec.txt#L1-L3)
+- GFM tables: [table.c#L853](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/extensions/table.c#L853)
+- GFM task lists: [tasklist.c#L143](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/extensions/tasklist.c#L143)
+- GFM strikethrough: [strikethrough.c#L144](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/extensions/strikethrough.c#L144)
+- GFM extended autolinks: [autolink.c#L495](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/extensions/autolink.c#L495)
+- Footnotes: [cmark-gfm.h#L753](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/cmark-gfm.h#L753-L755)
+- Frontmatter: [blocks.c](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/blocks.c)
+- Math: [core-extensions…#L11](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/extensions/core-extensions.c#L11-L19)
+- Other extensions: [tagfilter.c#L56](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/extensions/tagfilter.c#L56)
+- HTML: [html.c#L472](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/html.c#L472)
+- CommonMark back out: [commonmark.c#L507](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/commonmark.c#L507)
+- AST dump: [xml.c#L162](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/xml.c#L162)
+- Other renderers: [main.c#L48-L50](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/main.c#L48-L50)
+- On nodes: [node.h#L75](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/node.h#L75)
+- With columns: [node.h#L76](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/node.h#L76)
+- With end positions: [node.h#L77-L78](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/node.h#L77-L78)
+- Parser extension API: [cmark-gfm-exte…#L275](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/cmark-gfm-extension_api.h#L275)
+- Plugin discovery: [registry.c#L54](https://github.com/github/cmark-gfm/blob/0.29.0.gfm.13/src/registry.c#L54)
 
 ### commonmark.js 0.31.2
 
-https://github.com/commonmark/commonmark.js/tree/0.31.2
+[repository](https://github.com/commonmark/commonmark.js/tree/0.31.2) at 0.31.2
 
-- CommonMark spec version: https://github.com/commonmark/commonmark.js/blob/0.31.2/test/spec.txt#L4
-- GFM tables: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/index.js#L11-L15
-- GFM task lists: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/index.js#L11-L15
-- GFM strikethrough: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/inlines.js
-- GFM extended autolinks: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/inlines.js
-- Footnotes: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/node.js#L1-L30
-- Frontmatter: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/blocks.js
-- Math: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/blocks.js
-- Other extensions: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/inlines.js#L786
-- HTML: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/render/html.js#L34
-- CommonMark back out: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/index.js#L11-L15
-- AST dump: https://github.com/commonmark/commonmark.js/blob/0.31.2/bin/commonmark#L70
-- Other renderers: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/render/xml.js#L12
-- On nodes: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/node.js#L69-L76
-- With columns: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/blocks.js#L104-L107, https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/inlines.js#L93
-- With end positions: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/blocks.js#L906
-- Parser extension API: https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/index.js#L11-L15
+- CommonMark spec version: [spec.txt#L4](https://github.com/commonmark/commonmark.js/blob/0.31.2/test/spec.txt#L4)
+- GFM tables: [index.js#L11-L15](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/index.js#L11-L15)
+- GFM task lists: [index.js#L11-L15](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/index.js#L11-L15)
+- GFM strikethrough: [inlines.js](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/inlines.js)
+- GFM extended autolinks: [inlines.js](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/inlines.js)
+- Footnotes: [node.js#L1-L30](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/node.js#L1-L30)
+- Frontmatter: [blocks.js](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/blocks.js)
+- Math: [blocks.js](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/blocks.js)
+- Other extensions: [inlines.js#L786](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/inlines.js#L786)
+- HTML: [html.js#L34](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/render/html.js#L34)
+- CommonMark back out: [index.js#L11-L15](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/index.js#L11-L15)
+- AST dump: [commonmark#L70](https://github.com/commonmark/commonmark.js/blob/0.31.2/bin/commonmark#L70)
+- Other renderers: [xml.js#L12](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/render/xml.js#L12)
+- On nodes: [node.js#L69-L76](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/node.js#L69-L76)
+- With columns: [blocks.js#L104-L107](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/blocks.js#L104-L107), [inlines.js#L93](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/inlines.js#L93)
+- With end positions: [blocks.js#L906](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/blocks.js#L906)
+- Parser extension API: [index.js#L11-L15](https://github.com/commonmark/commonmark.js/blob/0.31.2/lib/index.js#L11-L15)
 
 ### commonmark-java 0.31.0
 
-https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0
+[repository](https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0) at commonmark-parent-0.31.0
 
-- CommonMark spec version: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-test-util/src/main/resources/spec.txt#L4
-- GFM tables: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-ext-gfm-tables/src/main/java/org/commonmark/ext/gfm/tables/TablesExtension.java#L44
-- GFM task lists: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-ext-task-list-items/src/main/java/org/commonmark/ext/task/list/items/TaskListItemsExtension.java#L31
-- GFM strikethrough: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-ext-gfm-strikethrough/src/main/java/org/commonmark/ext/gfm/strikethrough/StrikethroughExtension.java#L61
-- GFM extended autolinks: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-ext-autolink/src/main/java/org/commonmark/ext/autolink/AutolinkExtension.java#L30
-- Footnotes: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-ext-footnotes/src/main/java/org/commonmark/ext/footnotes/FootnotesExtension.java#L52
-- Frontmatter: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-ext-yaml-front-matter/src/main/java/org/commonmark/ext/front/matter/YamlFrontMatterExtension.java#L53
-- Math: https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0
-- Other extensions: https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0/commonmark-ext-gfm-alerts, https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0/commonmark-ext-heading-anchor, https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0/commonmark-ext-image-attributes, https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0/commonmark-ext-ins
-- HTML: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/renderer/html/HtmlRenderer.java#L20
-- CommonMark back out: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/renderer/markdown/MarkdownRenderer.java#L28
-- AST dump: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/node/Node.java#L154
-- Other renderers: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/renderer/text/TextContentRenderer.java#L11
-- On nodes: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/node/SourceSpan.java#L30
-- With columns: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/node/SourceSpan.java#L32-L35
-- With end positions: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/node/SourceSpan.java#L95
-- Parser extension API: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/parser/Parser.java#L296
-- Plugin discovery: https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/parser/Parser.java#L169
+- CommonMark spec version: [spec.txt#L4](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-test-util/src/main/resources/spec.txt#L4)
+- GFM tables: [TablesExtension…#L44](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-ext-gfm-tables/src/main/java/org/commonmark/ext/gfm/tables/TablesExtension.java#L44)
+- GFM task lists: [TaskListItemsEx…#L31](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-ext-task-list-items/src/main/java/org/commonmark/ext/task/list/items/TaskListItemsExtension.java#L31)
+- GFM strikethrough: [StrikethroughEx…#L61](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-ext-gfm-strikethrough/src/main/java/org/commonmark/ext/gfm/strikethrough/StrikethroughExtension.java#L61)
+- GFM extended autolinks: [AutolinkExtensi…#L30](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-ext-autolink/src/main/java/org/commonmark/ext/autolink/AutolinkExtension.java#L30)
+- Footnotes: [FootnotesExtens…#L52](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-ext-footnotes/src/main/java/org/commonmark/ext/footnotes/FootnotesExtension.java#L52)
+- Frontmatter: [YamlFrontMatter…#L53](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark-ext-yaml-front-matter/src/main/java/org/commonmark/ext/front/matter/YamlFrontMatterExtension.java#L53)
+- Math: [repository](https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0)
+- Other extensions: [commonmark-ext-gfm-…](https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0/commonmark-ext-gfm-alerts), [commonmark-ext-head…](https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0/commonmark-ext-heading-anchor), [commonmark-ext-imag…](https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0/commonmark-ext-image-attributes), [commonmark-ext-ins/](https://github.com/commonmark/commonmark-java/tree/commonmark-parent-0.31.0/commonmark-ext-ins)
+- HTML: [HtmlRenderer.ja…#L20](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/renderer/html/HtmlRenderer.java#L20)
+- CommonMark back out: [MarkdownRendere…#L28](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/renderer/markdown/MarkdownRenderer.java#L28)
+- AST dump: [Node.java#L154](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/node/Node.java#L154)
+- Other renderers: [TextContentRend…#L11](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/renderer/text/TextContentRenderer.java#L11)
+- On nodes: [SourceSpan.java#L30](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/node/SourceSpan.java#L30)
+- With columns: [SourceSpan.java#L32](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/node/SourceSpan.java#L32-L35)
+- With end positions: [SourceSpan.java#L95](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/node/SourceSpan.java#L95)
+- Parser extension API: [Parser.java#L296](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/parser/Parser.java#L296)
+- Plugin discovery: [Parser.java#L169](https://github.com/commonmark/commonmark-java/blob/commonmark-parent-0.31.0/commonmark/src/main/java/org/commonmark/parser/Parser.java#L169)
 
 ### comrak 0.57.0
 
-https://github.com/kivikakk/comrak/tree/v0.57.0
+[repository](https://github.com/kivikakk/comrak/tree/v0.57.0) at v0.57.0
 
-- CommonMark spec version: https://github.com/kivikakk/comrak/blob/v0.57.0/script/cibuild#L20, https://github.com/kivikakk/comrak/blob/v0.57.0/README.md#L12
-- GFM tables: https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L59
-- GFM task lists: https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L91
-- GFM strikethrough: https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L45
-- GFM extended autolinks: https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L72
-- Footnotes: https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L151
-- Frontmatter: https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L239
-- Math: https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L304
-- Other extensions: https://github.com/kivikakk/comrak/blob/v0.57.0/src/main.rs#L193-L225
-- HTML: https://github.com/kivikakk/comrak/blob/v0.57.0/src/lib.rs#L93
-- CommonMark back out: https://github.com/kivikakk/comrak/blob/v0.57.0/src/lib.rs#L89
-- AST dump: https://github.com/kivikakk/comrak/blob/v0.57.0/src/main.rs#L183-L190
-- Other renderers: https://github.com/kivikakk/comrak/blob/v0.57.0/src/main.rs#L183-L190
-- On nodes: https://github.com/kivikakk/comrak/blob/v0.57.0/src/nodes.rs#L845
-- With columns: https://github.com/kivikakk/comrak/blob/v0.57.0/src/nodes.rs#L945-L951
-- With end positions: https://github.com/kivikakk/comrak/blob/v0.57.0/src/nodes.rs#L891-L896
-- Config file formats: https://github.com/kivikakk/comrak/blob/v0.57.0/src/main.rs#L259-L286
-- Parser extension API: https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L1419-L1476
-- Plugin discovery: https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L1419-L1476
+- CommonMark spec version: [cibuild#L20](https://github.com/kivikakk/comrak/blob/v0.57.0/script/cibuild#L20), [README.md#L12](https://github.com/kivikakk/comrak/blob/v0.57.0/README.md#L12)
+- GFM tables: [options.rs#L59](https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L59)
+- GFM task lists: [options.rs#L91](https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L91)
+- GFM strikethrough: [options.rs#L45](https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L45)
+- GFM extended autolinks: [options.rs#L72](https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L72)
+- Footnotes: [options.rs#L151](https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L151)
+- Frontmatter: [options.rs#L239](https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L239)
+- Math: [options.rs#L304](https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L304)
+- Other extensions: [main.rs#L193-L225](https://github.com/kivikakk/comrak/blob/v0.57.0/src/main.rs#L193-L225)
+- HTML: [lib.rs#L93](https://github.com/kivikakk/comrak/blob/v0.57.0/src/lib.rs#L93)
+- CommonMark back out: [lib.rs#L89](https://github.com/kivikakk/comrak/blob/v0.57.0/src/lib.rs#L89)
+- AST dump: [main.rs#L183-L190](https://github.com/kivikakk/comrak/blob/v0.57.0/src/main.rs#L183-L190)
+- Other renderers: [main.rs#L183-L190](https://github.com/kivikakk/comrak/blob/v0.57.0/src/main.rs#L183-L190)
+- On nodes: [nodes.rs#L845](https://github.com/kivikakk/comrak/blob/v0.57.0/src/nodes.rs#L845)
+- With columns: [nodes.rs#L945-L951](https://github.com/kivikakk/comrak/blob/v0.57.0/src/nodes.rs#L945-L951)
+- With end positions: [nodes.rs#L891-L896](https://github.com/kivikakk/comrak/blob/v0.57.0/src/nodes.rs#L891-L896)
+- Config file formats: [main.rs#L259-L286](https://github.com/kivikakk/comrak/blob/v0.57.0/src/main.rs#L259-L286)
+- Parser extension API: [options.rs#L1419](https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L1419-L1476)
+- Plugin discovery: [options.rs#L1419](https://github.com/kivikakk/comrak/blob/v0.57.0/src/parser/options.rs#L1419-L1476)
 
 ### commonmarker 2.10.1
 
-https://github.com/gjtorikian/commonmarker/tree/v2.10.1
+[repository](https://github.com/gjtorikian/commonmarker/tree/v2.10.1) at v2.10.1
 
-- CommonMark spec version: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/test/fixtures/upstream/spec.txt#L1-L4
-- GFM tables: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs#L158
-- GFM task lists: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs#L164
-- GFM strikethrough: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs#L155
-- GFM extended autolinks: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs#L161
-- Footnotes: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs#L176
-- Frontmatter: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs#L185-L194
-- Math: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs#L195
-- Other extensions: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/lib/commonmarker/config.rb#L34-L63
-- HTML: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/lib/commonmarker.rb#L33-L43
-- CommonMark back out: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/lib/commonmarker/node.rb#L81-L90
-- AST dump: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/lib/commonmarker/node/inspect.rb#L9-L56
-- Other renderers: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/node.rs#L1336-L1341
-- On nodes: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/node.rs#L706-L719
-- With columns: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/node.rs#L710-L714
-- With end positions: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/node.rs#L715-L716
-- Parser extension API: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs, https://github.com/gjtorikian/commonmarker/tree/v2.10.1/ext/commonmarker/src/plugins
-- Plugin discovery: https://github.com/gjtorikian/commonmarker/blob/v2.10.1/lib/commonmarker/config.rb#L67-L72
+- CommonMark spec version: [spec.txt#L1-L4](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/test/fixtures/upstream/spec.txt#L1-L4)
+- GFM tables: [options.rs#L158](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs#L158)
+- GFM task lists: [options.rs#L164](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs#L164)
+- GFM strikethrough: [options.rs#L155](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs#L155)
+- GFM extended autolinks: [options.rs#L161](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs#L161)
+- Footnotes: [options.rs#L176](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs#L176)
+- Frontmatter: [options.rs#L185-L194](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs#L185-L194)
+- Math: [options.rs#L195](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs#L195)
+- Other extensions: [config.rb#L34-L63](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/lib/commonmarker/config.rb#L34-L63)
+- HTML: [commonmarker.rb#L33](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/lib/commonmarker.rb#L33-L43)
+- CommonMark back out: [node.rb#L81-L90](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/lib/commonmarker/node.rb#L81-L90)
+- AST dump: [inspect.rb#L9-L56](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/lib/commonmarker/node/inspect.rb#L9-L56)
+- Other renderers: [node.rs#L1336-L1341](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/node.rs#L1336-L1341)
+- On nodes: [node.rs#L706-L719](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/node.rs#L706-L719)
+- With columns: [node.rs#L710-L714](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/node.rs#L710-L714)
+- With end positions: [node.rs#L715-L716](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/node.rs#L715-L716)
+- Parser extension API: [options.rs](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/ext/commonmarker/src/options.rs), [plugins/](https://github.com/gjtorikian/commonmarker/tree/v2.10.1/ext/commonmarker/src/plugins)
+- Plugin discovery: [config.rb#L67-L72](https://github.com/gjtorikian/commonmarker/blob/v2.10.1/lib/commonmarker/config.rb#L67-L72)
 
 ### markd 0.6.0
 
-https://github.com/icyleaf/markd/tree/v0.6.0
+[repository](https://github.com/icyleaf/markd/tree/v0.6.0) at v0.6.0
 
-- CommonMark spec version: https://github.com/icyleaf/markd/blob/v0.6.0/spec/fixtures/spec.txt#L1-L5, https://github.com/icyleaf/markd/blob/v0.6.0/spec/markd_spec.cr#L3-L4
-- GFM tables: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/rules/table.cr#L9
-- GFM task lists: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/rules/list.cr#L85-L93
-- GFM strikethrough: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/parsers/inline.cr#L46-L47
-- GFM extended autolinks: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/options.cr#L72-L75
-- Footnotes: https://github.com/icyleaf/markd/blob/v0.6.0/spec/fixtures/gfm-extensions.txt#L705-L707
-- Frontmatter: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/parsers/block.cr#L9-L21
-- Math: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/options.cr#L1-L96
-- Other extensions: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/rule.cr#L108
-- HTML: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd.cr#L10-L33
-- CommonMark back out: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/renderers/html_renderer.cr#L1-L5
-- AST dump: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/node.cr#L134-L146
-- Other renderers: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/renderer.cr#L1-L70
-- On nodes: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/node.cr#L63
-- With columns: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/parsers/block.cr#L243-L245
-- With end positions: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/parsers/block.cr#L213-L216
-- Parser extension API: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/parsers/block.cr#L9-L21
-- Plugin discovery: https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/parsers/block.cr#L9-L21
+- CommonMark spec version: [spec.txt#L1-L5](https://github.com/icyleaf/markd/blob/v0.6.0/spec/fixtures/spec.txt#L1-L5), [markd_spec.cr#L3-L4](https://github.com/icyleaf/markd/blob/v0.6.0/spec/markd_spec.cr#L3-L4)
+- GFM tables: [table.cr#L9](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/rules/table.cr#L9)
+- GFM task lists: [list.cr#L85-L93](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/rules/list.cr#L85-L93)
+- GFM strikethrough: [inline.cr#L46-L47](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/parsers/inline.cr#L46-L47)
+- GFM extended autolinks: [options.cr#L72-L75](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/options.cr#L72-L75)
+- Footnotes: [gfm-extensions…#L705](https://github.com/icyleaf/markd/blob/v0.6.0/spec/fixtures/gfm-extensions.txt#L705-L707)
+- Frontmatter: [block.cr#L9-L21](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/parsers/block.cr#L9-L21)
+- Math: [options.cr#L1-L96](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/options.cr#L1-L96)
+- Other extensions: [rule.cr#L108](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/rule.cr#L108)
+- HTML: [markd.cr#L10-L33](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd.cr#L10-L33)
+- CommonMark back out: [html_renderer.cr#L1](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/renderers/html_renderer.cr#L1-L5)
+- AST dump: [node.cr#L134-L146](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/node.cr#L134-L146)
+- Other renderers: [renderer.cr#L1-L70](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/renderer.cr#L1-L70)
+- On nodes: [node.cr#L63](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/node.cr#L63)
+- With columns: [block.cr#L243-L245](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/parsers/block.cr#L243-L245)
+- With end positions: [block.cr#L213-L216](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/parsers/block.cr#L213-L216)
+- Parser extension API: [block.cr#L9-L21](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/parsers/block.cr#L9-L21)
+- Plugin discovery: [block.cr#L9-L21](https://github.com/icyleaf/markd/blob/v0.6.0/src/markd/parsers/block.cr#L9-L21)
 
 ### goldmark 2.1.8
 
-https://github.com/yuin/goldmark/tree/v2.1.8
+[repository](https://github.com/yuin/goldmark/tree/v2.1.8) at v2.1.8
 
-- CommonMark spec version: https://github.com/yuin/goldmark/blob/v2.1.8/commonmark_test.go#L23-L25
-- GFM tables: https://github.com/yuin/goldmark/blob/v2.1.8/extension/table.go#L512
-- GFM task lists: https://github.com/yuin/goldmark/blob/v2.1.8/extension/tasklist.go#L246
-- GFM strikethrough: https://github.com/yuin/goldmark/blob/v2.1.8/extension/strikethrough.go#L127
-- GFM extended autolinks: https://github.com/yuin/goldmark/blob/v2.1.8/extension/linkify.go#L228
-- Footnotes: https://github.com/yuin/goldmark/blob/v2.1.8/extension/footnote.go#L722
-- Frontmatter: https://github.com/yuin/goldmark/blob/v2.1.8/extension/package.go#L1-L2
-- Math: https://github.com/yuin/goldmark/blob/v2.1.8/extension/package.go#L1-L2
-- Other extensions: https://github.com/yuin/goldmark/blob/v2.1.8/extension/definition_list.go#L250
-- HTML: https://github.com/yuin/goldmark/blob/v2.1.8/renderer/html/html.go#L237
-- CommonMark back out: https://github.com/yuin/goldmark/blob/v2.1.8/renderer/renderer.go#L1-L60
-- AST dump: https://github.com/yuin/goldmark/blob/v2.1.8/ast/ast.go#L541
-- Other renderers: https://github.com/yuin/goldmark/blob/v2.1.8/renderer/renderer.go#L171-L172
-- On nodes: https://github.com/yuin/goldmark/blob/v2.1.8/ast/ast.go#L48-L50
-- With columns: https://github.com/yuin/goldmark/blob/v2.1.8/ast/ast.go#L48-L50, https://github.com/yuin/goldmark/blob/v2.1.8/text/value.go#L653-L660
-- With end positions: https://github.com/yuin/goldmark/blob/v2.1.8/ast/block.go#L43-L48, https://github.com/yuin/goldmark/blob/v2.1.8/text/value.go#L14-L17, https://github.com/yuin/goldmark/blob/v2.1.8/text/value.go#L653-L660
-- Parser extension API: https://github.com/yuin/goldmark/blob/v2.1.8/parser/parser.go#L701-L776
-- Plugin discovery: https://github.com/yuin/goldmark/blob/v2.1.8/parser/parser.go#L619
+- CommonMark spec version: [commonmark_test…#L23](https://github.com/yuin/goldmark/blob/v2.1.8/commonmark_test.go#L23-L25)
+- GFM tables: [table.go#L512](https://github.com/yuin/goldmark/blob/v2.1.8/extension/table.go#L512)
+- GFM task lists: [tasklist.go#L246](https://github.com/yuin/goldmark/blob/v2.1.8/extension/tasklist.go#L246)
+- GFM strikethrough: [strikethrough.…#L127](https://github.com/yuin/goldmark/blob/v2.1.8/extension/strikethrough.go#L127)
+- GFM extended autolinks: [linkify.go#L228](https://github.com/yuin/goldmark/blob/v2.1.8/extension/linkify.go#L228)
+- Footnotes: [footnote.go#L722](https://github.com/yuin/goldmark/blob/v2.1.8/extension/footnote.go#L722)
+- Frontmatter: [package.go#L1-L2](https://github.com/yuin/goldmark/blob/v2.1.8/extension/package.go#L1-L2)
+- Math: [package.go#L1-L2](https://github.com/yuin/goldmark/blob/v2.1.8/extension/package.go#L1-L2)
+- Other extensions: [definition_lis…#L250](https://github.com/yuin/goldmark/blob/v2.1.8/extension/definition_list.go#L250)
+- HTML: [html.go#L237](https://github.com/yuin/goldmark/blob/v2.1.8/renderer/html/html.go#L237)
+- CommonMark back out: [renderer.go#L1-L60](https://github.com/yuin/goldmark/blob/v2.1.8/renderer/renderer.go#L1-L60)
+- AST dump: [ast.go#L541](https://github.com/yuin/goldmark/blob/v2.1.8/ast/ast.go#L541)
+- Other renderers: [renderer.go#L171](https://github.com/yuin/goldmark/blob/v2.1.8/renderer/renderer.go#L171-L172)
+- On nodes: [ast.go#L48-L50](https://github.com/yuin/goldmark/blob/v2.1.8/ast/ast.go#L48-L50)
+- With columns: [ast.go#L48-L50](https://github.com/yuin/goldmark/blob/v2.1.8/ast/ast.go#L48-L50), [value.go#L653-L660](https://github.com/yuin/goldmark/blob/v2.1.8/text/value.go#L653-L660)
+- With end positions: [block.go#L43-L48](https://github.com/yuin/goldmark/blob/v2.1.8/ast/block.go#L43-L48), [value.go#L14-L17](https://github.com/yuin/goldmark/blob/v2.1.8/text/value.go#L14-L17), [value.go#L653-L660](https://github.com/yuin/goldmark/blob/v2.1.8/text/value.go#L653-L660)
+- Parser extension API: [parser.go#L701-L776](https://github.com/yuin/goldmark/blob/v2.1.8/parser/parser.go#L701-L776)
+- Plugin discovery: [parser.go#L619](https://github.com/yuin/goldmark/blob/v2.1.8/parser/parser.go#L619)
 
 ### pulldown-cmark 0.13.0
 
-https://github.com/pulldown-cmark/pulldown-cmark/tree/v0.13.0
+[repository](https://github.com/pulldown-cmark/pulldown-cmark/tree/v0.13.0) at v0.13.0
 
-- CommonMark spec version: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/third_party/CommonMark/spec.txt#L1-L6
-- GFM tables: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L651
-- GFM task lists: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L670
-- GFM strikethrough: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L669
-- GFM extended autolinks: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L645-L737
-- Footnotes: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L668
-- Frontmatter: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L691-L695
-- Math: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L718
-- Other extensions: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L678-L735
-- HTML: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/html.rs#L1-L40
-- CommonMark back out: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L84-L86
-- AST dump: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/main.rs#L45-L58
-- Other renderers: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/Cargo.toml#L53-L84
-- On nodes: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/parse.rs#L2161-L2171
-- With columns: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/parse.rs#L2167-L2168
-- With end positions: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/parse.rs#L2185-L2187
-- Parser extension API: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/guide/src/dev/extensions.md#L1-L22
-- Plugin discovery: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/parse.rs#L266
+- CommonMark spec version: [spec.txt#L1-L6](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/third_party/CommonMark/spec.txt#L1-L6)
+- GFM tables: [lib.rs#L651](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L651)
+- GFM task lists: [lib.rs#L670](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L670)
+- GFM strikethrough: [lib.rs#L669](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L669)
+- GFM extended autolinks: [lib.rs#L645-L737](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L645-L737)
+- Footnotes: [lib.rs#L668](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L668)
+- Frontmatter: [lib.rs#L691-L695](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L691-L695)
+- Math: [lib.rs#L718](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L718)
+- Other extensions: [lib.rs#L678-L735](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L678-L735)
+- HTML: [html.rs#L1-L40](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/html.rs#L1-L40)
+- CommonMark back out: [lib.rs#L84-L86](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L84-L86)
+- AST dump: [main.rs#L45-L58](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/main.rs#L45-L58)
+- Other renderers: [Cargo.toml#L53-L84](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/Cargo.toml#L53-L84)
+- On nodes: [parse.rs#L2161-L2171](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/parse.rs#L2161-L2171)
+- With columns: [parse.rs#L2167-L2168](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/parse.rs#L2167-L2168)
+- With end positions: [parse.rs#L2185-L2187](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/parse.rs#L2185-L2187)
+- Parser extension API: [extensions.md#L1-L22](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/guide/src/dev/extensions.md#L1-L22)
+- Plugin discovery: [parse.rs#L266](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/parse.rs#L266)
 
 ### md4c 0.6.0
 
-https://github.com/mity/md4c/tree/v0.6.0
+[repository](https://github.com/mity/md4c/tree/v0.6.0) at v0.6.0
 
-- CommonMark spec version: https://github.com/mity/md4c/blob/v0.6.0/test/spec.txt#L4
-- GFM tables: https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L393
-- GFM task lists: https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L396
-- GFM strikethrough: https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L394
-- GFM extended autolinks: https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L388-L395
-- Footnotes: https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L405
-- Frontmatter: https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h
-- Math: https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L397
-- Other extensions: https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L386-L408
-- HTML: https://github.com/mity/md4c/blob/v0.6.0/src/md4c-html.c#L618
-- CommonMark back out: https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L427-L470
-- AST dump: https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L451-L458
-- Other renderers: https://github.com/mity/md4c/blob/v0.6.0/md2html/md2html.c#L242
-- On nodes: https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L451-L458
-- With columns: https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L312
-- With end positions: https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L451-L458
-- Parser extension API: https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L427-L470
+- CommonMark spec version: [spec.txt#L4](https://github.com/mity/md4c/blob/v0.6.0/test/spec.txt#L4)
+- GFM tables: [md4c.h#L393](https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L393)
+- GFM task lists: [md4c.h#L396](https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L396)
+- GFM strikethrough: [md4c.h#L394](https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L394)
+- GFM extended autolinks: [md4c.h#L388-L395](https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L388-L395)
+- Footnotes: [md4c.h#L405](https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L405)
+- Frontmatter: [md4c.h](https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h)
+- Math: [md4c.h#L397](https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L397)
+- Other extensions: [md4c.h#L386-L408](https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L386-L408)
+- HTML: [md4c-html.c#L618](https://github.com/mity/md4c/blob/v0.6.0/src/md4c-html.c#L618)
+- CommonMark back out: [md4c.h#L427-L470](https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L427-L470)
+- AST dump: [md4c.h#L451-L458](https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L451-L458)
+- Other renderers: [md2html.c#L242](https://github.com/mity/md4c/blob/v0.6.0/md2html/md2html.c#L242)
+- On nodes: [md4c.h#L451-L458](https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L451-L458)
+- With columns: [md4c.h#L312](https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L312)
+- With end positions: [md4c.h#L451-L458](https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L451-L458)
+- Parser extension API: [md4c.h#L427-L470](https://github.com/mity/md4c/blob/v0.6.0/src/md4c.h#L427-L470)
 
 ### markdownlint-cli2 0.24.0
 
-https://github.com/DavidAnson/markdownlint-cli2/tree/v0.24.0
+[repository](https://github.com/DavidAnson/markdownlint-cli2/tree/v0.24.0) at v0.24.0
 
-- CommonMark spec version: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/README.md#L28
-- GFM tables: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L72
-- GFM task lists: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L68-L74
-- GFM strikethrough: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L68-L74
-- GFM extended autolinks: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L70
-- Footnotes: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L71
-- Frontmatter: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.mjs#L124-L142
-- Math: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L73
-- Other extensions: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L25-L34
-- Built-in rule count: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/rules.mjs#L59-L116
-- markdownlint `MD###` ids: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/md001.mjs#L9
-- Inline disable comments: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/helpers/helpers.cjs#L27, https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.mjs#L353-L373
-- Autofix: https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L984-L985
-- Fix shape: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.mjs#L1206-L1215
-- Dry run or diff: https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L248-L283
-- AST dump: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.mjs#L485-L489
-- Lint report formats: https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/formatter-json/markdownlint-cli2-formatter-json.js, https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/formatter-sarif/markdownlint-cli2-formatter-sarif.js, https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/formatter-junit/markdownlint-cli2-formatter-junit.js
-- On nodes: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.d.mts#L268-L275
-- With columns: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.d.mts#L272-L275
-- With end positions: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.d.mts#L276-L283
-- On findings, line and column: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.d.mts#L674-L680
-- Config file formats: https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L173-L174
-- Reads `.markdownlint.*`: https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L315-L320
-- Per-directory config: https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L661-L685
-- Parser extension API: https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L755-L762
-- Custom rule API: https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.mjs#L22
-- Plugin discovery: https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L600-L609
+- CommonMark spec version: [README.md#L28](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/README.md#L28) (markdownlint)
+- GFM tables: [micromark-parse…#L72](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L72) (markdownlint)
+- GFM task lists: [micromark-parse…#L68](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L68-L74) (markdownlint)
+- GFM strikethrough: [micromark-parse…#L68](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L68-L74) (markdownlint)
+- GFM extended autolinks: [micromark-parse…#L70](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L70) (markdownlint)
+- Footnotes: [micromark-parse…#L71](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L71) (markdownlint)
+- Frontmatter: [markdownlint.m…#L124](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.mjs#L124-L142) (markdownlint)
+- Math: [micromark-parse…#L73](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L73) (markdownlint)
+- Other extensions: [micromark-parse…#L25](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/micromark-parse.mjs#L25-L34) (markdownlint)
+- Built-in rule count: [rules.mjs#L59-L116](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/rules.mjs#L59-L116) (markdownlint)
+- markdownlint `MD###` ids: [md001.mjs#L9](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/md001.mjs#L9) (markdownlint)
+- Inline disable comments: [helpers.cjs#L27](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/helpers/helpers.cjs#L27) (markdownlint), [markdownlint.m…#L353](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.mjs#L353-L373) (markdownlint)
+- Autofix: [markdownlint-c…#L984](https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L984-L985)
+- Fix shape: [markdownlint.…#L1206](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.mjs#L1206-L1215) (markdownlint)
+- Dry run or diff: [markdownlint-c…#L248](https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L248-L283)
+- AST dump: [markdownlint.m…#L485](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.mjs#L485-L489) (markdownlint)
+- Lint report formats: [markdownlint-cli2-f…](https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/formatter-json/markdownlint-cli2-formatter-json.js), [markdownlint-cli2-f…](https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/formatter-sarif/markdownlint-cli2-formatter-sarif.js), [markdownlint-cli2-f…](https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/formatter-junit/markdownlint-cli2-formatter-junit.js)
+- On nodes: [markdownlint.d…#L268](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.d.mts#L268-L275) (markdownlint)
+- With columns: [markdownlint.d…#L272](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.d.mts#L272-L275) (markdownlint)
+- With end positions: [markdownlint.d…#L276](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.d.mts#L276-L283) (markdownlint)
+- On findings, line and column: [markdownlint.d…#L674](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.d.mts#L674-L680) (markdownlint)
+- Config file formats: [markdownlint-c…#L173](https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L173-L174)
+- Reads `.markdownlint.*`: [markdownlint-c…#L315](https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L315-L320)
+- Per-directory config: [markdownlint-c…#L661](https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L661-L685)
+- Parser extension API: [markdownlint-c…#L755](https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L755-L762)
+- Custom rule API: [markdownlint.mjs#L22](https://github.com/DavidAnson/markdownlint/blob/v0.42.0/lib/markdownlint.mjs#L22) (markdownlint)
+- Plugin discovery: [markdownlint-c…#L600](https://github.com/DavidAnson/markdownlint-cli2/blob/v0.24.0/markdownlint-cli2.mjs#L600-L609)
 
 ### rumdl 0.3.0
 
-https://github.com/rvben/rumdl/tree/v0.3.0
+[repository](https://github.com/rvben/rumdl/tree/v0.3.0) at v0.3.0
 
-- CommonMark spec version: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.4/pulldown-cmark/third_party/CommonMark/spec.txt#L1-L6
-- GFM tables: https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L15
-- GFM task lists: https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L18
-- GFM strikethrough: https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L17
-- GFM extended autolinks: https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.4/pulldown-cmark/src/lib.rs#L646-L735
-- Footnotes: https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L16
-- Frontmatter: https://github.com/rvben/rumdl/blob/v0.3.0/src/rules/front_matter_utils.rs#L202
-- Math: https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L21
-- Other extensions: https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L19-L26, https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L719-L722
-- Built-in rule count: https://github.com/rvben/rumdl/blob/v0.3.0/src/rules/mod.rs#L218
-- markdownlint `MD###` ids: https://github.com/rvben/rumdl/blob/v0.3.0/src/rules/mod.rs#L220
-- Inline disable comments: https://github.com/rvben/rumdl/blob/v0.3.0/src/inline_config.rs#L6
-- Autofix: https://github.com/rvben/rumdl/blob/v0.3.0/src/cli_types.rs#L158
-- Fix shape: https://github.com/rvben/rumdl/blob/v0.3.0/src/rule.rs#L79
-- Dry run or diff: https://github.com/rvben/rumdl/blob/v0.3.0/src/cli_types.rs#L164
-- AST dump: https://github.com/rvben/rumdl/blob/v0.3.0/src/main.rs#L109
-- Lint report formats: https://github.com/rvben/rumdl/blob/v0.3.0/src/cli_types.rs#L444
-- On nodes: https://github.com/rvben/rumdl/blob/v0.3.0/src/lint_context/types.rs#L7
-- With columns: https://github.com/rvben/rumdl/blob/v0.3.0/src/lint_context/types.rs#L257
-- With end positions: https://github.com/rvben/rumdl/blob/v0.3.0/src/lint_context/types.rs#L253
-- On findings, line and column: https://github.com/rvben/rumdl/blob/v0.3.0/src/rule.rs#L38
-- Config file formats: https://github.com/rvben/rumdl/blob/v0.3.0/src/config/types.rs#L818
-- Reads `.markdownlint.*`: https://github.com/rvben/rumdl/blob/v0.3.0/src/config/types.rs#L825
-- Per-directory config: https://github.com/rvben/rumdl/blob/v0.3.0/src/config/loading.rs#L1769
-- Parser extension API: https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L13
-- Custom rule API: https://github.com/rvben/rumdl/blob/v0.3.0/src/rule.rs#L206
-- Plugin discovery: https://github.com/rvben/rumdl/blob/v0.3.0/src/lib.rs#L265
+- CommonMark spec version: [spec.txt#L1-L6](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.4/pulldown-cmark/third_party/CommonMark/spec.txt#L1-L6) (pulldown-cmark)
+- GFM tables: [parser_options.…#L15](https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L15)
+- GFM task lists: [parser_options.…#L18](https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L18)
+- GFM strikethrough: [parser_options.…#L17](https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L17)
+- GFM extended autolinks: [lib.rs#L646-L735](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.4/pulldown-cmark/src/lib.rs#L646-L735) (pulldown-cmark)
+- Footnotes: [parser_options.…#L16](https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L16)
+- Frontmatter: [front_matter_u…#L202](https://github.com/rvben/rumdl/blob/v0.3.0/src/rules/front_matter_utils.rs#L202)
+- Math: [parser_options.…#L21](https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L21)
+- Other extensions: [parser_options.…#L19](https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L19-L26), [lib.rs#L719-L722](https://github.com/pulldown-cmark/pulldown-cmark/blob/v0.13.0/pulldown-cmark/src/lib.rs#L719-L722) (pulldown-cmark)
+- Built-in rule count: [mod.rs#L218](https://github.com/rvben/rumdl/blob/v0.3.0/src/rules/mod.rs#L218)
+- markdownlint `MD###` ids: [mod.rs#L220](https://github.com/rvben/rumdl/blob/v0.3.0/src/rules/mod.rs#L220)
+- Inline disable comments: [inline_config.rs#L6](https://github.com/rvben/rumdl/blob/v0.3.0/src/inline_config.rs#L6)
+- Autofix: [cli_types.rs#L158](https://github.com/rvben/rumdl/blob/v0.3.0/src/cli_types.rs#L158)
+- Fix shape: [rule.rs#L79](https://github.com/rvben/rumdl/blob/v0.3.0/src/rule.rs#L79)
+- Dry run or diff: [cli_types.rs#L164](https://github.com/rvben/rumdl/blob/v0.3.0/src/cli_types.rs#L164)
+- AST dump: [main.rs#L109](https://github.com/rvben/rumdl/blob/v0.3.0/src/main.rs#L109)
+- Lint report formats: [cli_types.rs#L444](https://github.com/rvben/rumdl/blob/v0.3.0/src/cli_types.rs#L444)
+- On nodes: [types.rs#L7](https://github.com/rvben/rumdl/blob/v0.3.0/src/lint_context/types.rs#L7)
+- With columns: [types.rs#L257](https://github.com/rvben/rumdl/blob/v0.3.0/src/lint_context/types.rs#L257)
+- With end positions: [types.rs#L253](https://github.com/rvben/rumdl/blob/v0.3.0/src/lint_context/types.rs#L253)
+- On findings, line and column: [rule.rs#L38](https://github.com/rvben/rumdl/blob/v0.3.0/src/rule.rs#L38)
+- Config file formats: [types.rs#L818](https://github.com/rvben/rumdl/blob/v0.3.0/src/config/types.rs#L818)
+- Reads `.markdownlint.*`: [types.rs#L825](https://github.com/rvben/rumdl/blob/v0.3.0/src/config/types.rs#L825)
+- Per-directory config: [loading.rs#L1769](https://github.com/rvben/rumdl/blob/v0.3.0/src/config/loading.rs#L1769)
+- Parser extension API: [parser_options.…#L13](https://github.com/rvben/rumdl/blob/v0.3.0/src/utils/parser_options.rs#L13)
+- Custom rule API: [rule.rs#L206](https://github.com/rvben/rumdl/blob/v0.3.0/src/rule.rs#L206)
+- Plugin discovery: [lib.rs#L265](https://github.com/rvben/rumdl/blob/v0.3.0/src/lib.rs#L265)
 
 ### mdl 0.18.1
 
-https://github.com/markdownlint/markdownlint/tree/v0.18.1
+[repository](https://github.com/markdownlint/markdownlint/tree/v0.18.1) at v0.18.1
 
-- CommonMark spec version: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/kramdown_parser.rb#L9
-- GFM tables: https://github.com/gettalong/kramdown/blob/REL_2_5_2/lib/kramdown/parser/kramdown.rb#L75-L81
-- GFM task lists: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/kramdown_parser.rb#L9, https://github.com/gettalong/kramdown/blob/REL_2_5_2/lib/kramdown/parser/kramdown.rb#L75-L81
-- GFM strikethrough: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/kramdown_parser.rb#L9, https://github.com/gettalong/kramdown/blob/REL_2_5_2/lib/kramdown/parser/kramdown.rb#L75-L81
-- GFM extended autolinks: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/kramdown_parser.rb#L9, https://github.com/gettalong/kramdown/blob/REL_2_5_2/lib/kramdown/parser/kramdown.rb#L79-L81
-- Footnotes: https://github.com/gettalong/kramdown/blob/REL_2_5_2/lib/kramdown/parser/kramdown.rb#L75-L77
-- Frontmatter: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/doc.rb#L30
-- Math: https://github.com/gettalong/kramdown/blob/REL_2_5_2/lib/kramdown/parser/kramdown.rb#L75-L80
-- Other extensions: https://github.com/gettalong/kramdown/blob/REL_2_5_2/lib/kramdown/parser/kramdown.rb#L75-L78
-- Built-in rule count: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/rules.rb#L16
-- markdownlint `MD###` ids: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/rules.rb#L16
-- Inline disable comments: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/rules.rb#L718
-- Autofix: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/cli.rb#L123
-- Fix shape: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/rules.rb#L194
-- Dry run or diff: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/cli.rb#L123
-- AST dump: https://github.com/markdownlint/markdownlint/blob/v0.18.1/tools/view_markdown.rb#L7
-- Lint report formats: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/cli.rb#L129
-- On nodes: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/doc.rb#L130
-- With columns: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/doc.rb#L130
-- With end positions: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/formatters/sarif.rb#L78
-- On findings, line and column: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl.rb#L129
-- Config file formats: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/cli.rb#L155-L158
-- Reads `.markdownlint.*`: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/cli.rb#L9
-- Per-directory config: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/cli.rb#L198
-- Parser extension API: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/kramdown_parser.rb#L9
-- Custom rule API: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/ruleset.rb#L9-L12
-- Plugin discovery: https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/cli.rb#L93
+- CommonMark spec version: [kramdown_parser.…#L9](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/kramdown_parser.rb#L9)
+- GFM tables: [kramdown.rb#L75-L81](https://github.com/gettalong/kramdown/blob/REL_2_5_2/lib/kramdown/parser/kramdown.rb#L75-L81) (kramdown)
+- GFM task lists: [kramdown_parser.…#L9](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/kramdown_parser.rb#L9), [kramdown.rb#L75-L81](https://github.com/gettalong/kramdown/blob/REL_2_5_2/lib/kramdown/parser/kramdown.rb#L75-L81) (kramdown)
+- GFM strikethrough: [kramdown_parser.…#L9](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/kramdown_parser.rb#L9), [kramdown.rb#L75-L81](https://github.com/gettalong/kramdown/blob/REL_2_5_2/lib/kramdown/parser/kramdown.rb#L75-L81) (kramdown)
+- GFM extended autolinks: [kramdown_parser.…#L9](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/kramdown_parser.rb#L9), [kramdown.rb#L79-L81](https://github.com/gettalong/kramdown/blob/REL_2_5_2/lib/kramdown/parser/kramdown.rb#L79-L81) (kramdown)
+- Footnotes: [kramdown.rb#L75-L77](https://github.com/gettalong/kramdown/blob/REL_2_5_2/lib/kramdown/parser/kramdown.rb#L75-L77) (kramdown)
+- Frontmatter: [doc.rb#L30](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/doc.rb#L30)
+- Math: [kramdown.rb#L75-L80](https://github.com/gettalong/kramdown/blob/REL_2_5_2/lib/kramdown/parser/kramdown.rb#L75-L80) (kramdown)
+- Other extensions: [kramdown.rb#L75-L78](https://github.com/gettalong/kramdown/blob/REL_2_5_2/lib/kramdown/parser/kramdown.rb#L75-L78) (kramdown)
+- Built-in rule count: [rules.rb#L16](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/rules.rb#L16)
+- markdownlint `MD###` ids: [rules.rb#L16](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/rules.rb#L16)
+- Inline disable comments: [rules.rb#L718](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/rules.rb#L718)
+- Autofix: [cli.rb#L123](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/cli.rb#L123)
+- Fix shape: [rules.rb#L194](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/rules.rb#L194)
+- Dry run or diff: [cli.rb#L123](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/cli.rb#L123)
+- AST dump: [view_markdown.rb#L7](https://github.com/markdownlint/markdownlint/blob/v0.18.1/tools/view_markdown.rb#L7)
+- Lint report formats: [cli.rb#L129](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/cli.rb#L129)
+- On nodes: [doc.rb#L130](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/doc.rb#L130)
+- With columns: [doc.rb#L130](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/doc.rb#L130)
+- With end positions: [sarif.rb#L78](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/formatters/sarif.rb#L78)
+- On findings, line and column: [mdl.rb#L129](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl.rb#L129)
+- Config file formats: [cli.rb#L155-L158](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/cli.rb#L155-L158)
+- Reads `.markdownlint.*`: [cli.rb#L9](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/cli.rb#L9)
+- Per-directory config: [cli.rb#L198](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/cli.rb#L198)
+- Parser extension API: [kramdown_parser.…#L9](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/kramdown_parser.rb#L9)
+- Custom rule API: [ruleset.rb#L9-L12](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/ruleset.rb#L9-L12)
+- Plugin discovery: [cli.rb#L93](https://github.com/markdownlint/markdownlint/blob/v0.18.1/lib/mdl/cli.rb#L93)
 
 ### pymarkdownlnt 0.9.41
 
-https://github.com/jackdewinter/pymarkdown/tree/v0.9.41
+[repository](https://github.com/jackdewinter/pymarkdown/tree/v0.9.41) at v0.9.41
 
-- CommonMark spec version: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/docs/old_README.md#L46
-- GFM tables: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extensions/markdown_tables.py#L22
-- GFM task lists: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extensions/task_list_items.py#L33
-- GFM strikethrough: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extensions/markdown_strikethrough.py#L22
-- GFM extended autolinks: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extensions/extended_autolinks.py#L46
-- Footnotes: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extension_manager/extension_manager.py#L78
-- Frontmatter: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extensions/front_matter_extension.py#L185
-- Math: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extension_manager/extension_manager.py#L78
-- Other extensions: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extension_manager/extension_manager.py#L78
-- Built-in rule count: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/plugins/rule_md_001.py#L42
-- markdownlint `MD###` ids: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/plugins/rule_md_051.py#L102
-- Inline disable comments: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extensions/pragma_token.py#L205
-- Autofix: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/file_scan_helper.py#L1264
-- Fix shape: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/file_scan_helper.py#L1092
-- Dry run or diff: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/main.py#L124
-- HTML: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/transform_gfm/transform_to_gfm.py#L21
-- CommonMark back out: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/transform_markdown/transform_to_markdown.py#L53
-- AST dump: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/tokens/markdown_token.py#L123
-- Lint report formats: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/general/main_presentation.py#L62
-- On nodes: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/tokens/markdown_token.py#L170
-- With columns: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/tokens/markdown_token.py#L177
-- With end positions: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/tokens/markdown_token.py#L75
-- On findings, line and column: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/plugin_manager/plugin_scan_failure.py#L18
-- Config file formats: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/application_configuration_helper.py#L44-L50
-- Reads `.markdownlint.*`: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/application_configuration_helper.py#L45
-- Per-directory config: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/application_configuration_helper.py#L29-L58
-- Parser extension API: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extension_manager/extension_manager.py#L78
-- Custom rule API: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/plugin_manager/rule_plugin.py#L21
-- Plugin discovery: https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/plugin_manager/plugin_manager.py#L114
+- CommonMark spec version: [old_README.md#L46](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/docs/old_README.md#L46)
+- GFM tables: [markdown_tables…#L22](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extensions/markdown_tables.py#L22)
+- GFM task lists: [task_list_items…#L33](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extensions/task_list_items.py#L33)
+- GFM strikethrough: [markdown_strike…#L22](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extensions/markdown_strikethrough.py#L22)
+- GFM extended autolinks: [extended_autoli…#L46](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extensions/extended_autolinks.py#L46)
+- Footnotes: [extension_manag…#L78](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extension_manager/extension_manager.py#L78)
+- Frontmatter: [front_matter_e…#L185](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extensions/front_matter_extension.py#L185)
+- Math: [extension_manag…#L78](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extension_manager/extension_manager.py#L78)
+- Other extensions: [extension_manag…#L78](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extension_manager/extension_manager.py#L78)
+- Built-in rule count: [rule_md_001.py#L42](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/plugins/rule_md_001.py#L42)
+- markdownlint `MD###` ids: [rule_md_051.py#L102](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/plugins/rule_md_051.py#L102)
+- Inline disable comments: [pragma_token.py#L205](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extensions/pragma_token.py#L205)
+- Autofix: [file_scan_hel…#L1264](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/file_scan_helper.py#L1264)
+- Fix shape: [file_scan_hel…#L1092](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/file_scan_helper.py#L1092)
+- Dry run or diff: [main.py#L124](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/main.py#L124)
+- HTML: [transform_to_gf…#L21](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/transform_gfm/transform_to_gfm.py#L21)
+- CommonMark back out: [transform_to_ma…#L53](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/transform_markdown/transform_to_markdown.py#L53)
+- AST dump: [markdown_token…#L123](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/tokens/markdown_token.py#L123)
+- Lint report formats: [main_presentati…#L62](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/general/main_presentation.py#L62)
+- On nodes: [markdown_token…#L170](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/tokens/markdown_token.py#L170)
+- With columns: [markdown_token…#L177](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/tokens/markdown_token.py#L177)
+- With end positions: [markdown_token.…#L75](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/tokens/markdown_token.py#L75)
+- On findings, line and column: [plugin_scan_fai…#L18](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/plugin_manager/plugin_scan_failure.py#L18)
+- Config file formats: [application_con…#L44](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/application_configuration_helper.py#L44-L50)
+- Reads `.markdownlint.*`: [application_con…#L45](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/application_configuration_helper.py#L45)
+- Per-directory config: [application_con…#L29](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/application_configuration_helper.py#L29-L58)
+- Parser extension API: [extension_manag…#L78](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/extension_manager/extension_manager.py#L78)
+- Custom rule API: [rule_plugin.py#L21](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/plugin_manager/rule_plugin.py#L21)
+- Plugin discovery: [plugin_manager…#L114](https://github.com/jackdewinter/pymarkdown/blob/v0.9.41/pymarkdown/plugin_manager/plugin_manager.py#L114)
 
 ### quickmark 1.1.0
 
-https://github.com/ekropotin/quickmark/tree/quickmark-cli%401.1.0
+[repository](https://github.com/ekropotin/quickmark/tree/quickmark-cli%401.1.0) at quickmark-cli@1.1.0
 
-- CommonMark spec version: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/README.md#L18
-- GFM tables: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/rules/md056.rs#L117
-- GFM task lists: https://github.com/tree-sitter-grammars/tree-sitter-markdown/blob/v0.3.2/tree-sitter-markdown/grammar.js#L374
-- GFM strikethrough: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L3
-- GFM extended autolinks: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/rules/md034.rs#L45
-- Footnotes: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L3
-- Frontmatter: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/rules/md041.rs#L74
-- Math: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L3
-- Other extensions: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L312
-- Built-in rule count: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/rules/mod.rs#L81
-- markdownlint `MD###` ids: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/rules/md001.rs#L82
-- Inline disable comments: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L343
-- Autofix: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-cli/src/main.rs#L21
-- AST dump: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-cli/src/main.rs#L21
-- Lint report formats: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-cli/src/main.rs#L147
-- On nodes: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L112
-- With columns: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L64
-- With end positions: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L18
-- On findings, line and column: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-cli/src/main.rs#L151
-- Config file formats: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/config/mod.rs#L253
-- Reads `.markdownlint.*`: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/config/mod.rs#L253
-- Per-directory config: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/config/mod.rs#L242
-- Parser extension API: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L312
-- Custom rule API: https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/rules/mod.rs#L81
+- CommonMark spec version: [README.md#L18](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/README.md#L18)
+- GFM tables: [md056.rs#L117](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/rules/md056.rs#L117)
+- GFM task lists: [grammar.js#L374](https://github.com/tree-sitter-grammars/tree-sitter-markdown/blob/v0.3.2/tree-sitter-markdown/grammar.js#L374) (tree-sitter-markdown)
+- GFM strikethrough: [linter.rs#L3](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L3)
+- GFM extended autolinks: [md034.rs#L45](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/rules/md034.rs#L45)
+- Footnotes: [linter.rs#L3](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L3)
+- Frontmatter: [md041.rs#L74](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/rules/md041.rs#L74)
+- Math: [linter.rs#L3](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L3)
+- Other extensions: [linter.rs#L312](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L312)
+- Built-in rule count: [mod.rs#L81](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/rules/mod.rs#L81)
+- markdownlint `MD###` ids: [md001.rs#L82](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/rules/md001.rs#L82)
+- Inline disable comments: [linter.rs#L343](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L343)
+- Autofix: [main.rs#L21](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-cli/src/main.rs#L21)
+- AST dump: [main.rs#L21](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-cli/src/main.rs#L21)
+- Lint report formats: [main.rs#L147](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-cli/src/main.rs#L147)
+- On nodes: [linter.rs#L112](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L112)
+- With columns: [linter.rs#L64](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L64)
+- With end positions: [linter.rs#L18](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L18)
+- On findings, line and column: [main.rs#L151](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-cli/src/main.rs#L151)
+- Config file formats: [mod.rs#L253](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/config/mod.rs#L253)
+- Reads `.markdownlint.*`: [mod.rs#L253](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/config/mod.rs#L253)
+- Per-directory config: [mod.rs#L242](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/config/mod.rs#L242)
+- Parser extension API: [linter.rs#L312](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/linter.rs#L312)
+- Custom rule API: [mod.rs#L81](https://github.com/ekropotin/quickmark/blob/quickmark-cli%401.1.0/crates/quickmark-core/src/rules/mod.rs#L81)
 
 ### gomarklint 3.3.2
 
-https://github.com/shinagawa-web/gomarklint/tree/v3.3.2
+[repository](https://github.com/shinagawa-web/gomarklint/tree/v3.3.2) at v3.3.2
 
-- CommonMark spec version: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/inline.go#L48
-- GFM tables: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/preprocess.go#L19-L24
-- GFM task lists: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/preprocess.go#L19-L24
-- GFM strikethrough: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/inline.go#L48
-- GFM extended autolinks: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/inline.go#L48
-- Footnotes: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/preprocess.go#L19-L24
-- Frontmatter: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/file/reader.go#L16-L20
-- Math: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/preprocess.go#L19-L24
-- Other extensions: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/html.go#L36
-- Built-in rule count: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/config/config.go#L16-L38
-- markdownlint `MD###` ids: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/config/config.go#L12-L42
-- Inline disable comments: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/linter/disable_comment.go#L144-L153
-- Autofix: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/cmd/root.go#L43-L45
-- AST dump: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/preprocess.go#L5-L10
-- Lint report formats: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/app/app.go#L73-L77
-- On nodes: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/preprocess.go#L5-L10
-- With columns: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/rule/heading_level.go#L10-L16
-- With end positions: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/rule/heading_level.go#L10-L16
-- On findings, line and column: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/rule/heading_level.go#L12
-- Config file formats: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/cmd/root.go#L43
-- Reads `.markdownlint.*`: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/config/load.go#L10
-- Per-directory config: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/config/merge.go#L15-L23
-- Custom rule API: https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/doc.go#L1-L6
+- CommonMark spec version: [inline.go#L48](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/inline.go#L48)
+- GFM tables: [preprocess.go#L19](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/preprocess.go#L19-L24)
+- GFM task lists: [preprocess.go#L19](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/preprocess.go#L19-L24)
+- GFM strikethrough: [inline.go#L48](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/inline.go#L48)
+- GFM extended autolinks: [inline.go#L48](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/inline.go#L48)
+- Footnotes: [preprocess.go#L19](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/preprocess.go#L19-L24)
+- Frontmatter: [reader.go#L16-L20](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/file/reader.go#L16-L20)
+- Math: [preprocess.go#L19](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/preprocess.go#L19-L24)
+- Other extensions: [html.go#L36](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/html.go#L36)
+- Built-in rule count: [config.go#L16-L38](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/config/config.go#L16-L38)
+- markdownlint `MD###` ids: [config.go#L12-L42](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/config/config.go#L12-L42)
+- Inline disable comments: [disable_commen…#L144](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/linter/disable_comment.go#L144-L153)
+- Autofix: [root.go#L43-L45](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/cmd/root.go#L43-L45)
+- AST dump: [preprocess.go#L5-L10](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/preprocess.go#L5-L10)
+- Lint report formats: [app.go#L73-L77](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/app/app.go#L73-L77)
+- On nodes: [preprocess.go#L5-L10](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/preprocess/preprocess.go#L5-L10)
+- With columns: [heading_level.go#L10](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/rule/heading_level.go#L10-L16)
+- With end positions: [heading_level.go#L10](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/rule/heading_level.go#L10-L16)
+- On findings, line and column: [heading_level.go#L12](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/rule/heading_level.go#L12)
+- Config file formats: [root.go#L43](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/cmd/root.go#L43)
+- Reads `.markdownlint.*`: [load.go#L10](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/config/load.go#L10)
+- Per-directory config: [merge.go#L15-L23](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/internal/config/merge.go#L15-L23)
+- Custom rule API: [doc.go#L1-L6](https://github.com/shinagawa-web/gomarklint/blob/v3.3.2/doc.go#L1-L6)
 
 ### goldmark-lint 0.6.0
 
-https://github.com/mrueg/goldmark-lint/tree/v0.6.0
+[repository](https://github.com/mrueg/goldmark-lint/tree/v0.6.0) at v0.6.0
 
-- CommonMark spec version: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/README.md#L398
-- GFM tables: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L155
-- GFM task lists: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L155
-- GFM strikethrough: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L155
-- GFM extended autolinks: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L155
-- Footnotes: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L155
-- Frontmatter: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L284
-- Math: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L155
-- Other extensions: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L154
-- Built-in rule count: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/rules/defaults.go#L11
-- markdownlint `MD###` ids: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/rules/md001.go#L19
-- Inline disable comments: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L362
-- Autofix: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L142
-- Fix shape: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/rules/md018.go#L23
-- Dry run or diff: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/cmd/goldmark-lint/main.go#L135
-- AST dump: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L160
-- Lint report formats: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/cmd/goldmark-lint/main.go#L102
-- On nodes: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L48
-- With columns: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/rules/helpers.go#L18
-- With end positions: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/rules/helpers.go#L298
-- On findings, line and column: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L36
-- Config file formats: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/cmd/goldmark-lint/config.go#L41
-- Reads `.markdownlint.*`: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/cmd/goldmark-lint/config.go#L46
-- Per-directory config: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/cmd/goldmark-lint/config.go#L55
-- Parser extension API: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L154
-- Custom rule API: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L15
-- Plugin discovery: https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L104
+- CommonMark spec version: [README.md#L398](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/README.md#L398)
+- GFM tables: [lint.go#L155](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L155)
+- GFM task lists: [lint.go#L155](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L155)
+- GFM strikethrough: [lint.go#L155](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L155)
+- GFM extended autolinks: [lint.go#L155](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L155)
+- Footnotes: [lint.go#L155](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L155)
+- Frontmatter: [lint.go#L284](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L284)
+- Math: [lint.go#L155](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L155)
+- Other extensions: [lint.go#L154](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L154)
+- Built-in rule count: [defaults.go#L11](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/rules/defaults.go#L11)
+- markdownlint `MD###` ids: [md001.go#L19](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/rules/md001.go#L19)
+- Inline disable comments: [lint.go#L362](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L362)
+- Autofix: [lint.go#L142](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L142)
+- Fix shape: [md018.go#L23](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/rules/md018.go#L23)
+- Dry run or diff: [main.go#L135](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/cmd/goldmark-lint/main.go#L135)
+- AST dump: [lint.go#L160](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L160)
+- Lint report formats: [main.go#L102](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/cmd/goldmark-lint/main.go#L102)
+- On nodes: [lint.go#L48](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L48)
+- With columns: [helpers.go#L18](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/rules/helpers.go#L18)
+- With end positions: [helpers.go#L298](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/rules/helpers.go#L298)
+- On findings, line and column: [lint.go#L36](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L36)
+- Config file formats: [config.go#L41](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/cmd/goldmark-lint/config.go#L41)
+- Reads `.markdownlint.*`: [config.go#L46](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/cmd/goldmark-lint/config.go#L46)
+- Per-directory config: [config.go#L55](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/cmd/goldmark-lint/config.go#L55)
+- Parser extension API: [lint.go#L154](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L154)
+- Custom rule API: [lint.go#L15](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L15)
+- Plugin discovery: [lint.go#L104](https://github.com/mrueg/goldmark-lint/blob/v0.6.0/lint/lint.go#L104)
 
 ### mdsmith 0.57.0
 
-https://github.com/jeduden/mdsmith/tree/v0.57.0
+[repository](https://github.com/jeduden/mdsmith/tree/v0.57.0) at v0.57.0
 
-- CommonMark spec version: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/goldmark/parser/corpus_test.go#L7
-- GFM tables: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/parser.go#L23
-- GFM task lists: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/parser.go#L25
-- GFM strikethrough: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/parser.go#L24
-- GFM extended autolinks: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/detect.go#L610
-- Footnotes: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/parser.go#L26
-- Frontmatter: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/frontmatter.go#L17
-- Math: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/parser.go#L30
-- Other extensions: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/feature.go#L8
-- Built-in rule count: https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/rules/all/all.go#L19
-- markdownlint `MD###` ids: https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/rules/all/all.go#L19
-- Inline disable comments: https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/rule/rule.go#L5-L10
-- Autofix: https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/rule/rule.go#L14
-- Fix shape: https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/rules/notrailingspaces/rule.go#L59
-- Dry run or diff: https://github.com/jeduden/mdsmith/blob/v0.57.0/cmd/mdsmith/fix.go#L171-L173
-- HTML: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/goldmark/markdown.go#L47
-- AST dump: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/goldmark/ast/ast.go#L136
-- Lint report formats: https://github.com/jeduden/mdsmith/blob/v0.57.0/cmd/mdsmith/main.go#L161
-- On nodes: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/goldmark/ast/ast.go#L162
-- With columns: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/goldmark/text/segment.go#L13
-- With end positions: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/goldmark/text/segment.go#L16
-- On findings, line and column: https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/lint/diagnostic.go#L67
-- Config file formats: https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/config/load.go#L19
-- Reads `.markdownlint.*`: https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/markdownlint/parse.go#L21
-- Per-directory config: https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/config/load.go#L245
-- Parser extension API: https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/parser.go#L70
-- Custom rule API: https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/rule/registry.go#L6
-- Plugin discovery: https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/rules/all/all.go#L19
+- CommonMark spec version: [corpus_test.go#L7](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/goldmark/parser/corpus_test.go#L7)
+- GFM tables: [parser.go#L23](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/parser.go#L23)
+- GFM task lists: [parser.go#L25](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/parser.go#L25)
+- GFM strikethrough: [parser.go#L24](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/parser.go#L24)
+- GFM extended autolinks: [detect.go#L610](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/detect.go#L610)
+- Footnotes: [parser.go#L26](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/parser.go#L26)
+- Frontmatter: [frontmatter.go#L17](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/frontmatter.go#L17)
+- Math: [parser.go#L30](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/parser.go#L30)
+- Other extensions: [feature.go#L8](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/feature.go#L8)
+- Built-in rule count: [all.go#L19](https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/rules/all/all.go#L19)
+- markdownlint `MD###` ids: [all.go#L19](https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/rules/all/all.go#L19)
+- Inline disable comments: [rule.go#L5-L10](https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/rule/rule.go#L5-L10)
+- Autofix: [rule.go#L14](https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/rule/rule.go#L14)
+- Fix shape: [rule.go#L59](https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/rules/notrailingspaces/rule.go#L59)
+- Dry run or diff: [fix.go#L171-L173](https://github.com/jeduden/mdsmith/blob/v0.57.0/cmd/mdsmith/fix.go#L171-L173)
+- HTML: [markdown.go#L47](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/goldmark/markdown.go#L47)
+- AST dump: [ast.go#L136](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/goldmark/ast/ast.go#L136)
+- Lint report formats: [main.go#L161](https://github.com/jeduden/mdsmith/blob/v0.57.0/cmd/mdsmith/main.go#L161)
+- On nodes: [ast.go#L162](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/goldmark/ast/ast.go#L162)
+- With columns: [segment.go#L13](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/goldmark/text/segment.go#L13)
+- With end positions: [segment.go#L16](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/goldmark/text/segment.go#L16)
+- On findings, line and column: [diagnostic.go#L67](https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/lint/diagnostic.go#L67)
+- Config file formats: [load.go#L19](https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/config/load.go#L19)
+- Reads `.markdownlint.*`: [parse.go#L21](https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/markdownlint/parse.go#L21)
+- Per-directory config: [load.go#L245](https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/config/load.go#L245)
+- Parser extension API: [parser.go#L70](https://github.com/jeduden/mdsmith/blob/v0.57.0/pkg/markdown/flavor/parser.go#L70)
+- Custom rule API: [registry.go#L6](https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/rule/registry.go#L6)
+- Plugin discovery: [all.go#L19](https://github.com/jeduden/mdsmith/blob/v0.57.0/internal/rules/all/all.go#L19)
 
 ### mado 0.3.2
 
-https://github.com/akiomik/mado/tree/v0.3.2
+[repository](https://github.com/akiomik/mado/tree/v0.3.2) at v0.3.2
 
-- CommonMark spec version: https://github.com/akiomik/mado/blob/v0.3.2/README.md#L7
-- GFM tables: https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L43
-- GFM task lists: https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L41-L44
-- GFM strikethrough: https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L41-L44
-- GFM extended autolinks: https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L41-L44
-- Footnotes: https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L41-L44
-- Frontmatter: https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L42
-- Math: https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L41-L44
-- Other extensions: https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L41-L44
-- Built-in rule count: https://github.com/akiomik/mado/blob/v0.3.2/src/rule.rs#L52-L91
-- markdownlint `MD###` ids: https://github.com/akiomik/mado/blob/v0.3.2/src/rule/md001.rs#L14-L17
-- Inline disable comments: https://github.com/akiomik/mado/blob/v0.3.2/src/service/linter.rs#L21-L28
-- Autofix: https://github.com/akiomik/mado/blob/v0.3.2/src/command.rs#L16-L32
-- AST dump: https://github.com/akiomik/mado/blob/v0.3.2/src/command.rs#L14-L38
-- Lint report formats: https://github.com/akiomik/mado/blob/v0.3.2/src/output.rs#L10-L16
-- On nodes: https://github.com/akiomik/mado/blob/v0.3.2/src/rule/md001.rs#L43
-- With columns: https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L91-L93
-- With end positions: https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L94
-- On findings, line and column: https://github.com/akiomik/mado/blob/v0.3.2/src/violation.rs#L8-L12
-- Config file formats: https://github.com/akiomik/mado/blob/v0.3.2/src/config.rs#L24-L25
-- Reads `.markdownlint.*`: https://github.com/akiomik/mado/blob/v0.3.2/src/config.rs#L34-L52
-- Per-directory config: https://github.com/akiomik/mado/blob/v0.3.2/src/config.rs#L34-L52
-- Parser extension API: https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L40-L44
-- Custom rule API: https://github.com/akiomik/mado/blob/v0.3.2/src/rule.rs#L52-L91
+- CommonMark spec version: [README.md#L7](https://github.com/akiomik/mado/blob/v0.3.2/README.md#L7)
+- GFM tables: [document.rs#L43](https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L43)
+- GFM task lists: [document.rs#L41-L44](https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L41-L44)
+- GFM strikethrough: [document.rs#L41-L44](https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L41-L44)
+- GFM extended autolinks: [document.rs#L41-L44](https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L41-L44)
+- Footnotes: [document.rs#L41-L44](https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L41-L44)
+- Frontmatter: [document.rs#L42](https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L42)
+- Math: [document.rs#L41-L44](https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L41-L44)
+- Other extensions: [document.rs#L41-L44](https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L41-L44)
+- Built-in rule count: [rule.rs#L52-L91](https://github.com/akiomik/mado/blob/v0.3.2/src/rule.rs#L52-L91)
+- markdownlint `MD###` ids: [md001.rs#L14-L17](https://github.com/akiomik/mado/blob/v0.3.2/src/rule/md001.rs#L14-L17)
+- Inline disable comments: [linter.rs#L21-L28](https://github.com/akiomik/mado/blob/v0.3.2/src/service/linter.rs#L21-L28)
+- Autofix: [command.rs#L16-L32](https://github.com/akiomik/mado/blob/v0.3.2/src/command.rs#L16-L32)
+- AST dump: [command.rs#L14-L38](https://github.com/akiomik/mado/blob/v0.3.2/src/command.rs#L14-L38)
+- Lint report formats: [output.rs#L10-L16](https://github.com/akiomik/mado/blob/v0.3.2/src/output.rs#L10-L16)
+- On nodes: [md001.rs#L43](https://github.com/akiomik/mado/blob/v0.3.2/src/rule/md001.rs#L43)
+- With columns: [document.rs#L91-L93](https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L91-L93)
+- With end positions: [document.rs#L94](https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L94)
+- On findings, line and column: [violation.rs#L8-L12](https://github.com/akiomik/mado/blob/v0.3.2/src/violation.rs#L8-L12)
+- Config file formats: [config.rs#L24-L25](https://github.com/akiomik/mado/blob/v0.3.2/src/config.rs#L24-L25)
+- Reads `.markdownlint.*`: [config.rs#L34-L52](https://github.com/akiomik/mado/blob/v0.3.2/src/config.rs#L34-L52)
+- Per-directory config: [config.rs#L34-L52](https://github.com/akiomik/mado/blob/v0.3.2/src/config.rs#L34-L52)
+- Parser extension API: [document.rs#L40-L44](https://github.com/akiomik/mado/blob/v0.3.2/src/document.rs#L40-L44)
+- Custom rule API: [rule.rs#L52-L91](https://github.com/akiomik/mado/blob/v0.3.2/src/rule.rs#L52-L91)
 
 ### remark-lint 10.0.1
 
-https://github.com/remarkjs/remark-lint/tree/10.0.1
+[repository](https://github.com/remarkjs/remark-lint/tree/10.0.1) at 10.0.1
 
-- CommonMark spec version: https://github.com/remarkjs/remark-lint/blob/10.0.1/readme.md#L610-L613
-- GFM tables: https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-table-pipes/index.js#L8
-- GFM task lists: https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-checkbox-character-style/index.js#L14
-- GFM strikethrough: https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-strikethrough-marker/index.js#L7-L8
-- GFM extended autolinks: https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-no-literal-urls/index.js#L1-L9
-- Footnotes: https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-definition-case/index.js#L94
-- Frontmatter: https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-no-missing-blank-lines/index.js#L211-L213
-- Math: https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-maximum-line-length/index.js#L288
-- Other extensions: https://github.com/remarkjs/remark-lint/blob/10.0.1/test.js#L402-L406
-- Built-in rule count: https://github.com/remarkjs/remark-lint/blob/10.0.1/package.json#L126-L209
-- markdownlint `MD###` ids: https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-final-newline/index.js#L83-L86
-- Inline disable comments: https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint/index.js#L56-L57
-- Autofix: https://github.com/unifiedjs/unified-args/blob/11.0.1/lib/schema.js#L24-L200
-- CommonMark back out: https://github.com/remarkjs/remark/blob/remark-cli%4012.0.1/packages/remark-stringify/lib/index.js#L27-L40
-- AST dump: https://github.com/unifiedjs/unified-args/blob/11.0.1/lib/schema.js#L165-L169
-- Lint report formats: https://github.com/unifiedjs/unified-engine/blob/11.2.2/lib/file-set-pipeline/log.js#L28-L50
-- On nodes: https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-emphasis-marker/index.js#L193
-- With columns: https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-final-newline/index.js#L96
-- With end positions: https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-maximum-line-length/index.js#L297
-- On findings, line and column: https://github.com/vfile/vfile-reporter/blob/8.1.1/lib/index.js#L378-L381
-- Config file formats: https://github.com/unifiedjs/unified-engine/blob/11.2.2/lib/configuration.js#L97-L106
-- Reads `.markdownlint.*`: https://github.com/remarkjs/remark/blob/remark-cli%4012.0.1/packages/remark-cli/cli.js
-- Per-directory config: https://github.com/unifiedjs/unified-engine/blob/11.2.2/lib/find-up.js#L172-L178
-- Parser extension API: https://github.com/remarkjs/remark/blob/remark-cli%4012.0.1/packages/remark-parse/lib/index.js#L39-L40
-- Custom rule API: https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/unified-lint-rule/lib/index.js#L39
-- Plugin discovery: https://github.com/unifiedjs/unified-engine/blob/11.2.2/lib/configuration.js#L423-L426
+- CommonMark spec version: [readme.md#L610-L613](https://github.com/remarkjs/remark-lint/blob/10.0.1/readme.md#L610-L613)
+- GFM tables: [index.js#L8](https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-table-pipes/index.js#L8)
+- GFM task lists: [index.js#L14](https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-checkbox-character-style/index.js#L14)
+- GFM strikethrough: [index.js#L7-L8](https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-strikethrough-marker/index.js#L7-L8)
+- GFM extended autolinks: [index.js#L1-L9](https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-no-literal-urls/index.js#L1-L9)
+- Footnotes: [index.js#L94](https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-definition-case/index.js#L94)
+- Frontmatter: [index.js#L211-L213](https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-no-missing-blank-lines/index.js#L211-L213)
+- Math: [index.js#L288](https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-maximum-line-length/index.js#L288)
+- Other extensions: [test.js#L402-L406](https://github.com/remarkjs/remark-lint/blob/10.0.1/test.js#L402-L406)
+- Built-in rule count: [package.json#L126](https://github.com/remarkjs/remark-lint/blob/10.0.1/package.json#L126-L209)
+- markdownlint `MD###` ids: [index.js#L83-L86](https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-final-newline/index.js#L83-L86)
+- Inline disable comments: [index.js#L56-L57](https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint/index.js#L56-L57)
+- Autofix: [schema.js#L24-L200](https://github.com/unifiedjs/unified-args/blob/11.0.1/lib/schema.js#L24-L200) (unified-args)
+- CommonMark back out: [index.js#L27-L40](https://github.com/remarkjs/remark/blob/remark-cli%4012.0.1/packages/remark-stringify/lib/index.js#L27-L40) (remark)
+- AST dump: [schema.js#L165-L169](https://github.com/unifiedjs/unified-args/blob/11.0.1/lib/schema.js#L165-L169) (unified-args)
+- Lint report formats: [log.js#L28-L50](https://github.com/unifiedjs/unified-engine/blob/11.2.2/lib/file-set-pipeline/log.js#L28-L50) (unified-engine)
+- On nodes: [index.js#L193](https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-emphasis-marker/index.js#L193)
+- With columns: [index.js#L96](https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-final-newline/index.js#L96)
+- With end positions: [index.js#L297](https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/remark-lint-maximum-line-length/index.js#L297)
+- On findings, line and column: [index.js#L378-L381](https://github.com/vfile/vfile-reporter/blob/8.1.1/lib/index.js#L378-L381) (vfile-reporter)
+- Config file formats: [configuration.js#L97](https://github.com/unifiedjs/unified-engine/blob/11.2.2/lib/configuration.js#L97-L106) (unified-engine)
+- Reads `.markdownlint.*`: [cli.js](https://github.com/remarkjs/remark/blob/remark-cli%4012.0.1/packages/remark-cli/cli.js) (remark)
+- Per-directory config: [find-up.js#L172-L178](https://github.com/unifiedjs/unified-engine/blob/11.2.2/lib/find-up.js#L172-L178) (unified-engine)
+- Parser extension API: [index.js#L39-L40](https://github.com/remarkjs/remark/blob/remark-cli%4012.0.1/packages/remark-parse/lib/index.js#L39-L40) (remark)
+- Custom rule API: [index.js#L39](https://github.com/remarkjs/remark-lint/blob/10.0.1/packages/unified-lint-rule/lib/index.js#L39)
+- Plugin discovery: [configuration.…#L423](https://github.com/unifiedjs/unified-engine/blob/11.2.2/lib/configuration.js#L423-L426) (unified-engine)
 
 ### mdmend 1.0.2
 
-https://github.com/mohitmishra786/mdmend/tree/v1.0.2
+[repository](https://github.com/mohitmishra786/mdmend/tree/v1.0.2) at v1.0.2
 
-- CommonMark spec version: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/README.md#L327
-- GFM tables: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/md055_table_pipes.go#L93
-- GFM task lists: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/rule.go#L27
-- GFM strikethrough: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/md037_emphasis_spaces.go#L19
-- GFM extended autolinks: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/md034_bare_url.go#L22
-- Footnotes: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/md066_footnotes.go#L55
-- Frontmatter: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/md024_duplicate_heading.go#L190-L196
-- Math: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/rule.go#L27
-- Other extensions: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/config/flavor.go#L106
-- Built-in rule count: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/registry.go#L12
-- markdownlint `MD###` ids: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/registry.go#L12
-- Inline disable comments: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/linter/linter.go#L24
-- Autofix: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/fixer/fixer.go#L29
-- Fix shape: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/md009_trailing_spaces.go#L36
-- Dry run or diff: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/cmd/mdmend/main.go#L160
-- Lint report formats: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/cmd/mdmend/main.go#L106
-- On nodes: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/rule.go#L32
-- With columns: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/rule.go#L32
-- With end positions: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/rule.go#L5
-- On findings, line and column: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/rule.go#L5-L12
-- Config file formats: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/config/config.go#L14
-- Reads `.markdownlint.*`: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/config/markdownlint.go#L20
-- Per-directory config: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/config/config.go#L10
-- Custom rule API: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/pkg/mdmend/rules.go#L55
-- Plugin discovery: https://github.com/mohitmishra786/mdmend/blob/v1.0.2/pkg/mdmend/rules.go#L55
+- CommonMark spec version: [README.md#L327](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/README.md#L327)
+- GFM tables: [md055_table_pip…#L93](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/md055_table_pipes.go#L93)
+- GFM task lists: [rule.go#L27](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/rule.go#L27)
+- GFM strikethrough: [md037_emphasis_…#L19](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/md037_emphasis_spaces.go#L19)
+- GFM extended autolinks: [md034_bare_url.…#L22](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/md034_bare_url.go#L22)
+- Footnotes: [md066_footnotes…#L55](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/md066_footnotes.go#L55)
+- Frontmatter: [md024_duplicat…#L190](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/md024_duplicate_heading.go#L190-L196)
+- Math: [rule.go#L27](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/rule.go#L27)
+- Other extensions: [flavor.go#L106](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/config/flavor.go#L106)
+- Built-in rule count: [registry.go#L12](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/registry.go#L12)
+- markdownlint `MD###` ids: [registry.go#L12](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/registry.go#L12)
+- Inline disable comments: [linter.go#L24](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/linter/linter.go#L24)
+- Autofix: [fixer.go#L29](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/fixer/fixer.go#L29)
+- Fix shape: [md009_trailing_…#L36](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/md009_trailing_spaces.go#L36)
+- Dry run or diff: [main.go#L160](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/cmd/mdmend/main.go#L160)
+- Lint report formats: [main.go#L106](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/cmd/mdmend/main.go#L106)
+- On nodes: [rule.go#L32](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/rule.go#L32)
+- With columns: [rule.go#L32](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/rule.go#L32)
+- With end positions: [rule.go#L5](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/rule.go#L5)
+- On findings, line and column: [rule.go#L5-L12](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/rules/rule.go#L5-L12)
+- Config file formats: [config.go#L14](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/config/config.go#L14)
+- Reads `.markdownlint.*`: [markdownlint.go#L20](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/config/markdownlint.go#L20)
+- Per-directory config: [config.go#L10](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/internal/config/config.go#L10)
+- Custom rule API: [rules.go#L55](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/pkg/mdmend/rules.go#L55)
+- Plugin discovery: [rules.go#L55](https://github.com/mohitmishra786/mdmend/blob/v1.0.2/pkg/mdmend/rules.go#L55)
 
 ### Vale 3.25.1
 
-https://github.com/vale-cli/vale/tree/v3.25.1
+[repository](https://github.com/vale-cli/vale/tree/v3.25.1) at v3.25.1
 
-- CommonMark spec version: https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/md.go#L20-L31
-- GFM tables: https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/md.go#L22
-- GFM task lists: https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/md.go#L22
-- GFM strikethrough: https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/md.go#L22
-- GFM extended autolinks: https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/md.go#L22
-- Footnotes: https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/md.go#L23
-- Frontmatter: https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/metadata.go#L15-L48
-- Math: https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/math.go#L14-L24
-- Other extensions: https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/lint.go#L334-L345
-- Built-in rule count: https://github.com/vale-cli/vale/blob/v3.25.1/internal/check/definition.go#L133-L185
-- markdownlint `MD###` ids: https://github.com/vale-cli/vale/blob/v3.25.1/internal/check/definition.go#L136
-- Inline disable comments: https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/file.go#L747-L780
-- Autofix: https://github.com/vale-cli/vale/blob/v3.25.1/cmd/vale/apply.go#L41-L47
-- Fix shape: https://github.com/vale-cli/vale/blob/v3.25.1/cmd/vale/apply.go#L172-L185
-- Dry run or diff: https://github.com/vale-cli/vale/blob/v3.25.1/cmd/vale/command.go#L120-L148
-- AST dump: https://github.com/vale-cli/vale/blob/v3.25.1/cmd/vale/command.go#L58-L116
-- Lint report formats: https://github.com/vale-cli/vale/blob/v3.25.1/cmd/vale/common.go#L14-L21
-- On nodes: https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/alert.go#L20-L41
-- With columns: https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/alert.go#L24
-- With end positions: https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/alert.go#L24
-- On findings, line and column: https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/alert.go#L20-L41
-- Config file formats: https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/config.go#L74-L87
-- Reads `.markdownlint.*`: https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/config.go#L74-L87
-- Per-directory config: https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/source.go#L180-L205
-- Parser extension API: https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/md.go#L20-L31
-- Custom rule API: https://github.com/vale-cli/vale/blob/v3.25.1/internal/check/definition.go#L119-L132
-- Plugin discovery: https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/ini.go#L26-L28
+- CommonMark spec version: [md.go#L20-L31](https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/md.go#L20-L31)
+- GFM tables: [md.go#L22](https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/md.go#L22)
+- GFM task lists: [md.go#L22](https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/md.go#L22)
+- GFM strikethrough: [md.go#L22](https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/md.go#L22)
+- GFM extended autolinks: [md.go#L22](https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/md.go#L22)
+- Footnotes: [md.go#L23](https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/md.go#L23)
+- Frontmatter: [metadata.go#L15-L48](https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/metadata.go#L15-L48)
+- Math: [math.go#L14-L24](https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/math.go#L14-L24)
+- Other extensions: [lint.go#L334-L345](https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/lint.go#L334-L345)
+- Built-in rule count: [definition.go#L133](https://github.com/vale-cli/vale/blob/v3.25.1/internal/check/definition.go#L133-L185)
+- markdownlint `MD###` ids: [definition.go#L136](https://github.com/vale-cli/vale/blob/v3.25.1/internal/check/definition.go#L136)
+- Inline disable comments: [file.go#L747-L780](https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/file.go#L747-L780)
+- Autofix: [apply.go#L41-L47](https://github.com/vale-cli/vale/blob/v3.25.1/cmd/vale/apply.go#L41-L47)
+- Fix shape: [apply.go#L172-L185](https://github.com/vale-cli/vale/blob/v3.25.1/cmd/vale/apply.go#L172-L185)
+- Dry run or diff: [command.go#L120-L148](https://github.com/vale-cli/vale/blob/v3.25.1/cmd/vale/command.go#L120-L148)
+- AST dump: [command.go#L58-L116](https://github.com/vale-cli/vale/blob/v3.25.1/cmd/vale/command.go#L58-L116)
+- Lint report formats: [common.go#L14-L21](https://github.com/vale-cli/vale/blob/v3.25.1/cmd/vale/common.go#L14-L21)
+- On nodes: [alert.go#L20-L41](https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/alert.go#L20-L41)
+- With columns: [alert.go#L24](https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/alert.go#L24)
+- With end positions: [alert.go#L24](https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/alert.go#L24)
+- On findings, line and column: [alert.go#L20-L41](https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/alert.go#L20-L41)
+- Config file formats: [config.go#L74-L87](https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/config.go#L74-L87)
+- Reads `.markdownlint.*`: [config.go#L74-L87](https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/config.go#L74-L87)
+- Per-directory config: [source.go#L180-L205](https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/source.go#L180-L205)
+- Parser extension API: [md.go#L20-L31](https://github.com/vale-cli/vale/blob/v3.25.1/internal/lint/md.go#L20-L31)
+- Custom rule API: [definition.go#L119](https://github.com/vale-cli/vale/blob/v3.25.1/internal/check/definition.go#L119-L132)
+- Plugin discovery: [ini.go#L26-L28](https://github.com/vale-cli/vale/blob/v3.25.1/internal/core/ini.go#L26-L28)
 
 ### contextlint 1.1.1
 
-https://github.com/nozomi-koborinai/contextlint/tree/v1.1.1
+[repository](https://github.com/nozomi-koborinai/contextlint/tree/v1.1.1) at v1.1.1
 
-- CommonMark spec version: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L81
-- GFM tables: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L97
-- GFM task lists: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L129
-- GFM strikethrough: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L81
-- GFM extended autolinks: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L81
-- Footnotes: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L81
-- Frontmatter: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L81
-- Math: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/package.json#L30-L37
-- Other extensions: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/package.json#L30-L37
-- Built-in rule count: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/registry.ts#L36-L56
-- markdownlint `MD###` ids: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/rules/tbl-001.ts#L17
-- Inline disable comments: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/rule.ts#L40-L62
-- Autofix: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/lsp-server/src/code-actions.ts#L16-L32
-- Fix shape: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/lsp-server/src/code-actions.ts#L60-L66
-- Dry run or diff: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/cli/src/index.ts#L64-L67
-- AST dump: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/cli/src/index.ts#L61-L75
-- Lint report formats: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/cli/src/commands/shared.ts#L24-L31
-- On nodes: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L93
-- With columns: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L18-L51
-- With end positions: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L18-L51
-- On findings, line and column: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/rule.ts#L5-L17
-- Config file formats: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/config.ts#L5
-- Reads `.markdownlint.*`: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/config.ts#L5
-- Per-directory config: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/config.ts#L39-L48
-- Parser extension API: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L80-L81
-- Custom rule API: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/index.ts#L12-L19
-- Plugin discovery: https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/registry.ts#L61-L68
+- CommonMark spec version: [parser.ts#L81](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L81)
+- GFM tables: [parser.ts#L97](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L97)
+- GFM task lists: [parser.ts#L129](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L129)
+- GFM strikethrough: [parser.ts#L81](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L81)
+- GFM extended autolinks: [parser.ts#L81](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L81)
+- Footnotes: [parser.ts#L81](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L81)
+- Frontmatter: [parser.ts#L81](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L81)
+- Math: [package.json#L30-L37](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/package.json#L30-L37)
+- Other extensions: [package.json#L30-L37](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/package.json#L30-L37)
+- Built-in rule count: [registry.ts#L36-L56](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/registry.ts#L36-L56)
+- markdownlint `MD###` ids: [tbl-001.ts#L17](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/rules/tbl-001.ts#L17)
+- Inline disable comments: [rule.ts#L40-L62](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/rule.ts#L40-L62)
+- Autofix: [code-actions.ts#L16](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/lsp-server/src/code-actions.ts#L16-L32)
+- Fix shape: [code-actions.ts#L60](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/lsp-server/src/code-actions.ts#L60-L66)
+- Dry run or diff: [index.ts#L64-L67](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/cli/src/index.ts#L64-L67)
+- AST dump: [index.ts#L61-L75](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/cli/src/index.ts#L61-L75)
+- Lint report formats: [shared.ts#L24-L31](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/cli/src/commands/shared.ts#L24-L31)
+- On nodes: [parser.ts#L93](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L93)
+- With columns: [parser.ts#L18-L51](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L18-L51)
+- With end positions: [parser.ts#L18-L51](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L18-L51)
+- On findings, line and column: [rule.ts#L5-L17](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/rule.ts#L5-L17)
+- Config file formats: [config.ts#L5](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/config.ts#L5)
+- Reads `.markdownlint.*`: [config.ts#L5](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/config.ts#L5)
+- Per-directory config: [config.ts#L39-L48](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/config.ts#L39-L48)
+- Parser extension API: [parser.ts#L80-L81](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/parser.ts#L80-L81)
+- Custom rule API: [index.ts#L12-L19](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/index.ts#L12-L19)
+- Plugin discovery: [registry.ts#L61-L68](https://github.com/nozomi-koborinai/contextlint/blob/v1.1.1/packages/core/src/registry.ts#L61-L68)
 
