@@ -26,7 +26,10 @@ def label(url):
 
 
 def cite(url, repo):
-    link_repo = re.match(r"https://github\.com/([^/]+/[^/]+)/", url).group(1)
+    m = re.match(r"https://github\.com/([^/]+/[^/]+)/", url)
+    if not m:
+        raise ValueError(f"not a GitHub link: {url}")
+    link_repo = m.group(1)
     text = f"[{label(url)}]({url})"
     return text if link_repo == repo else f"{text} ({link_repo.split('/')[1]})"
 
@@ -45,6 +48,7 @@ def main():
     table = [line(head), "|" + "|".join("---" for _ in head) + "|"] + [line([g, f] + c) for n, g, f, c in grid]
     src = []
     missing = []
+    bad = []
     for i, (key, name, repo, tag) in enumerate(TOOLS):
         src.append(f"### {name}\n")
         src.append(f"[repository](https://github.com/{repo}/tree/{tag.replace('@', '%40')}) at {tag}\n")
@@ -55,11 +59,16 @@ def main():
             if not links:
                 missing.append((key, n, c[i]))
                 continue
-            src.append(f"- {f}: " + ", ".join(cite(l, repo) for l in links))
+            try:
+                src.append(f"- {f}: " + ", ".join(cite(l, repo) for l in links))
+            except ValueError as e:
+                bad.append((key, n, str(e)))
         src.append("")
-    if missing:
-        for m in missing:
-            print("no citation:", m, file=sys.stderr)
+    for m in missing:
+        print("no citation:", m, file=sys.stderr)
+    for b in bad:
+        print("bad citation:", b, file=sys.stderr)
+    if missing or bad:
         return 1
     parts = [
         (HERE / "head.md").read_text(encoding="utf-8"),
